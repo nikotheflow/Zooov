@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@700&display=swap");
+
+// === MIXIN ===
+@mixin montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+
+@mixin oswald {
+  font-family: "Oswald", sans-serif;
+}
+// === / MIXIN ===
+
+// === VARIABLES ===
+$base: 4px;
+
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semibold: 600;
+$fw-bold: 700;
+
+$fs-sm: 12px;
+$fs-md: 16px;
+$fs-lg: 18px;
+
+$padding-vertical: $base * 20;
+$padding-vertical__big: $base * 54;
+
+$cl-primary: #961914;
+// === / VARIABLES ===
+
+// === COMMON ===
+body {
+  @include montserrat;
+  font-size: $fs-md;
+  font-weight: $fw-regular;
+  line-height: 140%;
+  margin: 0;
+  padding: 0;
+}
+
+.section-outer {
+}
+
+.section-inner {
+  max-width: 1200px;
+  padding-top: $padding-vertical;
+  padding-bottom: $padding-vertical;
+  margin: 0 auto;
+}
+
+.button {
+  @include montserrat;
+  width: $base * 56;
+  height: $base * 12;
+  font-weight: $fw-semibold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+
+  &__primary {
+    color: white;
+    background-color: $cl-primary;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  @include oswald;
+  font-size: 54px;
+  line-height: 130%;
+  font-weight: $fw-bold;
+}
+// === / COMMON ===
+
+// === HEADER ===
+.section-header {
+  width: 100%;
+  margin: $base * 4 0;
+
+  .section-inner {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.section-header__fixed {
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.nav-wrapper {
+  display: flex;
+  list-style: none;
+
+  &_item {
+    & + & {
+      margin-left: $base * 13;
+    }
+  }
+
+  &_link {
+    font-weight: $fw-medium;
+    text-decoration: none;
+    color: white;
+
+    &:hover,
+    &--active {
+      border-bottom: 2px solid #961914;
+    }
+  }
+}
+// === / HEADER ===
+
+// === HERO ===
+.section-hero {
+  .section-inner {
+    padding-top: $padding-vertical__big;
+    padding-bottom: $padding-vertical__big;
+  }
+
+  color: white;
+  background-image: url("../img/hero-background.jpg");
+  background-repeat: no-repeat;
+  background-position: top;
+}
+
+.hero_title {
+  position: relative;
+  margin-bottom: 10px;
+  display: inline-block;
+  z-index: 5;
+
+  &:after {
+    content: "";
+    display: inline-block;
+    width: 300px;
+    height: 150px;
+    background-image: url(../img/hero-stroke.svg);
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 165px;
+    top: 60px;
+  }
+}
+
+.hero_text {
+  font-size: 20px;
+  line-height: 140%;
+  margin-bottom: 25px;
+}
+
+.hero_zooov-background {
+  position: absolute;
+  right: -21px;
+  top: 160px;
+}
+// === / HERO ===
+
+// === BARF ===
+.section-barf {
+}
+// === / BARF ===
+
+// === RATIONS ===
+.section-rations {
+}
+// === / RATIONS ===
+
+// === ZOOOV ===
+.section-zooov {
+}
+// === / ZOOOV ===
+
+// === ABOUT ===
+.section-about {
+  background-color: #fff4f3;
+}
+// === / ABOUT ===
+
+// === DELIVERY ===
+.section-delivery {
+}
+// === / DELIVERY ===
+
+// === FAQ ===
+.section-faq {
+}
+// === / FAQ ===
+
+// === CONTACTS ===
+.section-contacts {
+  background-color: #961914;
+}
+// === / CONTACTS ===
