@@ -22,10 +22,14 @@ $fs-sm: 12px;
 $fs-md: 16px;
 $fs-lg: 18px;
 
-$padding-vertical: $base * 20;
+$padding-vertical__small: $base * 20;
+$padding-vertical: $base * 45;
 $padding-vertical__big: $base * 54;
 
+$cl-main: #434242;
+$cl-light: #9f9e9d;
 $cl-primary: #961914;
+$cl-secondary: #ead1d0;
 // === / VARIABLES ===
 
 // === COMMON ===
@@ -36,6 +40,7 @@ body {
   line-height: 140%;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 .section-outer {
@@ -68,17 +73,67 @@ h2,
 h3,
 h4,
 h5,
-h6,
-p {
+h6 {
+  @include montserrat;
   margin: 0;
   padding: 0;
+  font-weight: $fw-bold;
+  line-height: 130%;
+  color: $cl-main;
 }
 
 h1 {
   @include oswald;
   font-size: 54px;
-  line-height: 130%;
-  font-weight: $fw-bold;
+  color: white;
+}
+
+h2 {
+  @include oswald;
+  font-size: 46px;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: $fw-semibold;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+  font-weight: $fw-semibold;
+  line-height: 200%;
+  text-transform: uppercase;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.text {
+  color: $cl-main;
+}
+
+.list {
+  padding: 0;
+}
+.list_item {
+  color: $cl-main;
+  margin: 0;
+  list-style-type: none;
+
+  & + & {
+    margin-top: $base * 4;
+  }
+}
+.list_item:before {
+  content: "●";
+  color: $cl-primary;
+  margin-right: 6px;
 }
 // === / COMMON ===
 
@@ -170,8 +225,78 @@ h1 {
 // === / HERO ===
 
 // === BARF ===
-.section-barf {
+.barf_main {
+  display: flex;
+  align-items: center;
+  padding-bottom: $padding-vertical__small;
 }
+
+.barf_title {
+  margin-bottom: 32px;
+}
+
+.barf_text {
+  margin-bottom: 24px;
+}
+
+.barf_list-title {
+  margin-bottom: 16px;
+}
+.barf_composition {
+  background-color: $cl-secondary;
+  padding: $base * 8 $base * 20;
+  display: flex;
+  justify-content: space-between;
+  background-image: url(../img/barf-stroke.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.barf-composition_title {
+  margin-bottom: 16px;
+}
+
+.barf-composition_list {
+  column-count: 2;
+  padding: 0;
+  margin: 0;
+}
+.barf-composition_list-item {
+  list-style-type: none;
+  font-weight: $fw-medium;
+  font-size: $fs-lg;
+  line-height: 250%;
+  color: $cl-main;
+}
+
+.barf-composition_list-item {
+  background-repeat: no-repeat;
+  background-position-y: center;
+  padding-left: $base * 9;
+}
+
+.barf-composition_list-item__meat {
+  background-image: url(../img/meat.svg);
+}
+.barf-composition_list-item__bones {
+  background-image: url(../img/bones.svg);
+}
+.barf-composition_list-item__vegetables {
+  background-image: url(../img/vegetables.svg);
+}
+.barf-composition_list-item__liver {
+  background-image: url(../img/liver.svg);
+}
+.barf-composition_list-item__offal {
+  background-image: url(../img/offal.svg);
+}
+.barf-composition_list-item__nuts {
+  background-image: url(../img/nuts.svg);
+}
+.barf-composition_list-item__fruits {
+  background-image: url(../img/fruits.svg);
+}
+
 // === / BARF ===
 
 // === RATIONS ===
