@@ -119,7 +119,8 @@ p {
 }
 
 .features_item {
-  width: 24%;
+  position: relative;
+  width: 23%;
 }
 
 .features_icon {
@@ -128,6 +129,10 @@ p {
 
 .features_title {
   margin-bottom: 8px;
+}
+
+.features_link {
+  color: #961914;
 }
 
 .section-header {
@@ -460,6 +465,27 @@ p {
 .section-about_text {
   color: #434242;
   margin-bottom: 24px;
+}
+
+.section-delivery .section-inner {
+  padding-top: 160px;
+}
+
+.section-delivery_title {
+  margin-bottom: 80px;
+}
+
+.section-delivery .features_item:not(:last-child) .features_title:after {
+  content: "";
+  display: inline-block;
+  width: 160px;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-image: url("/img/arrow.svg");
+  background-repeat: no-repeat;
+  background-position-y: center;
 }
 
 .section-contacts {

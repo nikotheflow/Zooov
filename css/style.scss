@@ -149,7 +149,8 @@ p {
   justify-content: space-between;
 
   &_item {
-    width: 24%;
+    position: relative;
+    width: 23%;
   }
 
   &_icon {
@@ -158,6 +159,10 @@ p {
 
   &_title {
     margin-bottom: $base * 2;
+  }
+
+  &_link {
+    color: $cl-primary;
   }
 }
 // === / COMMON ===
@@ -486,7 +491,28 @@ p {
 
 // === DELIVERY ===
 .section-delivery {
+  .section-inner {
+    padding-top: $padding-vertical;
+  }
+
+  &_title {
+    margin-bottom: $base * 20;
+  }
+
+  .features_item:not(:last-child) .features_title:after {
+    content: "";
+    display: inline-block;
+    width: 160px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-image: url("/img/arrow.svg");
+    background-repeat: no-repeat;
+    background-position-y: center;
+  }
 }
+
 // === / DELIVERY ===
 
 // === FAQ ===
