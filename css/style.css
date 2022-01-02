@@ -109,6 +109,27 @@ p {
   margin-top: 16px;
 }
 
+.features {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.features_item {
+  width: 24%;
+}
+
+.features_icon {
+  margin-bottom: 16px;
+}
+
+.features_title {
+  margin-bottom: 8px;
+}
+
 .section-header {
   width: 100%;
   margin: 16px 0;
@@ -229,7 +250,7 @@ p {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  background-image: url(../img/background-stroke.svg);
+  background-image: url(../img/background-stroke-light.svg);
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -317,7 +338,7 @@ p {
       -ms-flex-pack: justify;
           justify-content: space-between;
   background-color: #ead1d0;
-  background-image: url(../img/background-stroke.svg);
+  background-image: url(../img/background-stroke-light.svg);
   background-position: center;
   background-repeat: no-repeat;
   padding: 52px 80px;
@@ -366,6 +387,17 @@ p {
 
 .catalog_item-button {
   width: 160px;
+}
+
+.section-zooov {
+  background-image: url("../img/background-stroke-dark.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-y: center;
+}
+
+.section-zooov_title {
+  margin-bottom: 60px;
 }
 
 .section-about {

@@ -143,6 +143,23 @@ p {
     }
   }
 }
+
+.features {
+  display: flex;
+  justify-content: space-between;
+
+  &_item {
+    width: 24%;
+  }
+
+  &_icon {
+    margin-bottom: $base * 4;
+  }
+
+  &_title {
+    margin-bottom: $base * 2;
+  }
+}
 // === / COMMON ===
 
 // === HEADER ===
@@ -259,7 +276,7 @@ p {
     padding: $base * 8 $base * 20;
     display: flex;
     justify-content: space-between;
-    background-image: url(../img/background-stroke.svg);
+    background-image: url(../img/background-stroke-light.svg);
     background-position: center;
     background-repeat: no-repeat;
   }
@@ -341,7 +358,7 @@ p {
     align-items: center;
     justify-content: space-between;
     background-color: $cl-secondary;
-    background-image: url(../img/background-stroke.svg);
+    background-image: url(../img/background-stroke-light.svg);
     background-position: center;
     background-repeat: no-repeat;
     padding: $base * 13 $base * 20;
@@ -396,6 +413,14 @@ p {
 
 // === ZOOOV ===
 .section-zooov {
+  background-image: url("../img/background-stroke-dark.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-y: center;
+
+  &_title {
+    margin-bottom: $base * 15;
+  }
 }
 // === / ZOOOV ===
 
