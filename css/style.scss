@@ -23,8 +23,8 @@ $fs-md: 16px;
 $fs-lg: 18px;
 
 $padding-vertical__small: $base * 20;
-$padding-vertical: $base * 45;
-$padding-vertical__big: $base * 54;
+$padding-vertical: $base * 20;
+$padding-vertical__big: $base * 56;
 
 $cl-main: #434242;
 $cl-light: #9f9e9d;
@@ -65,6 +65,12 @@ body {
   &__primary {
     color: white;
     background-color: $cl-primary;
+  }
+
+  &__secondary {
+    color: $cl-primary;
+    border: 1px solid $cl-primary;
+    background-color: white;
   }
 }
 
@@ -120,20 +126,22 @@ p {
 
 .list {
   padding: 0;
-}
-.list_item {
-  color: $cl-main;
-  margin: 0;
-  list-style-type: none;
 
-  & + & {
-    margin-top: $base * 4;
+  &_item {
+    color: $cl-main;
+    margin: 0;
+    list-style-type: none;
+
+    &:before {
+      content: "●";
+      color: $cl-primary;
+      margin-right: 6px;
+    }
+
+    & + & {
+      margin-top: $base * 4;
+    }
   }
-}
-.list_item:before {
-  content: "●";
-  color: $cl-primary;
-  margin-right: 6px;
 }
 // === / COMMON ===
 
@@ -148,12 +156,12 @@ p {
     align-items: center;
     justify-content: space-between;
   }
-}
 
-.section-header__fixed {
-  position: fixed;
-  left: 0;
-  top: 0;
+  &__fixed {
+    position: fixed;
+    left: 0;
+    top: 0;
+  }
 }
 
 .nav-wrapper {
@@ -181,126 +189,208 @@ p {
 
 // === HERO ===
 .section-hero {
+  color: white;
+  background-image: url("../img/hero-background.jpg");
+  background-repeat: no-repeat;
+  background-position: top;
+
   .section-inner {
     padding-top: $padding-vertical__big;
     padding-bottom: $padding-vertical__big;
   }
 
-  color: white;
-  background-image: url("../img/hero-background.jpg");
-  background-repeat: no-repeat;
-  background-position: top;
-}
-
-.hero_title {
-  position: relative;
-  margin-bottom: 10px;
-  display: inline-block;
-  z-index: 5;
-
-  &:after {
-    content: "";
+  &_title {
+    position: relative;
+    margin-bottom: 10px;
     display: inline-block;
-    width: 300px;
-    height: 150px;
-    background-image: url(../img/hero-stroke.svg);
-    background-repeat: no-repeat;
+    z-index: 5;
+
+    &:after {
+      content: "";
+      display: inline-block;
+      width: 300px;
+      height: 150px;
+      background-image: url(../img/hero-stroke.svg);
+      background-repeat: no-repeat;
+      position: absolute;
+      left: 165px;
+      top: 60px;
+    }
+  }
+
+  &_text {
+    font-size: 20px;
+    line-height: 140%;
+    margin-bottom: 25px;
+  }
+
+  &_zooov-background {
     position: absolute;
-    left: 165px;
-    top: 60px;
+    right: -21px;
+    top: 160px;
   }
 }
 
-.hero_text {
-  font-size: 20px;
-  line-height: 140%;
-  margin-bottom: 25px;
-}
-
-.hero_zooov-background {
-  position: absolute;
-  right: -21px;
-  top: 160px;
-}
 // === / HERO ===
 
 // === BARF ===
-.barf_main {
-  display: flex;
-  align-items: center;
-  padding-bottom: $padding-vertical__small;
+.section-barf {
+  &_main {
+    display: flex;
+    align-items: center;
+    padding-top: $padding-vertical;
+    padding-bottom: $padding-vertical__small;
+  }
+
+  &_title {
+    margin-bottom: 32px;
+  }
+
+  &_text {
+    margin-bottom: 24px;
+  }
+
+  &_list-title {
+    margin-bottom: 16px;
+  }
+
+  &_compositions {
+    background-color: $cl-secondary;
+    padding: $base * 8 $base * 20;
+    display: flex;
+    justify-content: space-between;
+    background-image: url(../img/background-stroke.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 }
 
-.barf_title {
-  margin-bottom: 32px;
-}
+.composition {
+  &_title {
+    margin-bottom: 16px;
+  }
 
-.barf_text {
-  margin-bottom: 24px;
-}
+  &_list {
+    column-count: 2;
+    padding: 0;
+    margin: 0;
+  }
 
-.barf_list-title {
-  margin-bottom: 16px;
-}
-.barf_composition {
-  background-color: $cl-secondary;
-  padding: $base * 8 $base * 20;
-  display: flex;
-  justify-content: space-between;
-  background-image: url(../img/barf-stroke.svg);
-  background-position: center;
-  background-repeat: no-repeat;
-}
+  &_item {
+    list-style-type: none;
+    font-weight: $fw-medium;
+    font-size: $fs-lg;
+    line-height: 250%;
+    color: $cl-main;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    padding-left: $base * 9;
 
-.barf-composition_title {
-  margin-bottom: 16px;
-}
+    &__meat {
+      background-image: url(../img/meat.svg);
+    }
 
-.barf-composition_list {
-  column-count: 2;
-  padding: 0;
-  margin: 0;
-}
-.barf-composition_list-item {
-  list-style-type: none;
-  font-weight: $fw-medium;
-  font-size: $fs-lg;
-  line-height: 250%;
-  color: $cl-main;
-}
+    &__bones {
+      background-image: url(../img/bones.svg);
+    }
 
-.barf-composition_list-item {
-  background-repeat: no-repeat;
-  background-position-y: center;
-  padding-left: $base * 9;
-}
+    &__vegetables {
+      background-image: url(../img/vegetables.svg);
+    }
 
-.barf-composition_list-item__meat {
-  background-image: url(../img/meat.svg);
-}
-.barf-composition_list-item__bones {
-  background-image: url(../img/bones.svg);
-}
-.barf-composition_list-item__vegetables {
-  background-image: url(../img/vegetables.svg);
-}
-.barf-composition_list-item__liver {
-  background-image: url(../img/liver.svg);
-}
-.barf-composition_list-item__offal {
-  background-image: url(../img/offal.svg);
-}
-.barf-composition_list-item__nuts {
-  background-image: url(../img/nuts.svg);
-}
-.barf-composition_list-item__fruits {
-  background-image: url(../img/fruits.svg);
+    &__liver {
+      background-image: url(../img/liver.svg);
+    }
+
+    &__offal {
+      background-image: url(../img/offal.svg);
+    }
+
+    &__nuts {
+      background-image: url(../img/nuts.svg);
+    }
+
+    &__fruits {
+      background-image: url(../img/fruits.svg);
+    }
+  }
 }
 
 // === / BARF ===
 
 // === RATIONS ===
 .section-rations {
+  &_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: $base * 20;
+  }
+
+  &_title {
+    white-space: nowrap;
+    margin-right: $base * 25;
+  }
+
+  &_catalog {
+    margin-bottom: $base * 20;
+  }
+
+  &_count {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $cl-secondary;
+    background-image: url(../img/background-stroke.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: $base * 13 $base * 20;
+
+    &-text {
+      width: 70%;
+      font-size: 28px;
+      font-weight: $fw-medium;
+      line-height: 140%;
+      letter-spacing: 0.02em;
+    }
+  }
+}
+
+.catalog {
+  display: flex;
+
+  &_item {
+    &-image {
+      margin-bottom: 45px;
+    }
+
+    &-title {
+      margin-bottom: 4px;
+    }
+
+    &-category {
+      color: $cl-light;
+      font-size: 13px;
+      line-height: 130%;
+      margin-bottom: 16px;
+    }
+
+    &-text {
+      color: $cl-main;
+      margin-bottom: 11px;
+    }
+
+    &-parameters {
+      color: $cl-light;
+      font-size: 13px;
+      line-height: 130%;
+      margin-bottom: 24px;
+    }
+
+    &-button {
+      width: $base * 40;
+    }
+  }
 }
 // === / RATIONS ===
 
