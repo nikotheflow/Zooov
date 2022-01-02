@@ -396,12 +396,70 @@ p {
   background-position-y: center;
 }
 
+.section-zooov .section-inner {
+  padding-bottom: 160px;
+}
+
 .section-zooov_title {
   margin-bottom: 60px;
 }
 
 .section-about {
   background-color: #fff4f3;
+  background-image: url("/img/background-stroke-twice.svg");
+  background-repeat: no-repeat;
+}
+
+.section-about .section-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.section-about_images {
+  position: relative;
+  min-width: 556px;
+  min-height: 745px;
+}
+
+.section-about_image {
+  position: absolute;
+}
+
+.section-about_image1 {
+  top: 0;
+  left: 0;
+}
+
+.section-about_image2 {
+  bottom: 0;
+  right: 0;
+}
+
+.section-about_image3 {
+  top: 475px;
+  left: -55px;
+}
+
+.section-about_image4 {
+  top: 287px;
+  right: 21px;
+}
+
+.section-about_main {
+  width: 49%;
+}
+
+.section-about_title {
+  margin-bottom: 40px;
+}
+
+.section-about_text {
+  color: #434242;
+  margin-bottom: 24px;
 }
 
 .section-contacts {

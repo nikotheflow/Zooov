@@ -23,7 +23,7 @@ $fs-md: 16px;
 $fs-lg: 18px;
 
 $padding-vertical__small: $base * 20;
-$padding-vertical: $base * 20;
+$padding-vertical: $base * 40;
 $padding-vertical__big: $base * 56;
 
 $cl-main: #434242;
@@ -48,8 +48,8 @@ body {
 
 .section-inner {
   max-width: 1200px;
-  padding-top: $padding-vertical;
-  padding-bottom: $padding-vertical;
+  padding-top: $padding-vertical__small;
+  padding-bottom: $padding-vertical__small;
   margin: 0 auto;
 }
 
@@ -255,7 +255,7 @@ p {
   &_main {
     display: flex;
     align-items: center;
-    padding-top: $padding-vertical;
+    padding-top: $padding-vertical__small;
     padding-bottom: $padding-vertical__small;
   }
 
@@ -418,6 +418,10 @@ p {
   background-size: contain;
   background-position-y: center;
 
+  .section-inner {
+    padding-bottom: $padding-vertical;
+  }
+
   &_title {
     margin-bottom: $base * 15;
   }
@@ -427,6 +431,56 @@ p {
 // === ABOUT ===
 .section-about {
   background-color: #fff4f3;
+  background-image: url("/img/background-stroke-twice.svg");
+  background-repeat: no-repeat;
+
+  .section-inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &_images {
+    position: relative;
+    min-width: 556px;
+    min-height: 745px;
+  }
+
+  &_image {
+    position: absolute;
+  }
+
+  &_image1 {
+    top: 0;
+    left: 0;
+  }
+
+  &_image2 {
+    bottom: 0;
+    right: 0;
+  }
+
+  &_image3 {
+    top: 475px;
+    left: -55px;
+  }
+
+  &_image4 {
+    top: 287px;
+    right: 21px;
+  }
+
+  &_main {
+    width: 49%;
+  }
+
+  &_title {
+    margin-bottom: $base * 10;
+  }
+
+  &_text {
+    color: $cl-main;
+    margin-bottom: $base * 6;
+  }
 }
 // === / ABOUT ===
 
