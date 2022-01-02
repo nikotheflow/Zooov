@@ -165,6 +165,48 @@ p {
     color: $cl-primary;
   }
 }
+
+.dropdown {
+  &_item {
+    display: flex;
+    flex-direction: column;
+    gap: $base * 3;
+    padding: $base * 8 0;
+  }
+
+  &_item:first-child {
+    padding-top: 0;
+  }
+
+  &_item:not(:last-child) {
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  &_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &_button {
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    background-image: url("/img/plus.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+
+    &__pressed {
+      background-image: url("/img/minus.svg");
+    }
+  }
+
+  &_text {
+    padding-right: $base * 20;
+  }
+}
 // === / COMMON ===
 
 // === HEADER ===
@@ -517,6 +559,19 @@ p {
 
 // === FAQ ===
 .section-faq {
+  .section-inner {
+    display: flex;
+    gap: 1rem;
+    padding-bottom: $padding-vertical;
+  }
+
+  &_title {
+    flex: 1;
+  }
+
+  &_questions {
+    flex: 2;
+  }
 }
 // === / FAQ ===
 

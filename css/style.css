@@ -135,6 +135,57 @@ p {
   color: #961914;
 }
 
+.dropdown_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 12px;
+  padding: 32px 0;
+}
+
+.dropdown_item:first-child {
+  padding-top: 0;
+}
+
+.dropdown_item:not(:last-child) {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.dropdown_header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.dropdown_button {
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  background-image: url("/img/plus.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown_button__pressed {
+  background-image: url("/img/minus.svg");
+}
+
+.dropdown_text {
+  padding-right: 80px;
+}
+
 .section-header {
   width: 100%;
   margin: 16px 0;
@@ -486,6 +537,26 @@ p {
   background-image: url("/img/arrow.svg");
   background-repeat: no-repeat;
   background-position-y: center;
+}
+
+.section-faq .section-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+  padding-bottom: 160px;
+}
+
+.section-faq_title {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.section-faq_questions {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
 }
 
 .section-contacts {
