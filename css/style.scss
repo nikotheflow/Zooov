@@ -72,6 +72,19 @@ body {
     border: 1px solid $cl-primary;
     background-color: white;
   }
+
+  &__social {
+    width: $base * 56;
+    height: $base * 10;
+    padding: $base * 2 $base * 3;
+    display: flex;
+    align-items: center;
+    gap: $base * 2;
+    font-size: 14px;
+    font-weight: $fw-medium;
+    color: white;
+    background: rgba(255, 255, 255, 0.2);
+  }
 }
 
 h1,
@@ -205,6 +218,14 @@ p {
 
   &_text {
     padding-right: $base * 20;
+  }
+}
+
+.form {
+  &-field {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
   }
 }
 // === / COMMON ===
@@ -578,5 +599,97 @@ p {
 // === CONTACTS ===
 .section-contacts {
   background-color: #961914;
+  background: url("/img/background-contacts.png") no-repeat;
+  background-size: cover;
+
+  .section-inner {
+    display: flex;
+    gap: $base * 45;
+  }
+
+  &_social {
+    flex: 4;
+  }
+
+  &_title {
+    margin-bottom: $base * 2;
+  }
+
+  &_text {
+    color: white;
+  }
+
+  &_social-text {
+    margin-bottom: $base * 8;
+  }
+
+  &_phone {
+    display: block;
+    font-weight: $fw-bold;
+    text-decoration: none;
+    margin-bottom: $base * 6;
+  }
+
+  &_buttons {
+    display: flex;
+    flex-direction: column;
+    gap: $base * 4;
+    margin-bottom: $base * 10;
+  }
+
+  &_form-area {
+    flex: 7;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    &-title {
+      font-weight: $fw-semibold;
+      font-size: 20px;
+      margin-bottom: $base;
+    }
+    &-text {
+      margin-bottom: $base * 8;
+    }
+  }
+
+  &_form {
+    display: grid;
+    grid-column-gap: $base * 6;
+    grid-row-gap: $base * 4;
+    grid-template-columns: 3fr 1fr 2fr;
+    grid-template-rows: $base * 12 $base * 30;
+
+    &-email {
+      grid-column: 2 / 4;
+    }
+
+    &-textarea {
+      grid-column: 1 / 4;
+    }
+
+    &-checkbox {
+      width: $base * 4;
+      height: $base * 4;
+      border: none;
+
+      &-area {
+        display: flex;
+        align-items: center;
+        gap: $base * 2;
+      }
+
+      &-label {
+        width: 80%;
+        font-size: $fs-sm;
+        line-height: 140%;
+      }
+    }
+
+    &-button {
+      width: 100%;
+      grid-column: 3 / 4;
+    }
+  }
 }
 // === / CONTACTS ===
