@@ -56,6 +56,10 @@ body {
   background: rgba(255, 255, 255, 0.2);
 }
 
+.button__social:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
 h1,
 h2,
 h3,
@@ -204,9 +208,57 @@ p {
 }
 
 .form-field {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  color: white;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 8px;
+  padding: 8px 16px;
+}
+
+.form-checkbox {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.form-checkbox + label {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
+
+.form-checkbox + label::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  background: #fff4f3 no-repeat 50% 50%;
+  border-radius: 2px;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.form-checkbox:checked + label::before {
+  background-image: url(/img/check.svg);
+}
+
+.form-checkbox:hover + label::before {
+  background-color: #ead1d0;
 }
 
 .section-header {
@@ -584,7 +636,9 @@ p {
 
 .section-contacts {
   background-color: #961914;
-  background: url("/img/background-contacts.png") no-repeat;
+  background-image: url("/img/background-contacts.png");
+  background-repeat: no-repeat;
+  background-position-y: 50%;
   background-size: cover;
 }
 
@@ -661,12 +715,14 @@ p {
 .section-contacts_form {
   display: -ms-grid;
   display: grid;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   grid-column-gap: 24px;
   grid-row-gap: 16px;
   -ms-grid-columns: 3fr 1fr 2fr;
       grid-template-columns: 3fr 1fr 2fr;
-  -ms-grid-rows: 48px 120px;
-      grid-template-rows: 48px 120px;
+  -ms-grid-rows: 48px 120px 48px;
+      grid-template-rows: 48px 120px 48px;
 }
 
 .section-contacts_form-email {
@@ -679,12 +735,7 @@ p {
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-column: 1 / 4;
-}
-
-.section-contacts_form-checkbox {
-  width: 16px;
-  height: 16px;
-  border: none;
+  resize: none;
 }
 
 .section-contacts_form-checkbox-area {
@@ -708,4 +759,38 @@ p {
   -ms-grid-column: 3;
   -ms-grid-column-span: 1;
   grid-column: 3 / 4;
+  color: #ec7973;
+  font-weight: 700;
+  background-color: #fff4f3;
+}
+
+.section-contacts_form-button:hover {
+  background-color: #ead1d0;
+}
+
+.footer {
+  background-color: #69120e;
+}
+
+.footer .section-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.footer_text {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 12px;
+}
+
+.footer_link {
+  text-decoration: none;
 }

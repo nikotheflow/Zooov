@@ -84,6 +84,10 @@ body {
     font-weight: $fw-medium;
     color: white;
     background: rgba(255, 255, 255, 0.2);
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.4);
+    }
   }
 }
 
@@ -223,9 +227,47 @@ p {
 
 .form {
   &-field {
+    @include montserrat();
+    font-size: 14px;
+    color: white;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 8px;
+    padding: $base * 2 $base * 4;
+  }
+
+  &-checkbox {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+
+    & + label {
+      display: inline-flex;
+      align-items: center;
+      user-select: none;
+      cursor: pointer;
+    }
+
+    & + label::before {
+      content: "";
+      display: inline-block;
+      width: $base * 4;
+      height: $base * 4;
+      flex-shrink: 0;
+      flex-grow: 0;
+      background: #fff4f3 no-repeat 50% 50%;
+      border-radius: 2px;
+      cursor: pointer;
+      margin-right: $base * 2;
+    }
+
+    &:checked + label::before {
+      background-image: url(/img/check.svg);
+    }
+
+    &:hover + label::before {
+      background-color: $cl-secondary;
+    }
   }
 }
 // === / COMMON ===
@@ -599,7 +641,9 @@ p {
 // === CONTACTS ===
 .section-contacts {
   background-color: #961914;
-  background: url("/img/background-contacts.png") no-repeat;
+  background-image: url("/img/background-contacts.png");
+  background-repeat: no-repeat;
+  background-position-y: 50%;
   background-size: cover;
 
   .section-inner {
@@ -655,10 +699,11 @@ p {
 
   &_form {
     display: grid;
+    box-sizing: border-box;
     grid-column-gap: $base * 6;
     grid-row-gap: $base * 4;
     grid-template-columns: 3fr 1fr 2fr;
-    grid-template-rows: $base * 12 $base * 30;
+    grid-template-rows: $base * 12 $base * 30 $base * 12;
 
     &-email {
       grid-column: 2 / 4;
@@ -666,13 +711,10 @@ p {
 
     &-textarea {
       grid-column: 1 / 4;
+      resize: none;
     }
 
     &-checkbox {
-      width: $base * 4;
-      height: $base * 4;
-      border: none;
-
       &-area {
         display: flex;
         align-items: center;
@@ -689,7 +731,37 @@ p {
     &-button {
       width: 100%;
       grid-column: 3 / 4;
+      color: #ec7973;
+      font-weight: $fw-bold;
+      background-color: #fff4f3;
+
+      &:hover {
+        background-color: $cl-secondary;
+      }
     }
   }
 }
 // === / CONTACTS ===
+
+// === FOOTER ===
+.footer {
+  background-color: #69120e;
+
+  .section-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: $base * 8;
+    padding-bottom: $base * 8;
+  }
+
+  &_text {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: $fs-sm;
+  }
+
+  &_link {
+    text-decoration: none;
+  }
+}
+// === / FOOTER ===
