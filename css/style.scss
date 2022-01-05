@@ -53,44 +53,6 @@ body {
   margin: 0 auto;
 }
 
-.button {
-  @include montserrat;
-  width: $base * 56;
-  height: $base * 12;
-  font-weight: $fw-semibold;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-
-  &__primary {
-    color: white;
-    background-color: $cl-primary;
-  }
-
-  &__secondary {
-    color: $cl-primary;
-    border: 1px solid $cl-primary;
-    background-color: white;
-  }
-
-  &__social {
-    width: $base * 56;
-    height: $base * 10;
-    padding: $base * 2 $base * 3;
-    display: flex;
-    align-items: center;
-    gap: $base * 2;
-    font-size: 14px;
-    font-weight: $fw-medium;
-    color: white;
-    background: rgba(255, 255, 255, 0.2);
-
-    &:hover {
-      background: rgba(255, 255, 255, 0.4);
-    }
-  }
-}
-
 h1,
 h2,
 h3,
@@ -139,6 +101,58 @@ p {
 
 .text {
   color: $cl-main;
+}
+
+.logo-image {
+  width: 100%;
+  height: 100%;
+}
+
+.button {
+  @include montserrat;
+  width: $base * 56;
+  height: $base * 12;
+  font-weight: $fw-semibold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+
+  &__primary {
+    color: white;
+    background-color: $cl-primary;
+
+    &:hover {
+      background-color: #75110d;
+    }
+  }
+
+  &__secondary {
+    color: $cl-primary;
+    border: 1px solid $cl-primary;
+    background-color: white;
+
+    &:hover {
+      border: none;
+      background-color: $cl-secondary;
+    }
+  }
+
+  &__social {
+    width: $base * 56;
+    height: $base * 10;
+    padding: $base * 2 $base * 3;
+    display: flex;
+    align-items: center;
+    gap: $base * 2;
+    font-size: 14px;
+    font-weight: $fw-medium;
+    color: white;
+    background: rgba(255, 255, 255, 0.2);
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.4);
+    }
+  }
 }
 
 .list {
@@ -203,6 +217,7 @@ p {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    cursor: pointer;
   }
 
   &_button {
@@ -255,7 +270,9 @@ p {
       height: $base * 4;
       flex-shrink: 0;
       flex-grow: 0;
-      background: #fff4f3 no-repeat 50% 50%;
+      background-color: #fff4f3;
+      background-repeat: no-repeat;
+      background-position: center center;
       border-radius: 2px;
       cursor: pointer;
       margin-right: $base * 2;
@@ -274,8 +291,13 @@ p {
 
 // === HEADER ===
 .section-header {
+  position: fixed;
+  left: 0;
+  top: 0;
   width: 100%;
   margin: $base * 4 0;
+  background-color: transparent;
+  z-index: 100;
 
   .section-inner {
     padding: 0;
@@ -284,16 +306,33 @@ p {
     justify-content: space-between;
   }
 
+  &_logo {
+    width: $base * 20;
+    height: $base * 20;
+  }
+
   &__fixed {
-    position: fixed;
-    left: 0;
-    top: 0;
+    background-color: white;
+    margin: 0;
+    padding: $base * 2 0;
+
+    .logo {
+      width: $base * 15;
+      height: $base * 15;
+    }
+
+    .nav-wrapper {
+      &_link {
+        color: black;
+      }
+    }
   }
 }
 
 .nav-wrapper {
   display: flex;
   list-style: none;
+  padding: 0;
 
   &_item {
     & + & {
@@ -489,10 +528,12 @@ p {
   &_item {
     &-image {
       margin-bottom: 45px;
+      cursor: pointer;
     }
 
     &-title {
       margin-bottom: 4px;
+      cursor: pointer;
     }
 
     &-category {
