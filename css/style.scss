@@ -56,8 +56,8 @@ body {
   box-sizing: border-box;
 }
 
-.section-outer {
-}
+/*.section-outer {
+}*/
 
 .section-inner {
   max-width: 1200px;
@@ -210,16 +210,30 @@ p {
   }
 }
 
-.dropdown {
+.accordion {
   &_item {
     display: flex;
     flex-direction: column;
     gap: $base * 3;
     padding: $base * 8 0;
+
+    &__active {
+      .accordion_text {
+        display: block;
+      }
+
+      .accordion_button {
+        background-image: url("../img/minus.svg");
+      }
+    }
   }
 
   &_item:first-child {
     padding-top: 0;
+  }
+
+  &_item:last-child {
+    padding-bottom: 0;
   }
 
   &_item:not(:last-child) {
@@ -233,22 +247,24 @@ p {
     cursor: pointer;
   }
 
+  &_title {
+    max-width: 90%;
+  }
+
   &_button {
     width: 30px;
     height: 30px;
+    box-sizing: border-box;
     background: transparent;
-    background-image: url("/img/plus.svg");
+    background-image: url("../img/plus.svg");
     background-position: center;
     background-repeat: no-repeat;
     border: none;
     cursor: pointer;
-
-    &__pressed {
-      background-image: url("/img/minus.svg");
-    }
   }
 
   &_text {
+    display: none;
     padding-right: $base * 20;
   }
 }
