@@ -10,12 +10,12 @@
 }
 
 @mixin word-outline($image) {
-  width: 300px;
-  height: 150px;
+  width: $base * 75;
+  height: $base * 40;
   display: inline-block;
   position: absolute;
-  top: -8px;
-  left: -28px;
+  top: -$base * 2;
+  left: -$base * 7;
   content: "";
   background-image: url($image);
   background-repeat: no-repeat;
@@ -31,24 +31,43 @@ $fw-medium: 500;
 $fw-semibold: 600;
 $fw-bold: 700;
 
-$fs-sm: 12px;
-$fs-md: 16px;
-$fs-lg: 18px;
+$fs-xxs: 12px;
+$fs-xs: 14px;
+$fs-s: 16px;
+$fs-m: 18px;
+$fs-l: 20px;
+$fs-xl: 28px;
+$fs-xxl: 46px;
+$fs-xxxl: 54px;
 
-$padding-vertical__small: $base * 20;
-$padding-vertical: $base * 40;
-$padding-vertical__big: $base * 56;
+$pv-s: $base * 20;
+$pv-m: $base * 40;
+$pv-l: $base * 56;
 
-$cl-main: #434242;
-$cl-light: #9f9e9d;
-$cl-primary: #961914;
-$cl-secondary: #ead1d0;
+$cl-red-100: #fff4f3;
+$cl-red-200: #ead1d0;
+$cl-red-300: #eab5b7;
+$cl-red-400: #ec7973;
+$cl-red-500: #961914;
+$cl-red-600: #8b1a12;
+$cl-red-700: #75110d;
+$cl-red-800: #69120e;
+
+$cl-white: #ffffff;
+$cl-gray-200: #f4f5f5;
+$cl-gray-300: #eff0f0;
+$cl-gray-400: #9f9e9d;
+$cl-gray-500: #9d9f9e;
+$cl-gray-600: #434242;
+$cl-gray-700: #424242;
+$cl-gray-800: #161920;
+$cl-black: #000000;
 // === / VARIABLES ===
 
 // === COMMON ===
 body {
   @include montserrat;
-  font-size: $fs-md;
+  font-size: $fs-s;
   font-weight: $fw-regular;
   line-height: 140%;
   margin: 0;
@@ -61,8 +80,8 @@ body {
 
 .section-inner {
   max-width: 1200px;
-  padding-top: $padding-vertical__small;
-  padding-bottom: $padding-vertical__small;
+  padding-top: $pv-s;
+  padding-bottom: $pv-s;
   margin: 0 auto;
 }
 
@@ -77,31 +96,31 @@ h6 {
   padding: 0;
   font-weight: $fw-bold;
   line-height: 130%;
-  color: $cl-main;
+  color: $cl-gray-600;
 }
 
 h1 {
   @include oswald;
-  font-size: 54px;
-  color: white;
+  font-size: $fs-xxxl;
+  color: $cl-white;
 }
 
 h2 {
   @include oswald;
-  font-size: 46px;
+  font-size: $fs-xxl;
 }
 
 h3 {
-  font-size: 18px;
+  font-size: $fs-m;
   font-weight: $fw-semibold;
 }
 
 h4 {
-  font-size: 16px;
+  font-size: $fs-s;
 }
 
 h5 {
-  font-size: 14px;
+  font-size: $fs-xs;
   font-weight: $fw-semibold;
   line-height: 200%;
   text-transform: uppercase;
@@ -113,7 +132,7 @@ p {
 }
 
 .text {
-  color: $cl-main;
+  color: $cl-gray-600;
 }
 
 .logo-image {
@@ -127,26 +146,26 @@ p {
   height: $base * 12;
   font-weight: $fw-semibold;
   border: none;
-  border-radius: 8px;
+  border-radius: $base * 2;
   cursor: pointer;
 
   &__primary {
-    color: white;
-    background-color: $cl-primary;
+    color: $cl-white;
+    background-color: $cl-red-500;
 
     &:hover {
-      background-color: #75110d;
+      background-color: $cl-red-700;
     }
   }
 
   &__secondary {
-    color: $cl-primary;
-    border: 1px solid $cl-primary;
-    background-color: white;
+    color: $cl-red-500;
+    border: 1px solid $cl-red-500;
+    background-color: $cl-white;
 
     &:hover {
       border: none;
-      background-color: $cl-secondary;
+      background-color: $cl-red-200;
     }
   }
 
@@ -157,13 +176,13 @@ p {
     display: flex;
     align-items: center;
     gap: $base * 2;
-    font-size: 14px;
+    font-size: $fs-xs;
     font-weight: $fw-medium;
-    color: white;
-    background: rgba(255, 255, 255, 0.2);
+    color: $cl-white;
+    background: rgba($cl-white, 0.2);
 
     &:hover {
-      background: rgba(255, 255, 255, 0.4);
+      background: rgba($cl-white, 0.4);
     }
   }
 }
@@ -172,14 +191,14 @@ p {
   padding: 0;
 
   &_item {
-    color: $cl-main;
+    color: $cl-gray-600;
     margin: 0;
     list-style-type: none;
 
     &:before {
       content: "●";
-      color: $cl-primary;
-      margin-right: 6px;
+      color: $cl-red-500;
+      margin-right: $base * 2;
     }
 
     & + & {
@@ -191,6 +210,8 @@ p {
 .features {
   display: flex;
   justify-content: space-between;
+  list-style: none;
+  padding: 0;
 
   &_item {
     position: relative;
@@ -206,7 +227,7 @@ p {
   }
 
   &_link {
-    color: $cl-primary;
+    color: $cl-red-500;
   }
 }
 
@@ -237,7 +258,7 @@ p {
   }
 
   &_item:not(:last-child) {
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid $cl-gray-300;
   }
 
   &_header {
@@ -252,8 +273,8 @@ p {
   }
 
   &_button {
-    width: 30px;
-    height: 30px;
+    width: $base * 8;
+    height: $base * 8;
     box-sizing: border-box;
     background: transparent;
     background-image: url("../img/plus.svg");
@@ -272,11 +293,11 @@ p {
 .form {
   &-field {
     @include montserrat();
-    font-size: 14px;
-    color: white;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: 8px;
+    font-size: $fs-xs;
+    color: $cl-white;
+    background: rgba($cl-white, 0.05);
+    border: 1px solid rgba($cl-white, 0.5);
+    border-radius: $base * 2;
     padding: $base * 2 $base * 4;
   }
 
@@ -299,10 +320,10 @@ p {
       height: $base * 4;
       flex-shrink: 0;
       flex-grow: 0;
-      background-color: #fff4f3;
+      background-color: $cl-red-100;
       background-repeat: no-repeat;
       background-position: center center;
-      border-radius: 2px;
+      border-radius: $base;
       cursor: pointer;
       margin-right: $base * 2;
     }
@@ -312,7 +333,7 @@ p {
     }
 
     &:hover + label::before {
-      background-color: $cl-secondary;
+      background-color: $cl-red-200;
     }
   }
 }
@@ -341,7 +362,7 @@ p {
   }
 
   &__fixed {
-    background-color: white;
+    background-color: $cl-white;
     margin: 0;
     padding: $base * 2 0;
 
@@ -372,11 +393,11 @@ p {
   &_link {
     font-weight: $fw-medium;
     text-decoration: none;
-    color: white;
+    color: $cl-white;
 
     &:hover,
     &--active {
-      border-bottom: 2px solid #961914;
+      border-bottom: $base/2 solid $cl-red-500;
     }
   }
 }
@@ -384,7 +405,7 @@ p {
 
 // === HERO ===
 .section-hero {
-  color: white;
+  color: $cl-white;
   background-image: url("../img/hero-background.jpg");
   background-repeat: no-repeat;
   background-position: top;
@@ -392,12 +413,12 @@ p {
   z-index: -5;
 
   .section-inner {
-    padding-top: $padding-vertical__big;
-    padding-bottom: $padding-vertical__big;
+    padding-top: $pv-l;
+    padding-bottom: $pv-l;
   }
 
   &_title {
-    margin-bottom: 10px;
+    margin-bottom: $base * 3;
   }
 
   &_outline {
@@ -409,15 +430,15 @@ p {
   }
 
   &_text {
-    font-size: 20px;
+    font-size: $fs-l;
     line-height: 140%;
-    margin-bottom: 25px;
+    margin-bottom: $base * 6;
   }
 
   &_zooov-background {
     position: absolute;
-    right: -21px;
-    top: 160px;
+    right: -$base * 5;
+    top: $base * 40;
   }
 }
 
@@ -428,24 +449,24 @@ p {
   &_main {
     display: flex;
     align-items: center;
-    padding-top: $padding-vertical__small;
-    padding-bottom: $padding-vertical__small;
+    padding-top: $pv-s;
+    padding-bottom: $pv-s;
   }
 
   &_title {
-    margin-bottom: 32px;
+    margin-bottom: $base * 8;
   }
 
   &_text {
-    margin-bottom: 24px;
+    margin-bottom: $base * 6;
   }
 
   &_list-title {
-    margin-bottom: 16px;
+    margin-bottom: $base * 4;
   }
 
   &_compositions {
-    background-color: $cl-secondary;
+    background-color: $cl-red-200;
     padding: $base * 8 $base * 20;
     display: flex;
     justify-content: space-between;
@@ -457,7 +478,7 @@ p {
 
 .composition {
   &_title {
-    margin-bottom: 16px;
+    margin-bottom: $base * 4;
   }
 
   &_list {
@@ -469,9 +490,9 @@ p {
   &_item {
     list-style-type: none;
     font-weight: $fw-medium;
-    font-size: $fs-lg;
+    font-size: $fs-m;
     line-height: 250%;
-    color: $cl-main;
+    color: $cl-gray-600;
     background-repeat: no-repeat;
     background-position-y: center;
     padding-left: $base * 9;
@@ -539,7 +560,7 @@ p {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: $cl-secondary;
+    background-color: $cl-red-200;
     background-image: url(../img/bg-stroke-light.svg);
     background-position: center;
     background-repeat: no-repeat;
@@ -547,7 +568,7 @@ p {
 
     &-text {
       width: 70%;
-      font-size: 28px;
+      font-size: $fs-xl;
       font-weight: $fw-medium;
       line-height: 140%;
       letter-spacing: 0.02em;
@@ -560,32 +581,32 @@ p {
 
   &_item {
     &-image {
-      margin-bottom: 45px;
+      margin-bottom: $base * 11;
       cursor: pointer;
     }
 
     &-title {
-      margin-bottom: 4px;
+      margin-bottom: $base;
       cursor: pointer;
     }
 
     &-category {
-      color: $cl-light;
-      font-size: 13px;
+      color: $cl-gray-400;
+      font-size: $fs-xs;
       line-height: 130%;
-      margin-bottom: 16px;
+      margin-bottom: $base * 4;
     }
 
     &-text {
-      color: $cl-main;
-      margin-bottom: 11px;
+      color: $cl-gray-600;
+      margin-bottom: $base * 3;
     }
 
     &-parameters {
-      color: $cl-light;
-      font-size: 13px;
+      color: $cl-gray-400;
+      font-size: $fs-xs;
       line-height: 130%;
-      margin-bottom: 24px;
+      margin-bottom: $base * 6;
     }
 
     &-button {
@@ -603,7 +624,7 @@ p {
   background-position-y: center;
 
   .section-inner {
-    padding-bottom: $padding-vertical;
+    padding-bottom: $pv-m;
   }
 
   &_title {
@@ -614,7 +635,7 @@ p {
 
 // === ABOUT ===
 .section-about {
-  background-color: #fff4f3;
+  background-color: $cl-red-100;
   background-image: url("../img/bg-stroke-twice.svg");
   background-repeat: no-repeat;
 
@@ -625,8 +646,8 @@ p {
 
   &_images {
     position: relative;
-    min-width: 556px;
-    min-height: 745px;
+    min-width: $base * 140;
+    max-height: $base * 186;
   }
 
   &_image {
@@ -644,17 +665,17 @@ p {
   }
 
   &_image3 {
-    top: 475px;
-    left: -55px;
+    top: $base * 118;
+    left: -$base * 14;
   }
 
   &_image4 {
-    top: 287px;
-    right: 21px;
+    top: $base * 68;
+    right: $base * 5;
   }
 
   &_main {
-    width: 49%;
+    flex-basis: 50%;
   }
 
   &_title {
@@ -662,7 +683,7 @@ p {
   }
 
   &_text {
-    color: $cl-main;
+    color: $cl-gray-600;
     margin-bottom: $base * 6;
   }
 }
@@ -671,7 +692,7 @@ p {
 // === DELIVERY ===
 .section-delivery {
   .section-inner {
-    padding-top: $padding-vertical;
+    padding-top: $pv-m;
   }
 
   &_title {
@@ -681,8 +702,8 @@ p {
   .features_item:not(:last-child) .features_title:after {
     content: "";
     display: inline-block;
-    width: 160px;
-    height: 40px;
+    width: $base * 40;
+    height: $base * 10;
     position: absolute;
     top: 0;
     right: 0;
@@ -699,7 +720,7 @@ p {
   .section-inner {
     display: flex;
     gap: 1rem;
-    padding-bottom: $padding-vertical;
+    padding-bottom: $pv-m;
   }
 
   &_title {
@@ -714,8 +735,8 @@ p {
 
 // === CONTACTS ===
 .section-contacts {
-  background-color: #961914;
-  background-image: url("/img/background-contacts.png");
+  background-color: $cl-red-500;
+  background-image: url("../img/bg-contacts.png");
   background-repeat: no-repeat;
   background-position-y: 50%;
   background-size: cover;
@@ -734,7 +755,7 @@ p {
   }
 
   &_text {
-    color: white;
+    color: $cl-white;
   }
 
   &_social-text {
@@ -763,7 +784,7 @@ p {
 
     &-title {
       font-weight: $fw-semibold;
-      font-size: 20px;
+      font-size: $fs-l;
       margin-bottom: $base;
     }
     &-text {
@@ -797,7 +818,7 @@ p {
 
       &-label {
         width: 80%;
-        font-size: $fs-sm;
+        font-size: $fs-xxs;
         line-height: 140%;
       }
     }
@@ -805,12 +826,12 @@ p {
     &-button {
       width: 100%;
       grid-column: 3 / 4;
-      color: #ec7973;
+      color: $cl-red-400;
       font-weight: $fw-bold;
-      background-color: #fff4f3;
+      background-color: $cl-red-100;
 
       &:hover {
-        background-color: $cl-secondary;
+        background-color: $cl-red-200;
       }
     }
   }
@@ -819,7 +840,7 @@ p {
 
 // === FOOTER ===
 .footer {
-  background-color: #69120e;
+  background-color: $cl-red-800;
 
   .section-inner {
     display: flex;
@@ -830,8 +851,8 @@ p {
   }
 
   &_text {
-    color: rgba(255, 255, 255, 0.4);
-    font-size: $fs-sm;
+    color: rgba($cl-white, 0.4);
+    font-size: $fs-xxs;
   }
 
   &_link {
