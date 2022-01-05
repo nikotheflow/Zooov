@@ -8,6 +8,19 @@
 @mixin oswald {
   font-family: "Oswald", sans-serif;
 }
+
+@mixin word-outline($image) {
+  width: 300px;
+  height: 150px;
+  display: inline-block;
+  position: absolute;
+  top: -8px;
+  left: -28px;
+  content: "";
+  background-image: url($image);
+  background-repeat: no-repeat;
+  z-index: -5;
+}
 // === / MIXIN ===
 
 // === VARIABLES ===
@@ -359,6 +372,8 @@ p {
   background-image: url("../img/hero-background.jpg");
   background-repeat: no-repeat;
   background-position: top;
+  position: relative;
+  z-index: -5;
 
   .section-inner {
     padding-top: $padding-vertical__big;
@@ -366,22 +381,15 @@ p {
   }
 
   &_title {
-    position: relative;
     margin-bottom: 10px;
-    display: inline-block;
-    z-index: 5;
+  }
 
-    &:after {
-      content: "";
-      display: inline-block;
-      width: 300px;
-      height: 150px;
-      background-image: url(../img/hero-stroke.svg);
-      background-repeat: no-repeat;
-      position: absolute;
-      left: 165px;
-      top: 60px;
-    }
+  &_outline {
+    position: relative;
+  }
+
+  &_outline:after {
+    @include word-outline("../img/bg-stroke1.svg");
   }
 
   &_text {
@@ -425,7 +433,7 @@ p {
     padding: $base * 8 $base * 20;
     display: flex;
     justify-content: space-between;
-    background-image: url(../img/background-stroke-light.svg);
+    background-image: url(../img/bg-stroke-light.svg);
     background-position: center;
     background-repeat: no-repeat;
   }
@@ -496,6 +504,15 @@ p {
   &_title {
     white-space: nowrap;
     margin-right: $base * 25;
+    z-index: 0;
+  }
+
+  &_outline {
+    position: relative;
+  }
+
+  &_outline:after {
+    @include word-outline("../img/bg-stroke2.svg");
   }
 
   &_catalog {
@@ -507,7 +524,7 @@ p {
     align-items: center;
     justify-content: space-between;
     background-color: $cl-secondary;
-    background-image: url(../img/background-stroke-light.svg);
+    background-image: url(../img/bg-stroke-light.svg);
     background-position: center;
     background-repeat: no-repeat;
     padding: $base * 13 $base * 20;
@@ -564,7 +581,7 @@ p {
 
 // === ZOOOV ===
 .section-zooov {
-  background-image: url("../img/background-stroke-dark.svg");
+  background-image: url("../img/bg-stroke-dark.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position-y: center;
@@ -582,7 +599,7 @@ p {
 // === ABOUT ===
 .section-about {
   background-color: #fff4f3;
-  background-image: url("/img/background-stroke-twice.svg");
+  background-image: url("../img/bg-stroke-twice.svg");
   background-repeat: no-repeat;
 
   .section-inner {

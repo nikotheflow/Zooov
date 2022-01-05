@@ -348,6 +348,8 @@ p {
   background-image: url("../img/hero-background.jpg");
   background-repeat: no-repeat;
   background-position: top;
+  position: relative;
+  z-index: -5;
 }
 
 .section-hero .section-inner {
@@ -356,22 +358,24 @@ p {
 }
 
 .section-hero_title {
-  position: relative;
   margin-bottom: 10px;
-  display: inline-block;
-  z-index: 5;
 }
 
-.section-hero_title:after {
-  content: "";
-  display: inline-block;
+.section-hero_outline {
+  position: relative;
+}
+
+.section-hero_outline:after {
   width: 300px;
   height: 150px;
-  background-image: url(../img/hero-stroke.svg);
-  background-repeat: no-repeat;
+  display: inline-block;
   position: absolute;
-  left: 165px;
-  top: 60px;
+  top: -8px;
+  left: -28px;
+  content: "";
+  background-image: url("../img/bg-stroke1.svg");
+  background-repeat: no-repeat;
+  z-index: -5;
 }
 
 .section-hero_text {
@@ -418,7 +422,7 @@ p {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  background-image: url(../img/background-stroke-light.svg);
+  background-image: url(../img/bg-stroke-light.svg);
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -489,6 +493,24 @@ p {
 .section-rations_title {
   white-space: nowrap;
   margin-right: 100px;
+  z-index: 0;
+}
+
+.section-rations_outline {
+  position: relative;
+}
+
+.section-rations_outline:after {
+  width: 300px;
+  height: 150px;
+  display: inline-block;
+  position: absolute;
+  top: -8px;
+  left: -28px;
+  content: "";
+  background-image: url("../img/bg-stroke2.svg");
+  background-repeat: no-repeat;
+  z-index: -5;
 }
 
 .section-rations_catalog {
@@ -506,7 +528,7 @@ p {
       -ms-flex-pack: justify;
           justify-content: space-between;
   background-color: #ead1d0;
-  background-image: url(../img/background-stroke-light.svg);
+  background-image: url(../img/bg-stroke-light.svg);
   background-position: center;
   background-repeat: no-repeat;
   padding: 52px 80px;
@@ -560,7 +582,7 @@ p {
 }
 
 .section-zooov {
-  background-image: url("../img/background-stroke-dark.svg");
+  background-image: url("../img/bg-stroke-dark.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position-y: center;
@@ -576,7 +598,7 @@ p {
 
 .section-about {
   background-color: #fff4f3;
-  background-image: url("/img/background-stroke-twice.svg");
+  background-image: url("../img/bg-stroke-twice.svg");
   background-repeat: no-repeat;
 }
 
