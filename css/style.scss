@@ -9,6 +9,11 @@
   font-family: "Oswald", sans-serif;
 }
 
+@mixin list-reset {
+  padding: 0;
+  list-style: none;
+}
+
 @mixin word-outline($image) {
   width: $base * 75;
   height: $base * 40;
@@ -20,6 +25,16 @@
   background-image: url($image);
   background-repeat: no-repeat;
   z-index: -5;
+}
+
+@mixin catalog-item-sticker($image) {
+  content: "";
+  width: $base * 15;
+  height: $base * 15;
+  position: absolute;
+  top: $base * 5;
+  left: $base * 5;
+  background: url($image) no-repeat center;
 }
 // === / MIXIN ===
 
@@ -208,10 +223,10 @@ p {
 }
 
 .features {
+  @include list-reset;
+
   display: flex;
   justify-content: space-between;
-  list-style: none;
-  padding: 0;
 
   &_item {
     position: relative;
@@ -232,6 +247,8 @@ p {
 }
 
 .accordion {
+  @include list-reset();
+
   &_item {
     display: flex;
     flex-direction: column;
@@ -385,6 +402,8 @@ p {
   padding: 0;
 
   &_item {
+    white-space: nowrap;
+
     & + & {
       margin-left: $base * 13;
     }
@@ -449,6 +468,7 @@ p {
   &_main {
     display: flex;
     align-items: center;
+    gap: 2%;
     padding-top: $pv-s;
     padding-bottom: $pv-s;
   }
@@ -489,6 +509,7 @@ p {
 
   &_item {
     list-style-type: none;
+    white-space: nowrap;
     font-weight: $fw-medium;
     font-size: $fs-m;
     line-height: 250%;
@@ -553,7 +574,7 @@ p {
   }
 
   &_catalog {
-    margin-bottom: $base * 20;
+    margin: 0 0 $base * 20;
   }
 
   &_count {
@@ -577,10 +598,17 @@ p {
 }
 
 .catalog {
+  @include list-reset;
+
   display: flex;
+  justify-content: space-between;
 
   &_item {
+    flex-basis: 24%;
+    position: relative;
+
     &-image {
+      width: 100%;
       margin-bottom: $base * 11;
       cursor: pointer;
     }
@@ -595,6 +623,14 @@ p {
       font-size: $fs-xs;
       line-height: 130%;
       margin-bottom: $base * 4;
+
+      &__turkey:after {
+        @include catalog-item-sticker("../img/sticker-turkey.svg");
+      }
+
+      &__mutton:after {
+        @include catalog-item-sticker("../img/sticker-mutton.svg");
+      }
     }
 
     &-text {
@@ -630,6 +666,19 @@ p {
   &_title {
     margin-bottom: $base * 15;
   }
+
+  &_outline {
+    position: relative;
+  }
+
+  &_outline:after {
+    @include word-outline("../img/bg-stroke3.svg");
+
+    width: $base * 7;
+    height: $base * 8;
+    top: 70%;
+    left: 95%;
+  }
 }
 // === / ZOOOV ===
 
@@ -642,6 +691,7 @@ p {
   .section-inner {
     display: flex;
     justify-content: space-between;
+    gap: 2%;
   }
 
   &_images {
@@ -719,16 +769,16 @@ p {
 .section-faq {
   .section-inner {
     display: flex;
-    gap: 1rem;
+    gap: 5%;
     padding-bottom: $pv-m;
   }
 
   &_title {
-    flex: 1;
+    flex-basis: 30%;
   }
 
   &_questions {
-    flex: 2;
+    flex: 1;
   }
 }
 // === / FAQ ===
