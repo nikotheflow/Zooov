@@ -377,6 +377,7 @@ p {
   background-repeat: no-repeat;
   background-position: top;
   position: relative;
+  overflow: hidden;
   z-index: -5;
 }
 
@@ -412,7 +413,11 @@ p {
   margin-bottom: 24px;
 }
 
-.section-hero_zooov-background {
+.section-hero:after {
+  width: 168px;
+  height: 548px;
+  content: "";
+  background: url(/img/zooov.svg);
   position: absolute;
   right: -20px;
   top: 160px;
@@ -615,6 +620,7 @@ p {
   top: 20px;
   left: 20px;
   background: url("../img/sticker-turkey.svg") no-repeat center;
+  background-size: cover;
 }
 
 .catalog_item-category__mutton:after {
@@ -625,6 +631,7 @@ p {
   top: 20px;
   left: 20px;
   background: url("../img/sticker-mutton.svg") no-repeat center;
+  background-size: cover;
 }
 
 .catalog_item-text {
@@ -641,6 +648,106 @@ p {
 
 .catalog_item-button {
   width: 160px;
+}
+
+.popup {
+  width: 100%;
+  height: 100%;
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+
+.popup_content {
+  position: relative;
+  max-width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 4%;
+  padding: 60px;
+  background: #ffffff;
+}
+
+.popup_main {
+  width: 50%;
+}
+
+.popup_images {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.popup_main-image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  cursor: auto;
+}
+
+.popup_preview-images {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.popup_preview-image {
+  cursor: pointer;
+}
+
+.popup_preview-image + .popup_preview-image {
+  margin-left: 16px;
+}
+
+.popup_close-button {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.popup .catalog_item-title {
+  font-size: 20px;
+  cursor: auto;
+}
+
+.popup .catalog_item-category {
+  font-size: 16px;
+}
+
+.popup .catalog_item-category__turkey:after, .popup .catalog_item-category__mutton:after {
+  width: 80px;
+  height: 80px;
+  top: 80px;
+  left: 80px;
+}
+
+.popup .catalog_item-parameters {
+  font-size: 14px;
+}
+
+.popup .catalog_item-text {
+  margin-bottom: 20px;
 }
 
 .section-zooov {

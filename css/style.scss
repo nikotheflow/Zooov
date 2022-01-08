@@ -35,6 +35,7 @@
   top: $base * 5;
   left: $base * 5;
   background: url($image) no-repeat center;
+  background-size: cover;
 }
 // === / MIXIN ===
 
@@ -55,6 +56,7 @@ $fs-xl: 28px;
 $fs-xxl: 46px;
 $fs-xxxl: 54px;
 
+$pv-xs: $base * 15;
 $pv-s: $base * 20;
 $pv-m: $base * 40;
 $pv-l: $base * 56;
@@ -429,6 +431,7 @@ p {
   background-repeat: no-repeat;
   background-position: top;
   position: relative;
+  overflow: hidden;
   z-index: -5;
 
   .section-inner {
@@ -454,7 +457,11 @@ p {
     margin-bottom: $base * 6;
   }
 
-  &_zooov-background {
+  &:after {
+    width: $base * 42;
+    height: $base * 137;
+    content: "";
+    background: url(/img/zooov.svg);
     position: absolute;
     right: -$base * 5;
     top: $base * 40;
@@ -647,6 +654,94 @@ p {
 
     &-button {
       width: $base * 40;
+    }
+  }
+}
+
+.popup {
+  width: 100%;
+  height: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+
+  &_content {
+    position: relative;
+    max-width: 50%;
+    display: flex;
+    justify-content: center;
+    gap: 4%;
+    padding: $pv-xs;
+    background: $cl-white;
+  }
+
+  &_main {
+    width: 50%;
+  }
+
+  &_images {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &_main-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: $base * 5;
+    cursor: auto;
+  }
+
+  &_preview-images {
+    display: flex;
+  }
+
+  &_preview-image {
+    cursor: pointer;
+
+    & + & {
+      margin-left: $base * 4;
+    }
+  }
+
+  &_close-button {
+    position: absolute;
+    top: $base * 4;
+    right: $base * 4;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .catalog_item {
+    &-title {
+      font-size: $fs-l;
+      cursor: auto;
+    }
+
+    &-category {
+      font-size: $fs-s;
+
+      &__turkey:after,
+      &__mutton:after {
+        width: $base * 20;
+        height: $base * 20;
+        top: $base * 20;
+        left: $base * 20;
+      }
+    }
+
+    &-parameters {
+      font-size: $fs-xs;
+    }
+
+    &-text {
+      margin-bottom: $base * 5;
     }
   }
 }
