@@ -144,39 +144,61 @@
     </div>
   </section>
 
-  <div class="popup popup__hide">
+  <div class="popup popup__open">
     <div class="popup_content">
-      <div class="popup_images">
-        <img class="popup_main-image catalog_item-image" src="/img/catalog-image1.png" alt="">
-        <div class="popup_preview-images">
-          <img class="popup_preview-image" src="../img/popup-preview-image1.png" alt="">
-          <img class="popup_preview-image" src="../img/popup-preview-image2.png" alt="">
-          <img class="popup_preview-image" src="../img/popup-preview-image3.png" alt="">
-        </div>
+      <div class="popup_image-area">
+        <img class="popup_image catalog_item-image" src="/img/popup-image.png" alt="">
       </div>
       <div class="popup_main">
         <div class="popup_header">
           <h4 class="popup_item-title catalog_item-title">Для взрослых собак</h4>
           <p class="popup_item-category catalog_item-category catalog_item-category__mutton">Баранина/Кролик</p>
         </div>
-        <div class="popup_description">
+        <!-- <div class="popup_description">
           <p class="popup_item-subtitle catalog_item-text">Подходит для ежедневного кормления. Богат животными белками и
             Омега-3.</p>
           <p class="popup_item-compound catalog_item-text"><b>Состав:</b> Мякоть баранины (46,5%), мясо кролика (23,5%),
-            кости
-            кролика (10%),
-            печень баранины (5%), почки бараньи (2,5%), рубец бараний (2,5%), кабачок (3%), брокколи (3%), семена
+            кости кролика (10%), печень баранины (5%), почки бараньи (2,5%), рубец бараний (2,5%), кабачок (3%),
+            брокколи (3%), семена
             конопли (2%), шпинат (1%), яблоко (1%), льняное масло, конопляное масло.</p>
           <p class="popup_item-nutritional catalog_item-text"><b>Пищевая ценность на 100г:</b> 174.9 ккал, белки 16.45,
-            жиры
-            11.9,
-            углеводы 0.60</p>
+            жиры 11.9, углеводы 0.60</p>
           <p class="popup_item-parameters catalog_item-parameters">700г / 500г / 300г / 150г / 100г</p>
           <button class="button button__secondary catalog_item-button">Заказать</button>
+        </div> -->
+
+        <div class="popup_description">
+          <form class="popup_form" action="">
+            <input class="form-field form-field__light popup_form-field popup_form-field__full" type="text"
+              placeholder="Имя">
+            <input class="form-field form-field__light popup_form-field popup_form-field__full" type="tel"
+              placeholder="Телефон">
+            <input class="form-field form-field__light popup_form-field popup_form-field__full" type="text"
+              placeholder="Адрес">
+            <select name="" id=""
+              class="form-field form-field__light popup_form-field popup_form-field__full"="Выберите объем">
+              <option class="form_option" value="700">700г</option>
+              <option class="form_option" value="500">500г</option>
+              <option class="form_option" value="300">300г</option>
+              <option class="form_option" value="150">150г</option>
+              <option class="form_option" value="100">100г</option>
+            </select>
+            <label class="form-label" for="quantity">Количество: </label>
+            <input class="form-field form-field__light popup_form-field popup_form-field__right" type="number"
+              id="quantity" name="quantity" min="1" max="10">
+            <input class="form-checkbox form-checkbox__light" type="checkbox" id="popup-agree-checkbox"
+              checked="checked">
+            <label class="form-label form-label__checkbox popup_form-label popup_form-field__full"
+              for="popup-agree-checkbox">Даю согласие
+              на обработку персональных данных</label>
+            <p class="popup_price">828₽</p>
+            <button class="button button__secondary popup_form-field__center-right">Оформить заказ</button>
+          </form>
         </div>
+
       </div>
       <button class="popup_close-button">
-        <svg calss="close-button" width="32" height="32" viewBox="0 0 32 32" fill="none"
+        <svg class="close-button" width="32" height="32" viewBox="0 0 32 32" fill="none"
           xmlns="http://www.w3.org/2000/svg">
           <path d="M25 7L7 25" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
           <path d="M25 25L7 7" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -354,14 +376,15 @@
         <p class="section-contacts_form-area-text section-contacts_text">Напишите нам и мы обязательно подробно на них
           ответим.</p>
         <form class="section-contacts_form" action="">
-          <input class="form-field section-contacts_form-name" type="text" placeholder="Имя">
-          <input class="form-field section-contacts_form-email" type="email" placeholder="Email">
-          <textarea class=" form-field section-contacts_form-textarea" name="" id=""
+          <input class="form-field form-field__dark section-contacts_form-name" type="text" placeholder="Имя">
+          <input class="form-field form-field__dark section-contacts_form-email" type="email" placeholder="Email">
+          <textarea class=" form-field form-field__dark section-contacts_form-textarea" name="" id=""
             placeholder="Ваш вопрос..."></textarea>
           <div class="section-contacts_form-checkbox-area">
-            <input class="section-contacts_form-checkbox form-checkbox" type="checkbox" id="agree_checkbox"
-              checked="checked">
-            <label class="section-contacts_form-checkbox-label section-contacts_text" for="agree_checkbox">Даю согласие
+            <input class="form-checkbox form-checkbox__dark section-contacts_form-checkbox" type="checkbox"
+              id="agree_checkbox" checked="checked">
+            <label class="form-label form-label__checkbox section-contacts_form-checkbox-label section-contacts_text"
+              for="agree_checkbox">Даю согласие
               на обработку
               персональных данных</label>
           </div>

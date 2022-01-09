@@ -249,11 +249,32 @@ p {
 .form-field {
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
+  border-radius: 8px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 8px 16px;
+  height: 100%;
+}
+
+.form-field__dark {
   color: #ffffff;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 8px;
-  padding: 8px 16px;
+}
+
+.form-field__light {
+  color: #000000;
+  background: #f4f5f5;
+  border: none;
+}
+
+.form-label {
+  font-size: 14px;
+  line-height: 140%;
+}
+
+.form-label__checkbox {
+  font-size: 12px;
 }
 
 .form-checkbox {
@@ -286,7 +307,6 @@ p {
   -webkit-box-flex: 0;
       -ms-flex-positive: 0;
           flex-grow: 0;
-  background-color: #fff4f3;
   background-repeat: no-repeat;
   background-position: center center;
   border-radius: 4px;
@@ -294,12 +314,32 @@ p {
   margin-right: 8px;
 }
 
-.form-checkbox:checked + label::before {
-  background-image: url(/img/check.svg);
+.form-checkbox__dark + label::before {
+  background-color: #fff4f3;
 }
 
-.form-checkbox:hover + label::before {
+.form-checkbox__dark:hover + label::before {
   background-color: #ead1d0;
+}
+
+.form-checkbox__light + label::before {
+  -webkit-box-shadow: inset 0px 0px 0px 1px #9f9e9d;
+          box-shadow: inset 0px 0px 0px 1px #9f9e9d;
+  background-color: #ffffff;
+}
+
+.form-checkbox__light:hover + label::before {
+  background-color: #f4f5f5;
+}
+
+.form-checkbox__light:checked + label::before {
+  border: none;
+  -webkit-box-shadow: inset 0px 0px 0px 1px #961914;
+          box-shadow: inset 0px 0px 0px 1px #961914;
+}
+
+.form-checkbox:checked + label::before {
+  background-image: url(/img/check.svg);
 }
 
 .section-header {
@@ -653,7 +693,9 @@ p {
 .popup {
   width: 100%;
   height: 100%;
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -665,56 +707,53 @@ p {
   position: fixed;
   top: 0;
   z-index: 100;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.8s;
+  transition: all 0.8s;
+}
+
+.popup__open {
+  opacity: 1;
+  -webkit-transition: all 0.8s;
+  transition: all 0.8s;
+  visibility: visible;
+}
+
+.popup__open .popup_content {
+  opacity: 1;
+  -webkit-transition: all 0.8s;
+  transition: all 0.8s;
 }
 
 .popup_content {
   position: relative;
-  max-width: 50%;
+  max-width: 872px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  gap: 4%;
+  gap: 40px;
   padding: 60px;
   background: #ffffff;
+  opacity: 0;
+  -webkit-transition: all 0.8s;
+  transition: all 0.8s;
 }
 
 .popup_main {
   width: 50%;
 }
 
-.popup_images {
-  width: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.popup_main-image {
-  width: 100%;
-  height: auto;
+.popup_image {
+  height: 100%;
   margin-bottom: 20px;
   cursor: auto;
-}
-
-.popup_preview-images {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.popup_preview-image {
-  cursor: pointer;
-}
-
-.popup_preview-image + .popup_preview-image {
-  margin-left: 16px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 0;
 }
 
 .popup_close-button {
@@ -724,6 +763,53 @@ p {
   background: transparent;
   border: none;
   cursor: pointer;
+}
+
+.popup_price {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 130%;
+}
+
+.popup_form {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-row-gap: 16px;
+  -ms-grid-columns: 40% 25% 35%;
+      grid-template-columns: 40% 25% 35%;
+  -ms-grid-rows: (48px)[5] 56px;
+      grid-template-rows: repeat(5, 48px) 56px;
+}
+
+.popup_form-field {
+  width: 100%;
+}
+
+.popup_form-field__full {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1 / 4;
+}
+
+.popup_form-field__center-right {
+  width: 100%;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-column: 2 / 4;
+}
+
+.popup_form-field__right {
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-column: 3 / 4;
+}
+
+.popup_form-label {
+  color: #9f9e9d;
 }
 
 .popup .catalog_item-title {
@@ -1002,8 +1088,6 @@ p {
 
 .section-contacts_form-checkbox-label {
   width: 80%;
-  font-size: 12px;
-  line-height: 140%;
 }
 
 .section-contacts_form-button {
