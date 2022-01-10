@@ -263,7 +263,7 @@ p {
       }
 
       .accordion_button {
-        background-image: url("../img/minus.svg");
+        background-image: url("img/minus.svg");
       }
     }
   }
@@ -296,7 +296,7 @@ p {
     height: $base * 8;
     box-sizing: border-box;
     background: transparent;
-    background-image: url("../img/plus.svg");
+    background-image: url("img/plus.svg");
     background-position: center;
     background-repeat: no-repeat;
     border: none;
@@ -393,7 +393,7 @@ p {
     }
 
     &:checked + label::before {
-      background-image: url(/img/check.svg);
+      background-image: url("img/check.svg");
     }
   }
 }
@@ -468,7 +468,7 @@ p {
 // === HERO ===
 .section-hero {
   color: $cl-white;
-  background-image: url("../img/hero-background.jpg");
+  background-image: url("img/hero-background.jpg");
   background-repeat: no-repeat;
   background-position: top;
   position: relative;
@@ -502,7 +502,7 @@ p {
     width: $base * 42;
     height: $base * 137;
     content: "";
-    background: url(/img/zooov.svg);
+    background: url("img/zooov.svg");
     position: absolute;
     right: -$base * 5;
     top: $base * 40;
@@ -538,7 +538,7 @@ p {
     padding: $base * 8 $base * 20;
     display: flex;
     justify-content: space-between;
-    background-image: url(../img/bg-stroke-light.svg);
+    background-image: url("img/bg-stroke-light.svg");
     background-position: center;
     background-repeat: no-repeat;
   }
@@ -567,31 +567,31 @@ p {
     padding-left: $base * 9;
 
     &__meat {
-      background-image: url(../img/meat.svg);
+      background-image: url("img/meat.svg");
     }
 
     &__bones {
-      background-image: url(../img/bones.svg);
+      background-image: url("img/bones.svg");
     }
 
     &__vegetables {
-      background-image: url(../img/vegetables.svg);
+      background-image: url("img/vegetables.svg");
     }
 
     &__liver {
-      background-image: url(../img/liver.svg);
+      background-image: url("img/liver.svg");
     }
 
     &__offal {
-      background-image: url(../img/offal.svg);
+      background-image: url("img/offal.svg");
     }
 
     &__nuts {
-      background-image: url(../img/nuts.svg);
+      background-image: url("img/nuts.svg");
     }
 
     &__fruits {
-      background-image: url(../img/fruits.svg);
+      background-image: url("img/fruits.svg");
     }
   }
 }
@@ -630,7 +630,7 @@ p {
     align-items: center;
     justify-content: space-between;
     background-color: $cl-red-200;
-    background-image: url(../img/bg-stroke-light.svg);
+    background-image: url("img/bg-stroke-light.svg");
     background-position: center;
     background-repeat: no-repeat;
     padding: $base * 13 $base * 20;
@@ -825,7 +825,7 @@ p {
 
 // === ZOOOV ===
 .section-zooov {
-  background-image: url("../img/bg-stroke-dark.svg");
+  background-image: url("img/bg-stroke-dark.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position-y: center;
@@ -856,7 +856,7 @@ p {
 // === ABOUT ===
 .section-about {
   background-color: $cl-red-100;
-  background-image: url("../img/bg-stroke-twice.svg");
+  background-image: url("img/bg-stroke-twice.svg");
   background-repeat: no-repeat;
 
   .section-inner {
@@ -928,7 +928,7 @@ p {
     position: absolute;
     top: 0;
     right: 0;
-    background-image: url("/img/arrow.svg");
+    background-image: url("img/arrow.svg");
     background-repeat: no-repeat;
     background-position-y: center;
   }
@@ -957,7 +957,7 @@ p {
 // === CONTACTS ===
 .section-contacts {
   background-color: $cl-red-500;
-  background-image: url("../img/bg-contacts.png");
+  background-image: url("img/bg-contacts.png");
   background-repeat: no-repeat;
   background-position-y: 50%;
   background-size: cover;
