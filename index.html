@@ -144,59 +144,114 @@
     </div>
   </section>
 
-  <div class="popup popup__open">
+  <div class="popup popup__catalog">
     <div class="popup_content">
-      <div class="popup_image-area">
-        <img class="popup_image catalog_item-image" src="img/popup-image.png" alt="">
+      <div class="popup_image-area catalog_item-category__mutton">
+        <img class="popup_image" src="img/popup-image.png" alt="">
       </div>
-      <div class="popup_main">
-        <div class="popup_header">
-          <h4 class="popup_item-title catalog_item-title">Для взрослых собак</h4>
-          <p class="popup_item-category catalog_item-category catalog_item-category__mutton">Баранина/Кролик</p>
-        </div>
-        <!-- <div class="popup_description">
-          <p class="popup_item-subtitle catalog_item-text">Подходит для ежедневного кормления. Богат животными белками и
-            Омега-3.</p>
-          <p class="popup_item-compound catalog_item-text"><b>Состав:</b> Мякоть баранины (46,5%), мясо кролика (23,5%),
-            кости кролика (10%), печень баранины (5%), почки бараньи (2,5%), рубец бараний (2,5%), кабачок (3%),
-            брокколи (3%), семена
-            конопли (2%), шпинат (1%), яблоко (1%), льняное масло, конопляное масло.</p>
-          <p class="popup_item-nutritional catalog_item-text"><b>Пищевая ценность на 100г:</b> 174.9 ккал, белки 16.45,
-            жиры 11.9, углеводы 0.60</p>
-          <p class="popup_item-parameters catalog_item-parameters">700г / 500г / 300г / 150г / 100г</p>
-          <button class="button button__secondary catalog_item-button">Заказать</button>
-        </div> -->
 
-        <div class="popup_description">
-          <form class="popup_form" action="">
-            <input class="form-field form-field__light popup_form-field popup_form-field__full" type="text"
-              placeholder="Имя">
-            <input class="form-field form-field__light popup_form-field popup_form-field__full" type="tel"
-              placeholder="Телефон">
-            <input class="form-field form-field__light popup_form-field popup_form-field__full" type="text"
-              placeholder="Адрес">
-            <select class="form-field form-field__light popup_form-field popup_form-field__full" name="" id="">
-              <option class="form_option" value="700">700г</option>
-              <option class="form_option" value="500">500г</option>
-              <option class="form_option" value="300">300г</option>
-              <option class="form_option" value="150">150г</option>
-              <option class="form_option" value="100">100г</option>
-            </select>
-            <label class="form-label" for="quantity">Количество: </label>
-            <input class="form-field form-field__light popup_form-field popup_form-field__right" type="number"
-              id="quantity" name="quantity" min="1" max="10">
-            <input class="form-checkbox form-checkbox__light" type="checkbox" id="popup-agree-checkbox"
-              checked="checked">
-            <label class="form-label form-label__checkbox popup_form-label popup_form-field__full"
-              for="popup-agree-checkbox">Даю согласие
-              на обработку персональных данных</label>
-            <p class="popup_price">828₽</p>
-            <button class="button button__secondary popup_form-field__center-right">Оформить заказ</button>
-          </form>
-        </div>
-
+      <div class="popup_header">
+        <h4 class="popup_item-title catalog_item-title">Для взрослых собак</h4>
+        <p class="popup_item-category catalog_item-category ">Баранина/Кролик</p>
       </div>
-      <button class="popup_close-button">
+
+      <div class="popup_description__item-info popup_description">
+        <p class="popup_item-subtitle catalog_item-text">Подходит для ежедневного кормления. Богат животными белками и
+          Омега-3.</p>
+        <p class="popup_item-compound catalog_item-text"><b>Состав:</b> Мякоть баранины (46,5%), мясо кролика (23,5%),
+          кости кролика (10%), печень баранины (5%), почки бараньи (2,5%), рубец бараний (2,5%), кабачок (3%),
+          брокколи (3%), семена
+          конопли (2%), шпинат (1%), яблоко (1%), льняное масло, конопляное масло.</p>
+        <p class="popup_item-nutritional catalog_item-text"><b>Пищевая ценность на 100г:</b> 174.9 ккал, белки 16.45,
+          жиры 11.9, углеводы 0.60</p>
+        <p class="popup_item-parameters catalog_item-parameters">700г / 500г / 300г / 150г / 100г</p>
+        <button class="button button__secondary catalog_item-button">Заказать</button>
+      </div>
+
+      <div class="popup_description__order popup_description">
+        <form class="popup_form popup-form popup-form-order" action="">
+          <input class="form-field form-field__light popup_form-field popup_form-field__full" type="text"
+            placeholder="Имя">
+          <input class="form-field form-field__light popup_form-field popup_form-field__full" type="tel"
+            placeholder="Телефон">
+          <input class="form-field form-field__light popup_form-field popup_form-field__full" type="text"
+            placeholder="Адрес">
+          <select class="form-field form-field__light popup_form-field popup_form-field__full" name="" id="">
+            <option class="form_option" value="700">700г</option>
+            <option class="form_option" value="500">500г</option>
+            <option class="form_option" value="300">300г</option>
+            <option class="form_option" value="150">150г</option>
+            <option class="form_option" value="100">100г</option>
+          </select>
+          <label class="form-label" for="quantity">Количество: </label>
+          <input class="form-field form-field__light popup_form-field popup_form-field__right" type="number"
+            id="quantity" name="quantity" min="1" max="10">
+          <input class="form-checkbox form-checkbox__light" type="checkbox" id="popup-agree-checkbox" checked="checked">
+          <label class="form-label form-label__checkbox popup_form-label popup_form-field__full"
+            for="popup-agree-checkbox">Даю согласие
+            на обработку персональных данных</label>
+          <p class="popup_price">828₽</p>
+          <button class="button button__secondary confirm-order-button popup_form-field__center-right"
+            type="button">Оформить
+            заказ</button>
+        </form>
+      </div>
+
+      <div class="popup_description__thanks popup_description">
+        <h2 class="popup_title">Спасибо!</h2>
+        <p class="popup_text">Ваш заказ оформлен и передан менеджеру. Мы свяжемся с вами для уточнения и подтверждения
+          в ближайшее время.</p>
+        <p class="popup_text">Если вы захотите дополнить свой заказ или уточнить какие-то детали – вы сможете это
+          сделать у оператора.</p>
+      </div>
+
+      <button class="popup_close-button" data-popup-class=".popup__catalog">
+        <svg class="close-button" width="32" height="32" viewBox="0 0 32 32" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path d="M25 7L7 25" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M25 25L7 7" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="popup popup__count">
+    <div class="popup_content">
+      <h2 class="popup_title">Расчет рациона</h2>
+      <p class="popup_text">Заполните информацию и мы свяжемся с вами, чтобы подсказать с подбором рациона для вашего
+        хвостика. Или напишите нам в мессендерах <a href="#" class="link">WhatsApp</a> и <a href="#"
+          class="link">Telegram</a>.</p>
+      <form action="" class="popup-form popup-form-count">
+        <div class="popup-form-count_radio-buttons">
+          <div class="popup-form-count_radio-button">
+            <input type="radio" id="age-choiсe1" name="age" value="adult" checked>
+            <label for="age-choiсe1">Взрослая собака</label>
+          </div>
+          <div class="popup-form-count_radio-button">
+            <input type="radio" id="age-choiсe2" name="age" value="puppy">
+            <label for="age-choiсe2">Щенок</label>
+          </div>
+        </div>
+
+        <input class="form-field form-field__light" type="text" placeholder="Вес (кг)">
+        <input class="form-field form-field__light" type="text" placeholder="Возраст">
+        <input class="form-field form-field__light" type="text" placeholder="Ваше имя">
+        <input class="form-field form-field__light" type="tel" placeholder="Телефон">
+        <textarea class="form-field form-field__light form-textarea" name="" id=""
+          placeholder="Если у вашего хвостика есть особенности здоровья – напишите об этом..."></textarea>
+
+        <div class="popup-form_checkbox">
+          <input class="form-checkbox form-checkbox__light" type="checkbox" id="popup-count-agree-checkbox"
+            checked="checked">
+          <label class="form-label form-label__checkbox popup_form-label" for="popup-count-agree-checkbox">Даю согласие
+            на обработку персональных данных</label>
+        </div>
+
+        <button class="button button__primary popup_count-button" type="button">Рассчитать</button>
+      </form>
+
+
+      <button class="popup_close-button" data-popup-class=".popup__count">
         <svg class="close-button" width="32" height="32" viewBox="0 0 32 32" fill="none"
           xmlns="http://www.w3.org/2000/svg">
           <path d="M25 7L7 25" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -276,8 +331,8 @@
         <li class="features_item">
           <img class="features_icon" src="img/features-package.svg" alt="package">
           <h3 class="features_title">Закажите рацион</h3>
-          <p class="features_text">Выберите рацион для своей собаки. Если не знаете сколько и какой – <a
-              class="features_link" href="#">мы подскажем</a>.</p>
+          <p class="features_text">Выберите рацион для своей собаки. Если не знаете сколько и какой – <a class="link"
+              href="#">мы подскажем</a>.</p>
         </li>
         <li class="features_item">
           <img class="features_icon" src="img/features-phonecall.svg" alt="phonecall">
@@ -377,7 +432,7 @@
         <form class="section-contacts_form" action="">
           <input class="form-field form-field__dark section-contacts_form-name" type="text" placeholder="Имя">
           <input class="form-field form-field__dark section-contacts_form-email" type="email" placeholder="Email">
-          <textarea class=" form-field form-field__dark section-contacts_form-textarea" name="" id=""
+          <textarea class=" form-field form-field__dark form-textarea section-contacts_form-textarea" name="" id=""
             placeholder="Ваш вопрос..."></textarea>
           <div class="section-contacts_form-checkbox-area">
             <input class="form-checkbox form-checkbox__dark section-contacts_form-checkbox" type="checkbox"
@@ -404,6 +459,8 @@
     </div>
   </footer>
   <!-- / FOOTER -->
+
+  <script src="js/script.js"></script>
 
 </body>
 
