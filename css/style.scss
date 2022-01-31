@@ -10,6 +10,7 @@
 }
 
 @mixin list-reset {
+  margin: 0;
   padding: 0;
   list-style: none;
 }
@@ -254,37 +255,48 @@ p {
   &_item {
     display: flex;
     flex-direction: column;
-    gap: $base * 3;
-    padding: $base * 8 0;
 
     &__active {
-      .accordion_text {
-        display: block;
-      }
+      .accordion {
+        &_header {
+          padding-bottom: $base * 3;
+          transition: all 0.2s ease-in-out;
+        }
 
-      .accordion_button {
-        background-image: url("/img/minus.svg");
+        &_content {
+          max-height: $base * 30;
+          visibility: visible;
+          transition: all 0.2s ease-in-out;
+        }
+
+        &_button {
+          transform: rotate(135deg);
+          transition: all 0.2s ease-in-out;
+          &__vertical,
+          &__horisontal {
+          }
+        }
       }
     }
-  }
 
-  &_item:first-child {
-    padding-top: 0;
-  }
+    &:first-child {
+      .accordion_header {
+        padding-top: 0;
+      }
+    }
 
-  &_item:last-child {
-    padding-bottom: 0;
-  }
-
-  &_item:not(:last-child) {
-    border-bottom: 1px solid $cl-gray-300;
+    &:not(:last-child) {
+      border-bottom: 1px solid $cl-gray-300;
+    }
   }
 
   &_header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: $base * 8 0;
     cursor: pointer;
+    transition: all 0.2s ease-in-out;
   }
 
   &_title {
@@ -296,15 +308,24 @@ p {
     height: $base * 8;
     box-sizing: border-box;
     background: transparent;
-    background-image: url("/img/plus.svg");
-    background-position: center;
-    background-repeat: no-repeat;
     border: none;
     cursor: pointer;
+    transform: rotate(0deg);
+    transition: all 0.2s ease-in-out;
+
+    &__vertical,
+    &__horisontal {
+    }
+  }
+
+  &_content {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.2s ease-in-out;
   }
 
   &_text {
-    display: none;
+    padding-bottom: $base * 8;
     padding-right: $base * 20;
   }
 }
@@ -398,6 +419,60 @@ p {
 
     &:checked + label::before {
       background-image: url("/img/check.svg");
+    }
+  }
+}
+
+.catalog {
+  @include list-reset;
+
+  display: flex;
+  justify-content: space-between;
+
+  &_item {
+    flex-basis: 24%;
+    position: relative;
+
+    &-image {
+      width: 100%;
+      margin-bottom: $base * 11;
+      cursor: pointer;
+    }
+
+    &-title {
+      margin-bottom: $base;
+      cursor: pointer;
+    }
+
+    &-category {
+      color: $cl-gray-400;
+      font-size: $fs-xs;
+      line-height: 130%;
+      margin-bottom: $base * 4;
+
+      &__turkey:after {
+        @include catalog-item-sticker("../img/sticker-turkey.svg");
+      }
+
+      &__mutton:after {
+        @include catalog-item-sticker("../img/sticker-mutton.svg");
+      }
+    }
+
+    &-text {
+      color: $cl-gray-600;
+      margin-bottom: $base * 3;
+    }
+
+    &-parameters {
+      color: $cl-gray-400;
+      font-size: $fs-xs;
+      line-height: 130%;
+      margin-bottom: $base * 6;
+    }
+
+    &-button {
+      width: $base * 40;
     }
   }
 }
@@ -833,60 +908,6 @@ p {
       font-weight: $fw-medium;
       line-height: 140%;
       letter-spacing: 0.02em;
-    }
-  }
-}
-
-.catalog {
-  @include list-reset;
-
-  display: flex;
-  justify-content: space-between;
-
-  &_item {
-    flex-basis: 24%;
-    position: relative;
-
-    &-image {
-      width: 100%;
-      margin-bottom: $base * 11;
-      cursor: pointer;
-    }
-
-    &-title {
-      margin-bottom: $base;
-      cursor: pointer;
-    }
-
-    &-category {
-      color: $cl-gray-400;
-      font-size: $fs-xs;
-      line-height: 130%;
-      margin-bottom: $base * 4;
-
-      &__turkey:after {
-        @include catalog-item-sticker("../img/sticker-turkey.svg");
-      }
-
-      &__mutton:after {
-        @include catalog-item-sticker("../img/sticker-mutton.svg");
-      }
-    }
-
-    &-text {
-      color: $cl-gray-600;
-      margin-bottom: $base * 3;
-    }
-
-    &-parameters {
-      color: $cl-gray-400;
-      font-size: $fs-xs;
-      line-height: 130%;
-      margin-bottom: $base * 6;
-    }
-
-    &-button {
-      width: $base * 40;
     }
   }
 }

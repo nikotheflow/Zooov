@@ -151,6 +151,7 @@ p {
 }
 
 .features {
+  margin: 0;
   padding: 0;
   list-style: none;
   display: -webkit-box;
@@ -175,6 +176,7 @@ p {
 }
 
 .accordion {
+  margin: 0;
   padding: 0;
   list-style: none;
 }
@@ -187,24 +189,30 @@ p {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 12px;
-  padding: 32px 0;
 }
 
-.accordion_item__active .accordion_text {
-  display: block;
+.accordion_item__active .accordion_header {
+  padding-bottom: 12px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.accordion_item__active .accordion_content {
+  max-height: 120px;
+  visibility: visible;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .accordion_item__active .accordion_button {
-  background-image: url("/img/minus.svg");
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
-.accordion_item:first-child {
+.accordion_item:first-child .accordion_header {
   padding-top: 0;
-}
-
-.accordion_item:last-child {
-  padding-bottom: 0;
 }
 
 .accordion_item:not(:last-child) {
@@ -221,7 +229,10 @@ p {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  padding: 32px 0;
   cursor: pointer;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .accordion_title {
@@ -234,15 +245,23 @@ p {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background: transparent;
-  background-image: url("/img/plus.svg");
-  background-position: center;
-  background-repeat: no-repeat;
   border: none;
   cursor: pointer;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.accordion_content {
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .accordion_text {
-  display: none;
+  padding-bottom: 32px;
   padding-right: 80px;
 }
 
@@ -344,6 +363,80 @@ p {
 
 .form-checkbox:checked + label::before {
   background-image: url("/img/check.svg");
+}
+
+.catalog {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.catalog_item {
+  -ms-flex-preferred-size: 24%;
+      flex-basis: 24%;
+  position: relative;
+}
+
+.catalog_item-image {
+  width: 100%;
+  margin-bottom: 44px;
+  cursor: pointer;
+}
+
+.catalog_item-title {
+  margin-bottom: 4px;
+  cursor: pointer;
+}
+
+.catalog_item-category {
+  color: #9f9e9d;
+  font-size: 14px;
+  line-height: 130%;
+  margin-bottom: 16px;
+}
+
+.catalog_item-category__turkey:after {
+  content: "";
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: url("../img/sticker-turkey.svg") no-repeat center;
+  background-size: cover;
+}
+
+.catalog_item-category__mutton:after {
+  content: "";
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: url("../img/sticker-mutton.svg") no-repeat center;
+  background-size: cover;
+}
+
+.catalog_item-text {
+  color: #434242;
+  margin-bottom: 12px;
+}
+
+.catalog_item-parameters {
+  color: #9f9e9d;
+  font-size: 14px;
+  line-height: 130%;
+  margin-bottom: 24px;
+}
+
+.catalog_item-button {
+  width: 160px;
 }
 
 .popup {
@@ -845,79 +938,6 @@ p {
   font-weight: 500;
   line-height: 140%;
   letter-spacing: 0.02em;
-}
-
-.catalog {
-  padding: 0;
-  list-style: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.catalog_item {
-  -ms-flex-preferred-size: 24%;
-      flex-basis: 24%;
-  position: relative;
-}
-
-.catalog_item-image {
-  width: 100%;
-  margin-bottom: 44px;
-  cursor: pointer;
-}
-
-.catalog_item-title {
-  margin-bottom: 4px;
-  cursor: pointer;
-}
-
-.catalog_item-category {
-  color: #9f9e9d;
-  font-size: 14px;
-  line-height: 130%;
-  margin-bottom: 16px;
-}
-
-.catalog_item-category__turkey:after {
-  content: "";
-  width: 60px;
-  height: 60px;
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  background: url("../img/sticker-turkey.svg") no-repeat center;
-  background-size: cover;
-}
-
-.catalog_item-category__mutton:after {
-  content: "";
-  width: 60px;
-  height: 60px;
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  background: url("../img/sticker-mutton.svg") no-repeat center;
-  background-size: cover;
-}
-
-.catalog_item-text {
-  color: #434242;
-  margin-bottom: 12px;
-}
-
-.catalog_item-parameters {
-  color: #9f9e9d;
-  font-size: 14px;
-  line-height: 130%;
-  margin-bottom: 24px;
-}
-
-.catalog_item-button {
-  width: 160px;
 }
 
 .section-zooov {
