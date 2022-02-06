@@ -1,5 +1,7 @@
 
 let body = document.querySelector('body');
+let header = document.querySelector('.section-header');
+let anchors = document.querySelectorAll('.nav-wrapper_link')
 let catalogImages = document.querySelectorAll('.catalog_item-image');
 let catalogTitles = document.querySelectorAll('.catalog_item-title');
 let confirmOrderButton = document.querySelector('.confirm-order-button');
@@ -13,6 +15,14 @@ let popupHeader = document.querySelector('.popup_header')
 let popupItem = document.querySelector('.popup_description__item-info');
 let popupOrder = document.querySelector('.popup_description__order');
 let popupThanks = document.querySelector('.popup_description__thanks');
+
+window.addEventListener('scroll', () => {
+  if (window.pageYOffset >= 798) {
+    header.classList.add('section-header__fixed');
+  } else {
+    header.classList.remove('section-header__fixed');
+  }
+})
 
 catalogImages.forEach((catalogImage) => {
   catalogImage.addEventListener('click', () => {
@@ -58,6 +68,27 @@ popupCloseButtons.forEach((button) => {
 
 accordionHeaders.forEach(header => header.addEventListener('click', toggleAccordion));
 
+anchors.forEach((anchor) => {
+  anchor.addEventListener('click', (e) => {
+    e.preventDefault()
+
+    let sectionID = anchor.getAttribute('href');
+
+
+    if (sectionID === '#barf') {
+      window.scrollTo({
+        top: 798,
+        behavior: 'smooth'
+      })
+    } else {
+      document.querySelector(sectionID).scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'    
+      })
+    }
+  })
+})
+
 function openPopup(popup) {
   popup.classList.add('popup__open');
   body.style.overflow = 'hidden';
@@ -93,6 +124,5 @@ function toggleAccordion() {
   let thisItem = this.parentNode;
 
   thisItem.classList.toggle('accordion_item__active');
-  console.log(thisItem);
 }
 

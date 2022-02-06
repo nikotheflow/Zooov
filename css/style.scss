@@ -83,6 +83,10 @@ $cl-black: #000000;
 // === / VARIABLES ===
 
 // === COMMON ===
+html {
+  scroll-padding-top: 76px;
+}
+
 body {
   @include montserrat;
   font-size: $fs-s;
@@ -272,9 +276,6 @@ p {
         &_button {
           transform: rotate(135deg);
           transition: all 0.2s ease-in-out;
-          &__vertical,
-          &__horisontal {
-          }
         }
       }
     }
@@ -312,10 +313,6 @@ p {
     cursor: pointer;
     transform: rotate(0deg);
     transition: all 0.2s ease-in-out;
-
-    &__vertical,
-    &__horisontal {
-    }
   }
 
   &_content {
@@ -418,7 +415,7 @@ p {
     }
 
     &:checked + label::before {
-      background-image: url("/img/check.svg");
+      background-image: url("../img/check.svg");
     }
   }
 }
@@ -667,13 +664,14 @@ p {
 
 // === HEADER ===
 .section-header {
-  position: fixed;
+  position: absolute;
   left: 0;
   top: 0;
   width: 100%;
-  margin: $base * 4 0;
+  padding: $base * 4 0;
   background-color: transparent;
   z-index: 100;
+  transition: 0.1s;
 
   .section-inner {
     padding: 0;
@@ -688,9 +686,12 @@ p {
   }
 
   &__fixed {
+    padding: $base * 2 0;
+    position: fixed;
     background-color: $cl-white;
     margin: 0;
-    padding: $base * 2 0;
+    box-shadow: 0 2px 10px rgba(122, 122, 122, 0.3);
+    transition: 0.1s;
 
     .logo {
       width: $base * 15;
@@ -734,15 +735,21 @@ p {
 // === HERO ===
 .section-hero {
   color: $cl-white;
-  background-image: url("/img/hero-background.jpg");
+
+  background-image: url("../img/hero-background.jpg");
   background-repeat: no-repeat;
   background-position: top;
+  background-size: cover;
   position: relative;
   overflow: hidden;
 
   .section-inner {
-    padding-top: $pv-l;
-    padding-bottom: $pv-l;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: $base * 28 0 0;
   }
 
   &_title {
@@ -756,7 +763,7 @@ p {
   }
 
   &_outline:after {
-    @include word-outline("/img/bg-stroke1.svg");
+    @include word-outline("../img/bg-stroke1.svg");
   }
 
   &_text {
@@ -766,13 +773,16 @@ p {
   }
 
   &:after {
-    width: $base * 42;
-    height: $base * 137;
+    width: 20vh;
+    height: 60vh;
     content: "";
-    background: url("/img/zooov.svg");
+    background: url("../img/zooov.svg");
+    background-position-x: right;
+    background-repeat: no-repeat;
+    background-size: contain;
     position: absolute;
-    right: -$base * 5;
-    top: $base * 40;
+    right: 0;
+    bottom: $base * 10;
   }
 }
 
@@ -805,7 +815,7 @@ p {
     padding: $base * 8 $base * 20;
     display: flex;
     justify-content: space-between;
-    background-image: url("/img/bg-stroke-light.svg");
+    background-image: url("../img/bg-stroke-light.svg");
     background-position: center;
     background-repeat: no-repeat;
   }
@@ -834,31 +844,31 @@ p {
     padding-left: $base * 9;
 
     &__meat {
-      background-image: url("/img/meat.svg");
+      background-image: url("../img/meat.svg");
     }
 
     &__bones {
-      background-image: url("/img/bones.svg");
+      background-image: url("../img/bones.svg");
     }
 
     &__vegetables {
-      background-image: url("/img/vegetables.svg");
+      background-image: url("../img/vegetables.svg");
     }
 
     &__liver {
-      background-image: url("/img/liver.svg");
+      background-image: url("../img/liver.svg");
     }
 
     &__offal {
-      background-image: url("/img/offal.svg");
+      background-image: url("../img/offal.svg");
     }
 
     &__nuts {
-      background-image: url("/img/nuts.svg");
+      background-image: url("../img/nuts.svg");
     }
 
     &__fruits {
-      background-image: url("/img/fruits.svg");
+      background-image: url("../img/fruits.svg");
     }
   }
 }
@@ -897,7 +907,7 @@ p {
     align-items: center;
     justify-content: space-between;
     background-color: $cl-red-200;
-    background-image: url("/img/bg-stroke-light.svg");
+    background-image: url("../img/bg-stroke-light.svg");
     background-position: center;
     background-repeat: no-repeat;
     padding: $base * 13 $base * 20;
@@ -915,7 +925,7 @@ p {
 
 // === ZOOOV ===
 .section-zooov {
-  background-image: url("/img/bg-stroke-dark.svg");
+  background-image: url("../img/bg-stroke-dark.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position-y: center;
@@ -946,7 +956,7 @@ p {
 // === ABOUT ===
 .section-about {
   background-color: $cl-red-100;
-  background-image: url("/img/bg-stroke-twice.svg");
+  background-image: url("../img/bg-stroke-twice.svg");
   background-repeat: no-repeat;
 
   .section-inner {
@@ -1018,7 +1028,7 @@ p {
     position: absolute;
     top: 0;
     right: 0;
-    background-image: url("/img/arrow.svg");
+    background-image: url("../img/arrow.svg");
     background-repeat: no-repeat;
     background-position-y: center;
   }
@@ -1047,7 +1057,7 @@ p {
 // === CONTACTS ===
 .section-contacts {
   background-color: $cl-red-500;
-  background-image: url("/img/bg-contacts.png");
+  background-image: url("../img/bg-contacts.png");
   background-repeat: no-repeat;
   background-position-y: 50%;
   background-size: cover;
