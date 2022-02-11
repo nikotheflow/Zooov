@@ -43,6 +43,19 @@
 // === VARIABLES ===
 $base: 4px;
 
+$breakpoints-xs-min: 0;
+$breakpoints-sm-min: 576px;
+$breakpoints-md-min: 768px;
+$breakpoints-lg-min: 992px;
+$breakpoints-xl-min: 1200px;
+$breakpoints-xxl-min: 1400px;
+
+$breakpoints-xs-max: $breakpoints-sm-min - 0.02px;
+$breakpoints-sm-max: $breakpoints-md-min - 0.02px;
+$breakpoints-md-max: $breakpoints-lg-min - 0.02px;
+$breakpoints-lg-max: $breakpoints-xl-min - 0.02px;
+$breakpoints-xl-max: $breakpoints-xxl-min - 0.02px;
+
 $fw-regular: 400;
 $fw-medium: 500;
 $fw-semibold: 600;
@@ -97,8 +110,9 @@ body {
   box-sizing: border-box;
 }
 
-/*.section-outer {
-}*/
+.section-outer {
+  padding: 0 $base * 6;
+}
 
 .section-inner {
   max-width: 1200px;
@@ -170,10 +184,30 @@ p {
   @include montserrat;
   width: $base * 56;
   height: $base * 12;
+  font-size: $fs-s;
   font-weight: $fw-semibold;
   border: none;
   border-radius: $base * 2;
   cursor: pointer;
+
+  &__burger {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: $base * 10;
+    height: $base * 10;
+    background: transparent;
+    border: none;
+    margin-left: auto;
+
+    svg {
+      fill: white;
+    }
+
+    @media (max-width: $breakpoints-md-max) {
+      display: flex;
+    }
+  }
 
   &__primary {
     color: $cl-white;
@@ -526,7 +560,6 @@ p {
     position: relative;
     padding: $pv-xs;
     background: $cl-white;
-    //opacity: 0;
     transition: all 0.8s;
   }
 
@@ -668,7 +701,8 @@ p {
   left: 0;
   top: 0;
   width: 100%;
-  padding: $base * 4 0;
+  box-sizing: border-box;
+  padding-top: $base * 4;
   background-color: transparent;
   z-index: 100;
   transition: 0.1s;
@@ -683,10 +717,16 @@ p {
   &_logo {
     width: $base * 20;
     height: $base * 20;
+
+    @media (max-width: $breakpoints-md-max) {
+      width: $base * 15;
+      height: $base * 15;
+    }
   }
 
   &__fixed {
-    padding: $base * 2 0;
+    padding-top: $base * 2;
+    padding-bottom: $base * 2;
     position: fixed;
     background-color: $cl-white;
     margin: 0;
@@ -696,6 +736,11 @@ p {
     .logo {
       width: $base * 15;
       height: $base * 15;
+
+      @media (max-width: $breakpoints-md-max) {
+        width: $base * 10;
+        height: $base * 10;
+      }
     }
 
     .nav-wrapper {
@@ -703,10 +748,21 @@ p {
         color: black;
       }
     }
+
+    .button__burger svg {
+      fill: black;
+    }
+  }
+}
+
+.nav {
+  @media (max-width: $breakpoints-md-max) {
+    display: none;
   }
 }
 
 .nav-wrapper {
+  position: relative;
   display: flex;
   list-style: none;
   padding: 0;
@@ -798,6 +854,18 @@ p {
     padding-bottom: $pv-s;
   }
 
+  &_description {
+    flex: 1;
+  }
+
+  &_image {
+    flex: 1;
+
+    img {
+      width: 100%;
+    }
+  }
+
   &_title {
     margin-bottom: $base * 8;
   }
@@ -815,19 +883,27 @@ p {
     padding: $base * 8 $base * 20;
     display: flex;
     justify-content: space-between;
+    gap: 5%;
     background-image: url("../img/bg-stroke-light.svg");
     background-position: center;
     background-repeat: no-repeat;
+
+    @media (max-width: $breakpoints-lg-max) {
+      padding: $base * 6 $base * 10;
+    }
   }
 }
 
 .composition {
+  flex: 1;
+
   &_title {
     margin-bottom: $base * 4;
   }
 
   &_list {
     column-count: 2;
+    column-gap: 0;
     padding: 0;
     margin: 0;
   }
@@ -842,6 +918,10 @@ p {
     background-repeat: no-repeat;
     background-position-y: center;
     padding-left: $base * 9;
+
+    @media (max-width: $breakpoints-lg-max) {
+      width: $base * 15;
+    }
 
     &__meat {
       background-image: url("../img/meat.svg");
@@ -958,41 +1038,23 @@ p {
   background-color: $cl-red-100;
   background-image: url("../img/bg-stroke-twice.svg");
   background-repeat: no-repeat;
+  background-position: left;
+  background-size: contain;
 
   .section-inner {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     gap: 2%;
-  }
-
-  &_images {
-    position: relative;
-    min-width: $base * 140;
-    max-height: $base * 186;
+    margin-bottom: $base * 20;
   }
 
   &_image {
-    position: absolute;
-  }
+    flex: 1;
 
-  &_image1 {
-    top: 0;
-    left: 0;
-  }
-
-  &_image2 {
-    bottom: 0;
-    right: 0;
-  }
-
-  &_image3 {
-    top: $base * 118;
-    left: -$base * 14;
-  }
-
-  &_image4 {
-    top: $base * 68;
-    right: $base * 5;
+    img {
+      width: 100%;
+    }
   }
 
   &_main {
@@ -1013,7 +1075,7 @@ p {
 // === DELIVERY ===
 .section-delivery {
   .section-inner {
-    padding-top: $pv-m;
+    padding-top: $pv-s;
   }
 
   &_title {
@@ -1046,6 +1108,10 @@ p {
 
   &_title {
     flex-basis: 30%;
+
+    @media (max-width: $breakpoints-lg-max) {
+      flex-basis: 20%;
+    }
   }
 
   &_questions {
@@ -1171,10 +1237,17 @@ p {
   &_text {
     color: rgba($cl-white, 0.4);
     font-size: $fs-xxs;
+
+    &__main {
+      @media (max-width: $breakpoints-lg-max) {
+        flex-basis: 50%;
+      }
+    }
   }
 
   &_link {
     text-decoration: none;
+    white-space: nowrap;
   }
 }
 // === / FOOTER ===

@@ -1,23 +1,22 @@
-
-let body = document.querySelector('body');
-let header = document.querySelector('.section-header');
-let anchors = document.querySelectorAll('.nav-wrapper_link')
-let catalogImages = document.querySelectorAll('.catalog_item-image');
-let catalogTitles = document.querySelectorAll('.catalog_item-title');
-let confirmOrderButton = document.querySelector('.confirm-order-button');
-let countButton = document.querySelector('.section-rations_count-button');
-let orderButtons = document.querySelectorAll('.catalog_item-button');
-let popupCloseButtons = document.querySelectorAll('.popup_close-button');
-let accordionHeaders = document.querySelectorAll('.accordion_header');
-let catalogPopup = document.querySelector('.popup__catalog');
-let countPopup = document.querySelector('.popup__count');
-let popupHeader = document.querySelector('.popup_header')
-let popupItem = document.querySelector('.popup_description__item-info');
-let popupOrder = document.querySelector('.popup_description__order');
-let popupThanks = document.querySelector('.popup_description__thanks');
+const body = document.querySelector('body'),
+      header = document.querySelector('.section-header'),
+      anchors = document.querySelectorAll('.nav-wrapper_link'),
+      catalogImages = document.querySelectorAll('.catalog_item-image'),
+      catalogTitles = document.querySelectorAll('.catalog_item-title'),
+      confirmOrderButton = document.querySelector('.confirm-order-button'),
+      countButton = document.querySelector('.section-rations_count-button'),
+      orderButtons = document.querySelectorAll('.catalog_item-button'),
+      popupCloseButtons = document.querySelectorAll('.popup_close-button'),
+      accordionHeaders = document.querySelectorAll('.accordion_header'),
+      catalogPopup = document.querySelector('.popup__catalog'),
+      countPopup = document.querySelector('.popup__count'),
+      popupHeader = document.querySelector('.popup_header'),
+      popupItem = document.querySelector('.popup_description__item-info'),
+      popupOrder = document.querySelector('.popup_description__order'),
+      popupThanks = document.querySelector('.popup_description__thanks');
 
 window.addEventListener('scroll', () => {
-  if (window.pageYOffset >= 798) {
+  if (window.pageYOffset >= document.documentElement.clientHeight) {
     header.classList.add('section-header__fixed');
   } else {
     header.classList.remove('section-header__fixed');
@@ -68,16 +67,16 @@ popupCloseButtons.forEach((button) => {
 
 accordionHeaders.forEach(header => header.addEventListener('click', toggleAccordion));
 
+//seamless.polyfill(); //smooth scroll for safari
+
 anchors.forEach((anchor) => {
   anchor.addEventListener('click', (e) => {
     e.preventDefault()
-
     let sectionID = anchor.getAttribute('href');
-
 
     if (sectionID === '#barf') {
       window.scrollTo({
-        top: 798,
+        top: document.documentElement.clientHeight,
         behavior: 'smooth'
       })
     } else {
