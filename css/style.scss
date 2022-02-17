@@ -272,10 +272,31 @@ p {
 
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+
+  @media (max-width: $breakpoints-md-max) {
+    row-gap: 40px;
+  }
 
   &_item {
     position: relative;
     width: 23%;
+    padding-top: $base * 15;
+
+    @media (max-width: $breakpoints-md-max) {
+      width: 48%;
+    }
+
+    &:before {
+      content: "";
+      width: $base * 10;
+      height: $base * 10;
+      position: absolute;
+      inset: 0;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
   }
 
   &_icon {
@@ -459,15 +480,25 @@ p {
 
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 
   &_item {
     flex-basis: 24%;
     position: relative;
 
+    @media (max-width: $breakpoints-md-max) {
+      flex-basis: 48%;
+      margin-bottom: $base * 10;
+    }
+
     &-image {
       width: 100%;
       margin-bottom: $base * 11;
       cursor: pointer;
+
+      @media (max-width: $breakpoints-md-max) {
+        margin-bottom: $base * 5;
+      }
     }
 
     &-title {
@@ -852,17 +883,31 @@ p {
     gap: 2%;
     padding-top: $pv-s;
     padding-bottom: $pv-s;
+
+    @media (max-width: $breakpoints-md-max) {
+      flex-direction: column;
+      padding-bottom: 0;
+    }
   }
 
   &_description {
     flex: 1;
+
+    @media (max-width: $breakpoints-md-max) {
+      margin-bottom: $base * 6;
+    }
   }
 
   &_image {
-    flex: 1;
+    @media (max-width: $breakpoints-md-max) {
+      width: 100%;
+      height: $base * 80;
+    }
 
     img {
       width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   }
 
@@ -891,6 +936,10 @@ p {
     @media (max-width: $breakpoints-lg-max) {
       padding: $base * 6 $base * 10;
     }
+
+    @media (max-width: $breakpoints-md-max) {
+      gap: 15%;
+    }
   }
 }
 
@@ -906,6 +955,10 @@ p {
     column-gap: 0;
     padding: 0;
     margin: 0;
+
+    @media (max-width: $breakpoints-md-max) {
+      column-count: 1;
+    }
   }
 
   &_item {
@@ -962,11 +1015,18 @@ p {
     align-items: center;
     justify-content: space-between;
     margin-bottom: $base * 20;
+    gap: $base * 25;
+
+    @media (max-width: $breakpoints-md-max) {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: $base * 10;
+      gap: $base * 8;
+    }
   }
 
   &_title {
     white-space: nowrap;
-    margin-right: $base * 25;
     z-index: 0;
   }
 
@@ -979,7 +1039,11 @@ p {
   }
 
   &_catalog {
-    margin: 0 0 $base * 20;
+    margin-bottom: $base * 20;
+
+    @media (max-width: $breakpoints-md-max) {
+      margin-bottom: $base * 10;
+    }
   }
 
   &_count {
@@ -992,12 +1056,24 @@ p {
     background-repeat: no-repeat;
     padding: $base * 13 $base * 20;
 
+    @media (max-width: $breakpoints-md-max) {
+      flex-direction: column;
+      height: 120px;
+      padding: $base * 6 $base * 10;
+    }
+
     &-text {
-      width: 70%;
+      flex-basis: 70%;
       font-size: $fs-xl;
       font-weight: $fw-medium;
       line-height: 140%;
       letter-spacing: 0.02em;
+
+      @media (max-width: $breakpoints-md-max) {
+        font-size: $fs-l;
+        text-align: center;
+        flex-basis: auto;
+      }
     }
   }
 }
@@ -1030,6 +1106,24 @@ p {
     top: 70%;
     left: 95%;
   }
+
+  .features_item {
+    &:nth-child(1):before {
+      background-image: url("../img/features-leaf.svg");
+    }
+
+    &:nth-child(2):before {
+      background-image: url("../img/features-heartbeat.svg");
+    }
+
+    &:nth-child(3):before {
+      background-image: url("../img/features-paw.svg");
+    }
+
+    &:nth-child(4):before {
+      background-image: url("../img/features-smile.svg");
+    }
+  }
 }
 // === / ZOOOV ===
 
@@ -1040,6 +1134,10 @@ p {
   background-repeat: no-repeat;
   background-position: left;
   background-size: contain;
+
+  @media (max-width: $breakpoints-md-max) {
+    background-size: cover;
+  }
 
   .section-inner {
     display: flex;
@@ -1082,17 +1180,35 @@ p {
     margin-bottom: $base * 20;
   }
 
-  .features_item:not(:last-child) .features_title:after {
-    content: "";
-    display: inline-block;
-    width: $base * 40;
-    height: $base * 10;
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-image: url("../img/arrow.svg");
-    background-repeat: no-repeat;
-    background-position-y: center;
+  .features_item {
+    &:nth-child(1):before {
+      background-image: url("../img/features-package.svg");
+    }
+
+    &:nth-child(2):before {
+      background-image: url("../img/features-phonecall.svg");
+    }
+
+    &:nth-child(3):before {
+      background-image: url("../img/features-clock.svg");
+    }
+
+    &:nth-child(4):before {
+      background-image: url("../img/features-heart.svg");
+    }
+
+    &:not(:last-child):after {
+      content: "";
+      display: inline-block;
+      width: $base * 40;
+      height: $base * 10;
+      position: absolute;
+      top: 0;
+      left: $base * 20;
+      background-image: url("../img/arrow.svg");
+      background-repeat: no-repeat;
+      background-position-y: center;
+    }
   }
 }
 
@@ -1104,6 +1220,11 @@ p {
     display: flex;
     gap: 5%;
     padding-bottom: $pv-m;
+
+    @media (max-width: $breakpoints-md-max) {
+      flex-direction: column;
+      row-gap: $base * 15;
+    }
   }
 
   &_title {
@@ -1130,15 +1251,19 @@ p {
 
   .section-inner {
     display: flex;
-    gap: $base * 45;
+    gap: 10%;
+
+    @media (max-width: $breakpoints-md-max) {
+      flex-direction: column;
+      row-gap: $base * 10;
+    }
   }
 
   &_social {
-    flex: 4;
   }
 
   &_title {
-    margin-bottom: $base * 2;
+    margin-bottom: $base * 5;
   }
 
   &_text {
@@ -1147,6 +1272,10 @@ p {
 
   &_social-text {
     margin-bottom: $base * 8;
+
+    @media (max-width: $breakpoints-md-max) {
+      margin-bottom: $base * 5;
+    }
   }
 
   &_phone {
@@ -1154,6 +1283,10 @@ p {
     font-weight: $fw-bold;
     text-decoration: none;
     margin-bottom: $base * 6;
+
+    @media (max-width: $breakpoints-md-max) {
+      margin-bottom: $base * 4;
+    }
   }
 
   &_buttons {
@@ -1161,10 +1294,14 @@ p {
     flex-direction: column;
     gap: $base * 4;
     margin-bottom: $base * 10;
+
+    @media (max-width: $breakpoints-md-max) {
+      flex-direction: row;
+      margin-bottom: $base * 5;
+    }
   }
 
   &_form-area {
-    flex: 7;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -1184,15 +1321,29 @@ p {
     box-sizing: border-box;
     grid-column-gap: $base * 6;
     grid-row-gap: $base * 4;
-    grid-template-columns: 3fr 1fr 2fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: $base * 12 $base * 30 $base * 12;
 
+    @media (max-width: $breakpoints-md-max) {
+      grid-template-columns: 1fr 2fr;
+      grid-template-rows: $base * 12 $base * 12;
+    }
+
     &-email {
-      grid-column: 2 / 4;
+      grid-column: 2 / 3;
+
+      @media (max-width: $breakpoints-md-max) {
+        grid-column: 1 / 2;
+      }
     }
 
     &-textarea {
-      grid-column: 1 / 4;
+      grid-column: 1 / 3;
+
+      @media (max-width: $breakpoints-md-max) {
+        grid-row: 1 / 3;
+        grid-column: 2 / 3;
+      }
     }
 
     &-checkbox {
@@ -1201,15 +1352,12 @@ p {
         align-items: center;
         gap: $base * 2;
       }
-
-      &-label {
-        width: 80%;
-      }
     }
 
     &-button {
-      width: 100%;
-      grid-column: 3 / 4;
+      margin-left: auto;
+      width: $base * 56;
+      grid-column: 2 / 3;
       color: $cl-red-400;
       font-weight: $fw-bold;
       background-color: $cl-red-100;
