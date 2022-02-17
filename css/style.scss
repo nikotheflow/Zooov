@@ -16,15 +16,12 @@
 }
 
 @mixin word-outline($image) {
-  width: $base * 75;
-  height: $base * 40;
+  content: "";
   display: inline-block;
   position: absolute;
-  top: -$base * 1;
-  left: -$base * 7;
-  content: "";
   background-image: url($image);
   background-repeat: no-repeat;
+  background-size: contain;
   z-index: -5;
 }
 
@@ -40,8 +37,18 @@
 }
 // === / MIXIN ===
 
+// === FUNCTIONS ===
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+@function rem($num) {
+  @return (strip-unit($num) / 16) * 1rem;
+}
+// === / FUNCTIONS ===
+
 // === VARIABLES ===
-$base: 4px;
+$base: rem(4px);
 
 $breakpoints-xs-min: 0;
 $breakpoints-sm-min: 576px;
@@ -61,14 +68,14 @@ $fw-medium: 500;
 $fw-semibold: 600;
 $fw-bold: 700;
 
-$fs-xxs: 12px;
-$fs-xs: 14px;
-$fs-s: 16px;
-$fs-m: 18px;
-$fs-l: 20px;
-$fs-xl: 28px;
-$fs-xxl: 46px;
-$fs-xxxl: 54px;
+$fs-xxs: rem(12px);
+$fs-xs: rem(14px);
+$fs-s: rem(16px);
+$fs-m: rem(18px);
+$fs-l: rem(20px);
+$fs-xl: rem(28px);
+$fs-xxl: rem(46px);
+$fs-xxxl: rem(54px);
 
 $pv-xs: $base * 15;
 $pv-s: $base * 20;
@@ -98,6 +105,10 @@ $cl-black: #000000;
 // === COMMON ===
 html {
   scroll-padding-top: 76px;
+
+  @media (max-width: $breakpoints-sm-max) {
+    font-size: 14px;
+  }
 }
 
 body {
@@ -487,7 +498,7 @@ p {
     position: relative;
 
     @media (max-width: $breakpoints-md-max) {
-      flex-basis: 48%;
+      flex-basis: 32%;
       margin-bottom: $base * 10;
     }
 
@@ -850,6 +861,10 @@ p {
   }
 
   &_outline:after {
+    width: $base * 66;
+    height: $base * 24;
+    top: -$base * 1;
+    left: -$base * 7;
     @include word-outline("../img/bg-stroke1.svg");
   }
 
@@ -861,7 +876,7 @@ p {
 
   &:after {
     width: 20vh;
-    height: 60vh;
+    height: 40vh;
     content: "";
     background: url("../img/zooov.svg");
     background-position-x: right;
@@ -1035,6 +1050,10 @@ p {
   }
 
   &_outline:after {
+    width: $base * 47;
+    height: $base * 20;
+    top: -$base * 1;
+    left: -$base * 7;
     @include word-outline("../img/bg-stroke2.svg");
   }
 
@@ -1145,6 +1164,11 @@ p {
     justify-content: space-between;
     gap: 2%;
     margin-bottom: $base * 20;
+
+    @media (max-width: $breakpoints-sm-max) {
+      flex-direction: column-reverse;
+      row-gap: $base * 4;
+    }
   }
 
   &_image {
@@ -1224,6 +1248,10 @@ p {
     @media (max-width: $breakpoints-md-max) {
       flex-direction: column;
       row-gap: $base * 15;
+    }
+
+    @media (max-width: $breakpoints-lg-max) {
+      padding-bottom: $pv-s;
     }
   }
 
@@ -1380,6 +1408,11 @@ p {
     justify-content: space-between;
     padding-top: $base * 8;
     padding-bottom: $base * 8;
+
+    @media (max-width: $breakpoints-sm-max) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
 
   &_text {
@@ -1390,12 +1423,20 @@ p {
       @media (max-width: $breakpoints-lg-max) {
         flex-basis: 50%;
       }
+
+      @media (max-width: $breakpoints-sm-max) {
+        margin-bottom: $base * 6;
+      }
     }
   }
 
   &_link {
     text-decoration: none;
     white-space: nowrap;
+
+    &:not(:last-child) {
+      margin-bottom: $base * 2;
+    }
   }
 }
 // === / FOOTER ===
