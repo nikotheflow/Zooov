@@ -6,7 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
-  <!--<link rel="stylesheet" href="css/normalize.css">-->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
   <title>Zooov</title>
 </head>
 
@@ -39,7 +40,7 @@
   <!-- HERO -->
   <section class="section-outer section-hero">
     <div class="section-inner">
-      <h1 class="section-hero_title">Питание,<br>которое <span class="section-hero_outline">полюбит</span><br>ваш
+      <h1 class="section-hero_title">Питание, которое <span class="section-hero_outline">полюбит</span><br>ваш
         хвостик</h1>
       <p class="section-hero_text">Натуральные рационы питания<br> для собак по системе BARF</p>
       <button class="button button__primary section-hero_button">Выбрать рацион</button>
@@ -72,7 +73,7 @@
         </div>
 
       </div>
-      <div class="section-barf_compositions">
+      <div class="section-barf_compositions section-barf_compositions__desktop">
         <div class="composition composition_adult">
           <h5 class="composition_title">Для взрослых</h5>
           <ul class="composition_list">
@@ -98,6 +99,37 @@
           </ul>
         </div>
       </div>
+
+      <div class="swiper section-barf_compositions section-barf_compositions__mobile">
+        <div class="swiper-wrapper composition_swiper-wrapper">
+          <div class="swiper-slide composition composition_adult">
+            <h5 class="composition_title">Для взрослых</h5>
+            <ul class="composition_list">
+              <li class="composition_item composition_item__meat">Мясо – 70%</li>
+              <li class="composition_item composition_item__bones">Кости – 10%</li>
+              <li class="composition_item composition_item__vegetables">Овощи – 7%</li>
+              <li class="composition_item composition_item__liver">Печень – 5%</li>
+              <li class="composition_item composition_item__offal">Субпродукты – 5%</li>
+              <li class="composition_item composition_item__nuts">Семена/Орехи – 2%</li>
+              <li class="composition_item composition_item__fruits">Фрукты – 1%</li>
+            </ul>
+          </div>
+          <div class="swiper-slide composition composition_puppy">
+            <h5 class="composition_title">Для щенков</h5>
+            <ul class="composition_list">
+              <li class="composition_item composition_item__meat">Мясо – 58%</li>
+              <li class="composition_item composition_item__bones">Кости – 17%</li>
+              <li class="composition_item composition_item__vegetables">Овощи – 7%</li>
+              <li class="composition_item composition_item__liver">Печень – 7%</li>
+              <li class="composition_item composition_item__offal">Субпродукты – 7%</li>
+              <li class="composition_item composition_item__nuts">Семена/Орехи – 3%</li>
+              <li class="composition_item composition_item__fruits">Фрукты – 1%</li>
+            </ul>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+
     </div>
   </section>
   <!-- / BARF -->
@@ -282,7 +314,7 @@
         </li>
         <li class="features_item">
           <h3 class="features_title">Здорово</h3>
-          <p class="features_text">Система питания, которая продлевает жизнь вашего хвостика.</p>
+          <p class="features_text">Система питания, которая продлевает жизнь вашего питомца.</p>
         </li>
         <li class="features_item">
           <h3 class="features_title">Сбалансированно</h3>

@@ -8,12 +8,31 @@ const body = document.querySelector('body'),
       orderButtons = document.querySelectorAll('.catalog_item-button'),
       popupCloseButtons = document.querySelectorAll('.popup_close-button'),
       accordionHeaders = document.querySelectorAll('.accordion_header'),
+      compositionsDesktop = document.querySelector('.section-barf_compositions__desktop'),
+      compositionsMobile = document.querySelector('.section-barf_compositions__mobile'),
       catalogPopup = document.querySelector('.popup__catalog'),
       countPopup = document.querySelector('.popup__count'),
       popupHeader = document.querySelector('.popup_header'),
       popupItem = document.querySelector('.popup_description__item-info'),
       popupOrder = document.querySelector('.popup_description__order'),
       popupThanks = document.querySelector('.popup_description__thanks');
+
+let swiper = new Swiper('.swiper', {
+  direction: 'horizontal',
+  loop: false,
+
+  pagination: {
+    el: '.swiper-pagination'
+  }
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+  showCompositions();
+})
+
+window.addEventListener('resize', () => {
+  showCompositions();
+})
 
 window.addEventListener('scroll', () => {
   if (window.pageYOffset >= document.documentElement.clientHeight) {
@@ -117,6 +136,16 @@ function showOrderInfo() {
 
 function showThanksInfo() {
   popupThanks.style.display = "flex"; 
+}
+
+function showCompositions() {
+  if (document.documentElement.clientWidth >= 575.98) {
+    compositionsMobile.style.display = "none";
+    compositionsDesktop.style.display = "flex";
+  } else {    
+    compositionsDesktop.style.display = "none";
+    compositionsMobile.style.display = "flex";
+  }
 }
 
 function toggleAccordion() {

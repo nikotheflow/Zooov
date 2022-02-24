@@ -13,6 +13,8 @@
   margin: 0;
   padding: 0;
   list-style: none;
+  display: grid;
+  grid-gap: 1rem;
 }
 
 @mixin word-outline($image) {
@@ -259,21 +261,18 @@ p {
 }
 
 .list {
-  padding: 0;
+  @include list-reset;
 
   &_item {
     color: $cl-gray-600;
-    margin: 0;
-    list-style-type: none;
+    display: grid;
+    grid-template-columns: 0 1fr;
+    grid-gap: 1rem;
+    align-items: start;
 
     &:before {
       content: "●";
       color: $cl-red-500;
-      margin-right: $base * 2;
-    }
-
-    & + & {
-      margin-top: $base * 4;
     }
   }
 }
@@ -296,6 +295,10 @@ p {
 
     @media (max-width: $breakpoints-md-max) {
       width: 48%;
+    }
+
+    @media (max-width: $breakpoints-xs-max) {
+      width: auto;
     }
 
     &:before {
@@ -330,18 +333,18 @@ p {
       .accordion {
         &_header {
           padding-bottom: $base * 3;
-          transition: all 0.2s ease-in-out;
+          transition: all 0.2s ease;
         }
 
         &_content {
-          max-height: $base * 30;
+          max-height: 100%;
           visibility: visible;
-          transition: all 0.2s ease-in-out;
+          transition: all 0.2s ease;
         }
 
         &_button {
           transform: rotate(135deg);
-          transition: all 0.2s ease-in-out;
+          transition: all 0.2s ease;
         }
       }
     }
@@ -494,12 +497,16 @@ p {
   flex-wrap: wrap;
 
   &_item {
-    flex-basis: 24%;
+    flex-basis: 23%;
     position: relative;
 
     @media (max-width: $breakpoints-md-max) {
-      flex-basis: 32%;
+      flex-basis: 31%;
       margin-bottom: $base * 10;
+    }
+
+    @media (max-width: $breakpoints-xs-max) {
+      flex-basis: 80%;
     }
 
     &-image {
@@ -848,6 +855,10 @@ p {
     justify-content: center;
     box-sizing: border-box;
     padding: $base * 28 0 0;
+
+    @media (max-width: $breakpoints-xs-max) {
+      padding: 0;
+    }
   }
 
   &_title {
@@ -861,10 +872,10 @@ p {
   }
 
   &_outline:after {
-    width: $base * 66;
-    height: $base * 24;
-    top: -$base * 1;
-    left: -$base * 7;
+    width: $base * 63;
+    height: $base * 22;
+    top: $base * 1;
+    left: -$base * 4;
     @include word-outline("../img/bg-stroke1.svg");
   }
 
@@ -948,6 +959,10 @@ p {
     background-position: center;
     background-repeat: no-repeat;
 
+    &__mobile {
+      display: none;
+    }
+
     @media (max-width: $breakpoints-lg-max) {
       padding: $base * 6 $base * 10;
     }
@@ -960,6 +975,13 @@ p {
 
 .composition {
   flex: 1;
+
+  @media (max-width: $breakpoints-xs-max) {
+    box-sizing: border-box;
+    flex: auto;
+    display: flex;
+    flex-direction: column;
+  }
 
   &_title {
     margin-bottom: $base * 4;
@@ -1019,6 +1041,16 @@ p {
       background-image: url("../img/fruits.svg");
     }
   }
+
+  &_swiper-wrapper {
+    @media (max-width: $breakpoints-xs-max) {
+      padding: $base * 6 $base * 10 $base * 10;
+    }
+  }
+}
+
+.swiper-pagination-bullet {
+  background: $cl-red-500 !important;
 }
 
 // === / BARF ===
@@ -1077,7 +1109,7 @@ p {
 
     @media (max-width: $breakpoints-md-max) {
       flex-direction: column;
-      height: 120px;
+      row-gap: $base * 5;
       padding: $base * 6 $base * 10;
     }
 
@@ -1104,6 +1136,10 @@ p {
   background-repeat: no-repeat;
   background-size: contain;
   background-position-y: center;
+
+  @media (max-width: $breakpoints-md-max) {
+    background-size: auto;
+  }
 
   .section-inner {
     padding-bottom: $pv-m;
@@ -1165,7 +1201,7 @@ p {
     gap: 2%;
     margin-bottom: $base * 20;
 
-    @media (max-width: $breakpoints-sm-max) {
+    @media (max-width: $breakpoints-md-max) {
       flex-direction: column-reverse;
       row-gap: $base * 4;
     }
@@ -1204,34 +1240,57 @@ p {
     margin-bottom: $base * 20;
   }
 
-  .features_item {
-    &:nth-child(1):before {
-      background-image: url("../img/features-package.svg");
+  .features {
+    position: relative;
+
+    @media (max-width: $breakpoints-xs-max) {
+      padding-left: $base * 10;
+
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: $base;
+        width: $base * 6;
+        height: $base * 180;
+        background-image: url("../img/arrow-long.svg");
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-size: contain;
+      }
     }
 
-    &:nth-child(2):before {
-      background-image: url("../img/features-phonecall.svg");
-    }
+    &_item {
+      &:nth-child(1):before {
+        background-image: url("../img/features-package.svg");
+      }
 
-    &:nth-child(3):before {
-      background-image: url("../img/features-clock.svg");
-    }
+      &:nth-child(2):before {
+        background-image: url("../img/features-phonecall.svg");
+      }
 
-    &:nth-child(4):before {
-      background-image: url("../img/features-heart.svg");
-    }
+      &:nth-child(3):before {
+        background-image: url("../img/features-clock.svg");
+      }
 
-    &:not(:last-child):after {
-      content: "";
-      display: inline-block;
-      width: $base * 40;
-      height: $base * 10;
-      position: absolute;
-      top: 0;
-      left: $base * 20;
-      background-image: url("../img/arrow.svg");
-      background-repeat: no-repeat;
-      background-position-y: center;
+      &:nth-child(4):before {
+        background-image: url("../img/features-heart.svg");
+      }
+
+      @media (min-width: $breakpoints-sm-min) {
+        &:not(:last-child):after {
+          content: "";
+          display: inline-block;
+          width: $base * 40;
+          height: $base * 10;
+          position: absolute;
+          top: 0;
+          left: $base * 20;
+          background-image: url("../img/arrow.svg");
+          background-repeat: no-repeat;
+          background-position-y: center;
+        }
+      }
     }
   }
 }
