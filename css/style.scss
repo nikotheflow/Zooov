@@ -490,11 +490,14 @@ p {
 }
 
 .catalog {
-  @include list-reset;
+  list-style: none;
+  padding-left: 0;
 
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  @media (min-width: $breakpoints-sm-min) {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
 
   &_item {
     flex-basis: 23%;
@@ -952,6 +955,7 @@ p {
   &_compositions {
     background-color: $cl-red-200;
     padding: $base * 8 $base * 20;
+    overflow: hidden;
     display: flex;
     justify-content: space-between;
     gap: 5%;
@@ -1049,14 +1053,48 @@ p {
   }
 }
 
-.swiper-pagination-bullet {
-  background: $cl-red-500 !important;
+.swiper {
+  &-slide {
+    opacity: 0.4;
+    transition: opacity 0.2s !important;
+
+    &-active {
+      opacity: 1;
+      transition: opacity 0.2s !important;
+    }
+  }
+
+  &-pagination {
+    margin: 0 !important;
+
+    &-bullet {
+      background: $cl-red-500 !important;
+    }
+  }
 }
 
 // === / BARF ===
 
 // === RATIONS ===
 .section-rations {
+  @media (max-width: $breakpoints-xs-max) {
+    overflow: hidden;
+    padding: 0;
+
+    .section-inner div:not(.section-rations_catalog) {
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+
+    .section-rations_catalog {
+      padding: 0 20px;
+    }
+
+    .swiper-pagination {
+      margin-left: 0;
+    }
+  }
+
   &_header {
     display: flex;
     align-items: center;
@@ -1069,6 +1107,10 @@ p {
       align-items: flex-start;
       margin-bottom: $base * 10;
       gap: $base * 8;
+    }
+
+    @media (max-width: $breakpoints-xs-max) {
+      padding: 0;
     }
   }
 
@@ -1091,6 +1133,10 @@ p {
 
   &_catalog {
     margin-bottom: $base * 20;
+
+    &__mobile {
+      display: none;
+    }
 
     @media (max-width: $breakpoints-md-max) {
       margin-bottom: $base * 10;
@@ -1344,9 +1390,6 @@ p {
       flex-direction: column;
       row-gap: $base * 10;
     }
-  }
-
-  &_social {
   }
 
   &_title {

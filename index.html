@@ -71,8 +71,9 @@
         <div class="section-barf_image">
           <img src="img/barf.jpg" alt="dog eats">
         </div>
-
       </div>
+
+      <!-- compositions for screen width >= sm -->
       <div class="section-barf_compositions section-barf_compositions__desktop">
         <div class="composition composition_adult">
           <h5 class="composition_title">Для взрослых</h5>
@@ -100,6 +101,7 @@
         </div>
       </div>
 
+      <!-- compositions for xs screen width (with swiper)-->
       <div class="swiper section-barf_compositions section-barf_compositions__mobile">
         <div class="swiper-wrapper composition_swiper-wrapper">
           <div class="swiper-slide composition composition_adult">
@@ -143,7 +145,9 @@
           рационы ZOOOV. Вы сможете заказать полноценное питание исходя из возраста, веса и даже вкусовых предпочтений
           вашего друга. ZOOOV заботится о каждой собаке.</p>
       </div>
-      <ul class="catalog section-rations_catalog">
+
+      <!-- catalog for screen width >= sm -->
+      <ul class="catalog section-rations_catalog section-rations_catalog__desktop">
         <li class="catalog_item">
           <img class="catalog_item-image" src="img/catalog-image1.png" alt="">
           <h4 class="catalog_item-title">Для взрослых собак</h4>
@@ -177,6 +181,46 @@
           <button class="button button__secondary catalog_item-button">Заказать</button>
         </li>
       </ul>
+
+      <!-- catalog xs screen width (with swiper) -->
+      <div class="section-rations_catalog section-rations_catalog__mobile swiper">
+        <ul class="catalog swiper-wrapper">
+          <li class="catalog_item swiper-slide">
+            <img class="catalog_item-image" src="img/catalog-image1.png" alt="">
+            <h4 class="catalog_item-title">Для взрослых собак</h4>
+            <p class="catalog_item-category catalog_item-category__turkey">Индейка/Говядина</p>
+            <p class="catalog_item-text">Подходит для ежедневного кормления. Богат животными белками и Омега-3.</p>
+            <p class="catalog_item-parameters">700г / 500г / 300г / 150г / 100г</p>
+            <button class="button button__secondary catalog_item-button">Заказать</button>
+          </li>
+          <li class="catalog_item swiper-slide">
+            <img class="catalog_item-image" src="img/catalog-image2.png" alt="">
+            <h4 class="catalog_item-title">Для щенков</h4>
+            <p class="catalog_item-category catalog_item-category__turkey">Индейка/Говядина</p>
+            <p class="catalog_item-text">Подходит для ежедневного кормления. Богат животными белками и Омега-3.</p>
+            <p class="catalog_item-parameters">700г / 500г / 300г / 150г / 100г</p>
+            <button class="button button__secondary catalog_item-button">Заказать</button>
+          </li>
+          <li class="catalog_item swiper-slide">
+            <img class="catalog_item-image" src="img/catalog-image3.png" alt="">
+            <h4 class="catalog_item-title">Для взрослых собак</h4>
+            <p class="catalog_item-category catalog_item-category__mutton">Баранина/Кролик</p>
+            <p class="catalog_item-text">Подходит для ежедневного кормления. Богат животными белками и Омега-3.</p>
+            <p class="catalog_item-parameters">700г / 500г / 300г / 150г / 100г</p>
+            <button class="button button__secondary catalog_item-button">Заказать</button>
+          </li>
+          <li class="catalog_item swiper-slide">
+            <img class="catalog_item-image" src="img/catalog-image4.png" alt="">
+            <h4 class="catalog_item-title">Для щенков</h4>
+            <p class="catalog_item-category catalog_item-category__mutton">Баранина/Кролик</p>
+            <p class="catalog_item-text">Подходит для ежедневного кормления. Богат животными белками и Омега-3.</p>
+            <p class="catalog_item-parameters">700г / 500г / 300г / 150г / 100г</p>
+            <button class="button button__secondary catalog_item-button">Заказать</button>
+          </li>
+        </ul>
+        <div class="swiper-pagination"></div>
+      </div>
+
       <div class="section-rations_count">
         <p class="section-rations_count-text">Рассчитаем в каком количестве нужно кормить вашего хвостика рационами
           Zooov</p>
@@ -526,7 +570,7 @@
       <a href="#" class="footer_text footer_link">Политика конфеденциальности</a>
     </div>
   </footer>
-  <!-- / FOOTER -->
+  <!--/ FOOTER -->
 
   <!-- <script src="https://cdn.jsdelivr.net/npm/seamless-scroll-polyfill@2.1.6/lib/bundle.min.js"></script> -->
   <script src="js/script.js"></script>

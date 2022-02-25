@@ -10,6 +10,8 @@ const body = document.querySelector('body'),
       accordionHeaders = document.querySelectorAll('.accordion_header'),
       compositionsDesktop = document.querySelector('.section-barf_compositions__desktop'),
       compositionsMobile = document.querySelector('.section-barf_compositions__mobile'),
+      catalogDesktop = document.querySelector('.section-rations_catalog__desktop'),
+      catalogMobile = document.querySelector('.section-rations_catalog__mobile'),
       catalogPopup = document.querySelector('.popup__catalog'),
       countPopup = document.querySelector('.popup__count'),
       popupHeader = document.querySelector('.popup_header'),
@@ -17,7 +19,7 @@ const body = document.querySelector('body'),
       popupOrder = document.querySelector('.popup_description__order'),
       popupThanks = document.querySelector('.popup_description__thanks');
 
-let swiper = new Swiper('.swiper', {
+const compositionSwiper = new Swiper('.section-barf_compositions__mobile', {
   direction: 'horizontal',
   loop: false,
 
@@ -26,12 +28,24 @@ let swiper = new Swiper('.swiper', {
   }
 });
 
+const catalogSwiper = new Swiper('.section-rations_catalog__mobile', {  
+  slidesPerView: "auto",
+  spaceBetween: 20,
+
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+});
+
 window.addEventListener('DOMContentLoaded', () => {
   showCompositions();
+  showCatalog()
 })
 
 window.addEventListener('resize', () => {
   showCompositions();
+  showCatalog()
 })
 
 window.addEventListener('scroll', () => {
@@ -145,6 +159,16 @@ function showCompositions() {
   } else {    
     compositionsDesktop.style.display = "none";
     compositionsMobile.style.display = "flex";
+  }
+}
+
+function showCatalog() {
+  if (document.documentElement.clientWidth >= 575.98) {
+    catalogMobile.style.display = "none";
+    catalogDesktop.style.display = "flex";
+  } else {    
+    catalogDesktop.style.display = "none";
+    catalogMobile.style.display = "flex";
   }
 }
 
