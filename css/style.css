@@ -366,10 +366,54 @@ p {
   border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
+.form-field__dark:focus {
+  outline: none;
+  -webkit-box-shadow: 0 0 0 2px #ec7973;
+          box-shadow: 0 0 0 2px #ec7973;
+}
+
+.form-field__dark::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.form-field__dark:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.form-field__dark::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.form-field__dark::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
 .form-field__light {
   color: #000000;
   background: #f4f5f5;
   border: none;
+}
+
+.form-field__light:focus {
+  outline: none;
+  -webkit-box-shadow: 0 0 0 2px #9f9e9d;
+          box-shadow: 0 0 0 2px #9f9e9d;
+}
+
+.form-field__light::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.form-field__light:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.form-field__light::-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.form-field__light::placeholder {
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .form-label {
@@ -916,8 +960,15 @@ p {
 
 .section-hero_title {
   position: relative;
+  width: 45%;
   z-index: 0;
   margin-bottom: 0.75rem;
+}
+
+@media (max-width: 991.98px) {
+  .section-hero_title {
+    width: 65%;
+  }
 }
 
 .section-hero_outline {
@@ -939,9 +990,16 @@ p {
 }
 
 .section-hero_text {
+  width: 35%;
   font-size: 1.25rem;
   line-height: 140%;
   margin-bottom: 1.5rem;
+}
+
+@media (max-width: 991.98px) {
+  .section-hero_text {
+    width: 60%;
+  }
 }
 
 .section-hero:after {
@@ -1335,6 +1393,7 @@ p {
   height: 2rem;
   top: 70%;
   left: 95%;
+  z-index: 1;
 }
 
 .section-zooov .features_item:nth-child(1):before {
@@ -1392,6 +1451,7 @@ p {
 }
 
 .section-about_image {
+  position: relative;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -1399,6 +1459,28 @@ p {
 
 .section-about_image img {
   width: 100%;
+}
+
+.section-about_image::before {
+  content: "";
+  width: 30%;
+  height: 22%;
+  position: absolute;
+  bottom: 12%;
+  left: -10%;
+  background: url("../img/about-dog.png") no-repeat center;
+  background-size: contain;
+}
+
+.section-about_image::after {
+  content: "";
+  width: 22%;
+  height: 18%;
+  position: absolute;
+  top: 38%;
+  right: 3%;
+  background: url("../img/about-heart.png") no-repeat center;
+  background-size: contain;
 }
 
 .section-about_main {
@@ -1519,11 +1601,23 @@ p {
 }
 
 .section-contacts {
+  position: relative;
   background-color: #961914;
-  background-image: url("../img/bg-contacts.png");
+  background-image: url("../img/bg-contacts-line1.svg"), url("../img/bg-contacts-line2.svg"), url("../img/bg-contacts-shine1.svg"), url("../img/bg-contacts-shine2.svg"), url("../img/bg-contacts-shine3.svg"), url("../img/bg-contacts-dog.png"), url("../img/bg-contacts-meat.png"), url("../img/bg-contacts-apple.png");
+  background-position: -8.75rem 85%, right -3.75rem top, 1.75rem 32%, left 36% bottom 50%, right 6.25rem top 55%, 43% 25%, left 38% bottom 30%, right 2% bottom;
   background-repeat: no-repeat;
-  background-position-y: 50%;
-  background-size: cover;
+}
+
+@media (max-width: 1399.98px) {
+  .section-contacts {
+    background-position: -8.75rem 120%, right -3.75rem top, 1.75rem 38%, left 36% bottom 50%, right 6.25rem top 55%, 43% 25%, left 38% bottom 30%, right 2% bottom;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .section-contacts {
+    background-position: -8.75rem 120%, right -10rem top -8.75rem, 1.75rem -1000%, left 36% bottom -1000%, right 1.25rem top 10rem, 95% 26%, right -10% top 45%, right 2% bottom;
+  }
 }
 
 .section-contacts .section-inner {
@@ -1540,6 +1634,16 @@ p {
         -ms-flex-direction: column;
             flex-direction: column;
     row-gap: 2.5rem;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .section-contacts .section-inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 4.5rem;
   }
 }
 
@@ -1645,8 +1749,8 @@ p {
   .section-contacts_form {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
-    -ms-grid-rows: 3rem 3rem 7.5rem 1fr 4rem;
-        grid-template-rows: 3rem 3rem 7.5rem 1fr 4rem;
+    -ms-grid-rows: 3rem 3rem 7.5rem 1.5rem 4rem;
+        grid-template-rows: 3rem 3rem 7.5rem 1.5rem 4rem;
   }
 }
 

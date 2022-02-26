@@ -410,12 +410,30 @@ p {
       color: $cl-white;
       background: rgba($cl-white, 0.05);
       border: 1px solid rgba($cl-white, 0.5);
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px $cl-red-400;
+      }
+
+      &::placeholder {
+        color: rgba($cl-white, 0.5);
+      }
     }
 
     &__light {
       color: $cl-black;
       background: $cl-gray-200;
       border: none;
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px $cl-gray-400;
+      }
+
+      &::placeholder {
+        color: rgba($cl-black, 0.5);
+      }
     }
   }
 
@@ -845,7 +863,6 @@ p {
 // === HERO ===
 .section-hero {
   color: $cl-white;
-
   background-image: url("../img/hero-background.jpg");
   background-repeat: no-repeat;
   background-position: top;
@@ -868,8 +885,13 @@ p {
 
   &_title {
     position: relative;
+    width: 45%;
     z-index: 0;
     margin-bottom: $base * 3;
+
+    @media (max-width: $breakpoints-md-max) {
+      width: 65%;
+    }
   }
 
   &_outline {
@@ -885,9 +907,14 @@ p {
   }
 
   &_text {
+    width: 35%;
     font-size: $fs-l;
     line-height: 140%;
     margin-bottom: $base * 6;
+
+    @media (max-width: $breakpoints-md-max) {
+      width: 60%;
+    }
   }
 
   &:after {
@@ -1208,6 +1235,7 @@ p {
     height: $base * 8;
     top: 70%;
     left: 95%;
+    z-index: 1;
   }
 
   .features_item {
@@ -1256,10 +1284,33 @@ p {
   }
 
   &_image {
+    position: relative;
     flex: 1;
 
     img {
       width: 100%;
+    }
+
+    &::before {
+      content: "";
+      width: 30%;
+      height: 22%;
+      position: absolute;
+      bottom: 12%;
+      left: -10%;
+      background: url("../img/about-dog.png") no-repeat center;
+      background-size: contain;
+    }
+
+    &::after {
+      content: "";
+      width: 22%;
+      height: 18%;
+      position: absolute;
+      top: 38%;
+      right: 3%;
+      background: url("../img/about-heart.png") no-repeat center;
+      background-size: contain;
     }
   }
 
@@ -1378,11 +1429,29 @@ p {
 
 // === CONTACTS ===
 .section-contacts {
+  position: relative;
   background-color: $cl-red-500;
-  background-image: url("../img/bg-contacts.png");
+  background-image: url("../img/bg-contacts-line1.svg"),
+    url("../img/bg-contacts-line2.svg"), url("../img/bg-contacts-shine1.svg"),
+    url("../img/bg-contacts-shine2.svg"), url("../img/bg-contacts-shine3.svg"),
+    url("../img/bg-contacts-dog.png"), url("../img/bg-contacts-meat.png"),
+    url("../img/bg-contacts-apple.png");
+  background-position: $base * -35 85%, right $base * -15 top, $base * 7 32%,
+    left 36% bottom 50%, right $base * 25 top 55%, 43% 25%, left 38% bottom 30%,
+    right 2% bottom;
   background-repeat: no-repeat;
-  background-position-y: 50%;
-  background-size: cover;
+
+  @media (max-width: $breakpoints-xl-max) {
+    background-position: $base * -35 120%, right $base * -15 top, $base * 7 38%,
+      left 36% bottom 50%, right $base * 25 top 55%, 43% 25%,
+      left 38% bottom 30%, right 2% bottom;
+  }
+
+  @media (max-width: $breakpoints-md-max) {
+    background-position: $base * -35 120%, right $base * -40 top $base * -35,
+      $base * 7 -1000%, left 36% bottom -1000%, right $base * 5 top $base * 40,
+      95% 26%, right -10% top 45%, right 2% bottom;
+  }
 
   .section-inner {
     display: flex;
@@ -1391,6 +1460,11 @@ p {
     @media (max-width: $breakpoints-md-max) {
       flex-direction: column;
       row-gap: $base * 10;
+    }
+
+    @media (max-width: $breakpoints-md-max) {
+      flex-direction: column;
+      row-gap: $base * 18;
     }
   }
 
@@ -1463,7 +1537,7 @@ p {
 
     @media (max-width: $breakpoints-xs-max) {
       grid-template-columns: 1fr;
-      grid-template-rows: $base * 12 $base * 12 $base * 30 1fr $base * 16;
+      grid-template-rows: $base * 12 $base * 12 $base * 30 $base * 6 $base * 16;
     }
 
     &-email {
