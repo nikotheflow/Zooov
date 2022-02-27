@@ -15,7 +15,8 @@
   <!-- HEADER -->
   <section class="section-outer section-header">
     <div class="section-inner">
-      <a class="logo section-header_logo" href="#"><img class="logo-image" src="img/logo.png" alt="logo"></a>
+      <a class="logo section-header_logo" href="#"><img class="logo-image anchor" href="#hero" src="img/logo.png"
+          alt="logo"></a>
       <button class="button button__burger">
         <svg width="29" height="18" viewBox="0 0 29 18" xmlns="http://www.w3.org/2000/svg">
           <path
@@ -24,13 +25,13 @@
       </button>
       <nav class="nav">
         <ul class="nav-wrapper">
-          <li class="nav-wrapper_item"><a class="nav-wrapper_link" href="#barf">BARF</a></li>
-          <li class="nav-wrapper_item"><a class="nav-wrapper_link" href="#rations">Рационы</a></li>
-          <li class="nav-wrapper_item"><a class="nav-wrapper_link" href="#zooov">ZOOOV</a></li>
-          <li class="nav-wrapper_item"><a class="nav-wrapper_link" href="#about">О нас</a></li>
-          <li class="nav-wrapper_item"><a class="nav-wrapper_link" href="#delivery">Доставка</a></li>
-          <li class="nav-wrapper_item"><a class="nav-wrapper_link" href="#faq">FAQ</a></li>
-          <li class="nav-wrapper_item"><a class="nav-wrapper_link" href="#contacts">Контакты</a></li>
+          <li class="nav-wrapper_item"><a class="nav-wrapper_link anchor" href="#barf">BARF</a></li>
+          <li class="nav-wrapper_item"><a class="nav-wrapper_link anchor" href="#rations">Рационы</a></li>
+          <li class="nav-wrapper_item"><a class="nav-wrapper_link anchor" href="#zooov">ZOOOV</a></li>
+          <li class="nav-wrapper_item"><a class="nav-wrapper_link anchor" href="#about">О нас</a></li>
+          <li class="nav-wrapper_item"><a class="nav-wrapper_link anchor" href="#delivery">Доставка</a></li>
+          <li class="nav-wrapper_item"><a class="nav-wrapper_link anchor" href="#faq">FAQ</a></li>
+          <li class="nav-wrapper_item"><a class="nav-wrapper_link anchor" href="#contacts">Контакты</a></li>
         </ul>
       </nav>
     </div>
@@ -38,7 +39,7 @@
   <!-- / HEADER -->
 
   <!-- HERO -->
-  <section class="section-outer section-hero">
+  <section class="section-outer section-hero" id="hero">
     <div class="section-inner">
       <h1 class="section-hero_title">Питание,<br> которое <span class="section-hero_outline">полюбит</span>
         <nobr>ваш
@@ -47,7 +48,7 @@
       <p class="section-hero_text">Натуральные рационы питания для собак
         по системе BARF
       </p>
-      <button class="button button__primary section-hero_button">Выбрать рацион</button>
+      <a class="button button__primary section-hero_button anchor" href="#rations">Выбрать рацион</a>
     </div>
   </section>
   <!-- / HERO -->
@@ -153,35 +154,52 @@
       <!-- catalog for screen width >= sm -->
       <ul class="catalog section-rations_catalog section-rations_catalog__desktop">
         <li class="catalog_item">
-          <img class="catalog_item-image" src="img/catalog-image1.png" alt="">
-          <h4 class="catalog_item-title">Для взрослых собак</h4>
-          <p class="catalog_item-category catalog_item-category__turkey">Индейка/Говядина</p>
-          <p class="catalog_item-text">Подходит для ежедневного кормления. Богат животными белками и Омега-3.</p>
-          <p class="catalog_item-parameters">700г / 500г / 300г / 150г / 100г</p>
-          <button class="button button__secondary catalog_item-button">Заказать</button>
+          <div class="catalog_item-top">
+            <img class="catalog_item-image" src="img/catalog-image1.png" alt="">
+            <h4 class="catalog_item-title">Для взрослых собак</h4>
+            <p class="catalog_item-category catalog_item-category__turkey">Индейка/Говядина</p>
+            <p class="catalog_item-text">Основной и самый популярный рацион для взрослых собак от 1 года.</p>
+          </div>
+          <div class="catalog_item-bottom">
+            <p class="catalog_item-parameters">700г / 500г / 300г / 150г / 100г</p>
+            <button class="button button__secondary catalog_item-button">Заказать</button>
+          </div>
         </li>
         <li class="catalog_item">
-          <img class="catalog_item-image" src="img/catalog-image2.png" alt="">
-          <h4 class="catalog_item-title">Для щенков</h4>
-          <p class="catalog_item-category catalog_item-category__turkey">Индейка/Говядина</p>
-          <p class="catalog_item-text">Подходит для ежедневного кормления. Богат животными белками и Омега-3.</p>
-          <p class="catalog_item-parameters">700г / 500г / 300г / 150г / 100г</p>
-          <button class="button button__secondary catalog_item-button">Заказать</button>
+          <div class="catalog_item-top">
+            <img class="catalog_item-image" src="img/catalog-image2.png" alt="">
+            <h4 class="catalog_item-title">Для щенков</h4>
+            <p class="catalog_item-category catalog_item-category__turkey">Индейка/Говядина</p>
+            <p class="catalog_item-text">Основной рацион для щенков с 3-х недельного возраста.</p>
+          </div>
+          <div class="catalog_item-bottom">
+            <p class="catalog_item-parameters">700г / 500г / 300г / 150г / 100г</p>
+            <button class="button button__secondary catalog_item-button">Заказать</button>
+          </div>
         </li>
         <li class="catalog_item">
-          <img class="catalog_item-image" src="img/catalog-image3.png" alt="">
-          <h4 class="catalog_item-title">Для взрослых собак</h4>
-          <p class="catalog_item-category catalog_item-category__mutton">Баранина/Кролик</p>
-          <p class="catalog_item-text">Подходит для ежедневного кормления. Богат животными белками и Омега-3.</p>
-          <p class="catalog_item-parameters">700г / 500г / 300г / 150г / 100г</p>
-          <button class="button button__secondary catalog_item-button">Заказать</button>
+          <div class="catalog_item-top">
+            <img class="catalog_item-image" src="img/catalog-image3.png" alt="">
+            <h4 class="catalog_item-title">Для взрослых собак</h4>
+            <p class="catalog_item-category catalog_item-category__mutton">Баранина/Кролик</p>
+            <p class="catalog_item-text">Для собак с чувствительным пищеварением и склонностью к аллергии.</p>
+          </div>
+          <div class="catalog_item-bottom">
+            <p class="catalog_item-parameters">700г / 500г / 300г / 150г / 100г</p>
+            <button class="button button__secondary catalog_item-button">Заказать</button>
+          </div>
         </li>
         <li class="catalog_item">
-          <img class="catalog_item-image" src="img/catalog-image4.png" alt="">
-          <h4 class="catalog_item-title">Для щенков</h4>
-          <p class="catalog_item-category catalog_item-category__mutton">Баранина/Кролик</p>
-          <p class="catalog_item-text">Подходит для ежедневного кормления. Богат животными белками и Омега-3.</p>
-          <p class="catalog_item-parameters">700г / 500г / 300г / 150г / 100г</p>
+          <div class="catalog_item-top">
+            <img class="catalog_item-image" src="img/catalog-image4.png" alt="">
+            <h4 class="catalog_item-title">Для щенков</h4>
+            <p class="catalog_item-category catalog_item-category__mutton">Баранина/Кролик</p>
+            <p class="catalog_item-text">Для щенков с 3-х недельного возраста с чувствительным пищеварением и
+              склонностью к аллергии.</p>
+          </div>
+          <div class="catalog_item-bottom">
+            <p class="catalog_item-parameters">700г / 500г / 300г / 150г / 100г</p>
+          </div>
           <button class="button button__secondary catalog_item-button">Заказать</button>
         </li>
       </ul>
@@ -190,36 +208,53 @@
       <div class="section-rations_catalog section-rations_catalog__mobile swiper">
         <ul class="catalog swiper-wrapper">
           <li class="catalog_item swiper-slide">
-            <img class="catalog_item-image" src="img/catalog-image1.png" alt="">
-            <h4 class="catalog_item-title">Для взрослых собак</h4>
-            <p class="catalog_item-category catalog_item-category__turkey">Индейка/Говядина</p>
-            <p class="catalog_item-text">Подходит для ежедневного кормления. Богат животными белками и Омега-3.</p>
-            <p class="catalog_item-parameters">700г / 500г / 300г / 150г / 100г</p>
-            <button class="button button__secondary catalog_item-button">Заказать</button>
+            <div class="catalog_item-top">
+              <img class="catalog_item-image" src="img/catalog-image1.png" alt="">
+              <h4 class="catalog_item-title">Для взрослых собак</h4>
+              <p class="catalog_item-category catalog_item-category__turkey">Индейка/Говядина</p>
+              <p class="catalog_item-text">Основной и самый популярный рацион для взрослых собак от 1 года.</p>
+            </div>
+            <div class="catalog_item-bottom">
+              <p class="catalog_item-parameters">700г / 500г / 300г / 150г / 100г</p>
+              <button class="button button__secondary catalog_item-button">Заказать</button>
+            </div>
           </li>
           <li class="catalog_item swiper-slide">
-            <img class="catalog_item-image" src="img/catalog-image2.png" alt="">
-            <h4 class="catalog_item-title">Для щенков</h4>
-            <p class="catalog_item-category catalog_item-category__turkey">Индейка/Говядина</p>
-            <p class="catalog_item-text">Подходит для ежедневного кормления. Богат животными белками и Омега-3.</p>
-            <p class="catalog_item-parameters">700г / 500г / 300г / 150г / 100г</p>
-            <button class="button button__secondary catalog_item-button">Заказать</button>
+            <div class="catalog_item-top">
+              <img class="catalog_item-image" src="img/catalog-image2.png" alt="">
+              <h4 class="catalog_item-title">Для щенков</h4>
+              <p class="catalog_item-category catalog_item-category__turkey">Индейка/Говядина</p>
+              <p class="catalog_item-text">Основной рацион для щенков с 3-х недельного возраста.</p>
+            </div>
+            <div class="catalog_item-bottom">
+              <p class="catalog_item-parameters">700г / 500г / 300г / 150г / 100г</p>
+              <button class="button button__secondary catalog_item-button">Заказать</button>
+            </div>
           </li>
           <li class="catalog_item swiper-slide">
-            <img class="catalog_item-image" src="img/catalog-image3.png" alt="">
-            <h4 class="catalog_item-title">Для взрослых собак</h4>
-            <p class="catalog_item-category catalog_item-category__mutton">Баранина/Кролик</p>
-            <p class="catalog_item-text">Подходит для ежедневного кормления. Богат животными белками и Омега-3.</p>
-            <p class="catalog_item-parameters">700г / 500г / 300г / 150г / 100г</p>
-            <button class="button button__secondary catalog_item-button">Заказать</button>
+            <div class="catalog_item-top">
+              <img class="catalog_item-image" src="img/catalog-image3.png" alt="">
+              <h4 class="catalog_item-title">Для взрослых собак</h4>
+              <p class="catalog_item-category catalog_item-category__mutton">Баранина/Кролик</p>
+              <p class="catalog_item-text">Для собак с чувствительным пищеварением и склонностью к аллергии.</p>
+            </div>
+            <div class="catalog_item-bottom">
+              <p class="catalog_item-parameters">700г / 500г / 300г / 150г / 100г</p>
+              <button class="button button__secondary catalog_item-button">Заказать</button>
+            </div>
           </li>
           <li class="catalog_item swiper-slide">
-            <img class="catalog_item-image" src="img/catalog-image4.png" alt="">
-            <h4 class="catalog_item-title">Для щенков</h4>
-            <p class="catalog_item-category catalog_item-category__mutton">Баранина/Кролик</p>
-            <p class="catalog_item-text">Подходит для ежедневного кормления. Богат животными белками и Омега-3.</p>
-            <p class="catalog_item-parameters">700г / 500г / 300г / 150г / 100г</p>
-            <button class="button button__secondary catalog_item-button">Заказать</button>
+            <div class="catalog_item-top">
+              <img class="catalog_item-image" src="img/catalog-image4.png" alt="">
+              <h4 class="catalog_item-title">Для щенков</h4>
+              <p class="catalog_item-category catalog_item-category__mutton">Баранина/Кролик</p>
+              <p class="catalog_item-text">Для щенков с 3-х недельного возраста с чувствительным пищеварением и
+                склонностью к аллергии.</p>
+            </div>
+            <div class="catalog_item-bottom">
+              <p class="catalog_item-parameters">700г / 500г / 300г / 150г / 100г</p>
+              <button class="button button__secondary catalog_item-button">Заказать</button>
+            </div>
           </li>
         </ul>
         <div class="swiper-pagination"></div>
@@ -524,7 +559,7 @@
             телефону</nobr>
           <nobr>или в мессенджерах</nobr>
         </p>
-        <a class="section-contacts_phone section-contacts_text" href="tel:+79000000000">+7 (900) 000-00-00</a>
+        <a class="section-contacts_phone section-contacts_text" href="tel:+79000000000">+7 (800) 555-35-35</a>
         <div class="section-contacts_buttons">
           <button class="button button__social section-contacts_button">
             <img src="img/logo-whatsapp.svg" alt="whatsapp logo">
@@ -554,8 +589,8 @@
             <input class="form-checkbox form-checkbox__dark section-contacts_form-checkbox" type="checkbox"
               id="agree_checkbox" checked="checked">
             <label class="form-label form-label__checkbox section-contacts_form-checkbox-label section-contacts_text"
-              for="agree_checkbox">Даю согласие
-              на обработку персональных данных
+              for="agree_checkbox"><span>Даю согласие
+                на обработку <nobr>персональных данных</nobr></span>
             </label>
           </div>
           <button class="button section-contacts_form-button">Отправить</button>

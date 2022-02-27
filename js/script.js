@@ -1,6 +1,6 @@
 const body = document.querySelector('body'),
       header = document.querySelector('.section-header'),
-      anchors = document.querySelectorAll('.nav-wrapper_link'),
+      anchors = document.querySelectorAll('.anchor'),
       catalogImages = document.querySelectorAll('.catalog_item-image'),
       catalogTitles = document.querySelectorAll('.catalog_item-title'),
       confirmOrderButton = document.querySelector('.confirm-order-button'),

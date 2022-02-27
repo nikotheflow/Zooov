@@ -4,7 +4,7 @@ html {
   scroll-padding-top: 76px;
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 1399.98px) {
   html {
     font-size: 14px;
   }
@@ -26,10 +26,17 @@ body {
 }
 
 .section-inner {
-  max-width: 1200px;
+  max-width: 75rem;
   padding-top: 5rem;
   padding-bottom: 5rem;
   margin: 0 auto;
+}
+
+@media (max-width: 991.98px) {
+  .section-inner {
+    padding-top: 3.75rem;
+    padding-bottom: 3.75rem;
+  }
 }
 
 h1,
@@ -85,6 +92,11 @@ p {
 .logo-image {
   width: 100%;
   height: 100%;
+  border: none;
+}
+
+.logo-image:active, .logo-image:hover {
+  border: none;
 }
 
 .link {
@@ -215,7 +227,7 @@ p {
 
 @media (max-width: 991.98px) {
   .features {
-    row-gap: 40px;
+    row-gap: 2.5rem;
   }
 }
 
@@ -316,8 +328,8 @@ p {
           justify-content: space-between;
   padding: 2rem 0;
   cursor: pointer;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .accordion_title {
@@ -334,15 +346,15 @@ p {
   cursor: pointer;
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .accordion_content {
   max-height: 0;
   overflow: hidden;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .accordion_text {
@@ -516,6 +528,16 @@ p {
   -ms-flex-preferred-size: 23%;
       flex-basis: 23%;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 @media (max-width: 991.98px) {
@@ -1002,6 +1024,19 @@ p {
   }
 }
 
+.section-hero_button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+}
+
 .section-hero:after {
   width: 20vh;
   height: 40vh;
@@ -1033,14 +1068,14 @@ p {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    padding-top: 3.75rem;
     padding-bottom: 0;
   }
 }
 
 .section-barf_description {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
 }
 
 @media (max-width: 991.98px) {
@@ -1049,9 +1084,18 @@ p {
   }
 }
 
+.section-barf_image {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  width: 100%;
+}
+
 @media (max-width: 991.98px) {
   .section-barf_image {
-    width: 100%;
+    -webkit-box-flex: 1;
+        -ms-flex: auto;
+            flex: auto;
     height: 20rem;
   }
 }
@@ -1228,11 +1272,11 @@ p {
     padding: 0;
   }
   .section-rations .section-inner div:not(.section-rations_catalog) {
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
   }
   .section-rations .section-rations_catalog {
-    padding: 0 20px;
+    padding: 0 1.25rem;
   }
   .section-rations .swiper-pagination {
     margin-left: 0;
@@ -1373,6 +1417,12 @@ p {
   padding-bottom: 10rem;
 }
 
+@media (max-width: 991.98px) {
+  .section-zooov .section-inner {
+    padding-bottom: 5rem;
+  }
+}
+
 .section-zooov_title {
   margin-bottom: 3.75rem;
 }
@@ -1436,7 +1486,7 @@ p {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  gap: 2%;
+  gap: 4%;
   margin-bottom: 5rem;
 }
 
@@ -1447,6 +1497,7 @@ p {
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
     row-gap: 1rem;
+    margin-bottom: 0;
   }
 }
 
@@ -1503,6 +1554,17 @@ p {
 
 .section-delivery_title {
   margin-bottom: 5rem;
+}
+
+@media (max-width: 991.98px) {
+  .section-delivery_title {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    row-gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
 }
 
 .section-delivery .features {
@@ -1610,13 +1672,15 @@ p {
 
 @media (max-width: 1399.98px) {
   .section-contacts {
-    background-position: -8.75rem 120%, right -3.75rem top, 1.75rem 38%, left 36% bottom 50%, right 6.25rem top 55%, 43% 25%, left 38% bottom 30%, right 2% bottom;
+    background-position: -8.75rem 120%, right -3.75rem top, 1.75rem 24%, left 36% bottom 52%, right 6.25rem top 68%, 43% 25%, left 38% bottom 30%, right 2% bottom;
   }
 }
 
-@media (max-width: 991.98px) {
+@media (max-width: 575.98px) {
   .section-contacts {
-    background-position: -8.75rem 120%, right -10rem top -8.75rem, 1.75rem -1000%, left 36% bottom -1000%, right 1.25rem top 10rem, 95% 26%, right -10% top 45%, right 2% bottom;
+    background-image: url("../img/bg-contacts-line1.svg"), url("../img/bg-contacts-line2.svg"), url("../img/bg-contacts-line3.svg"), url("../img/bg-contacts-shine1.svg"), url("../img/bg-contacts-shine2.svg"), url("../img/bg-contacts-shine3.svg"), url("../img/bg-contacts-dog.png"), url("../img/bg-contacts-meat.png"), url("../img/bg-contacts-apple.png");
+    background-position: -8.75rem 1200%, right -7.5rem top -8%, bottom -8.75rem right -6.25rem, 1.75rem -1000%, left 36% bottom -1000%, right 1000% top 2.5rem, right 2% top 18%, right 5% top 38%, left 3% bottom 3.75rem;
+    background-size: auto, 50%, auto, auto, auto, 15%, auto, 30%, auto;
   }
 }
 
@@ -1637,13 +1701,10 @@ p {
   }
 }
 
-@media (max-width: 991.98px) {
+@media (max-width: 575.98px) {
   .section-contacts .section-inner {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
     row-gap: 4.5rem;
+    padding-bottom: 14rem;
   }
 }
 
@@ -1879,6 +1940,8 @@ p {
   white-space: nowrap;
 }
 
-.footer_link:not(:last-child) {
-  margin-bottom: 0.5rem;
+@media (max-width: 767.98px) {
+  .footer_link:not(:last-child) {
+    margin-bottom: 0.5rem;
+  }
 }

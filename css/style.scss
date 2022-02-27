@@ -79,6 +79,7 @@ $fs-xl: rem(28px);
 $fs-xxl: rem(46px);
 $fs-xxxl: rem(54px);
 
+$pv-xxs: $base * 5;
 $pv-xs: $base * 15;
 $pv-s: $base * 20;
 $pv-m: $base * 40;
@@ -108,7 +109,7 @@ $cl-black: #000000;
 html {
   scroll-padding-top: 76px;
 
-  @media (max-width: $breakpoints-sm-max) {
+  @media (max-width: $breakpoints-xl-max) {
     font-size: 14px;
   }
 }
@@ -128,10 +129,15 @@ body {
 }
 
 .section-inner {
-  max-width: 1200px;
+  max-width: $base * 300;
   padding-top: $pv-s;
   padding-bottom: $pv-s;
   margin: 0 auto;
+
+  @media (max-width: $breakpoints-md-max) {
+    padding-top: $pv-xs;
+    padding-bottom: $pv-xs;
+  }
 }
 
 h1,
@@ -187,6 +193,12 @@ p {
 .logo-image {
   width: 100%;
   height: 100%;
+  border: none;
+
+  &:active,
+  &:hover {
+    border: none;
+  }
 }
 
 .link {
@@ -285,7 +297,7 @@ p {
   flex-wrap: wrap;
 
   @media (max-width: $breakpoints-md-max) {
-    row-gap: 40px;
+    row-gap: $base * 10;
   }
 
   &_item {
@@ -367,7 +379,7 @@ p {
     justify-content: space-between;
     padding: $base * 8 0;
     cursor: pointer;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease;
   }
 
   &_title {
@@ -382,13 +394,13 @@ p {
     border: none;
     cursor: pointer;
     transform: rotate(0deg);
-    transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease;
   }
 
   &_content {
     max-height: 0;
     overflow: hidden;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease;
   }
 
   &_text {
@@ -521,6 +533,9 @@ p {
   &_item {
     flex-basis: 23%;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     @media (max-width: $breakpoints-md-max) {
       flex-basis: 31%;
@@ -831,33 +846,34 @@ p {
   @media (max-width: $breakpoints-md-max) {
     display: none;
   }
-}
 
-.nav-wrapper {
-  position: relative;
-  display: flex;
-  list-style: none;
-  padding: 0;
+  &-wrapper {
+    position: relative;
+    display: flex;
+    list-style: none;
+    padding: 0;
 
-  &_item {
-    white-space: nowrap;
+    &_item {
+      white-space: nowrap;
 
-    & + & {
-      margin-left: $base * 13;
+      & + & {
+        margin-left: $base * 13;
+      }
+    }
+
+    &_link {
+      font-weight: $fw-medium;
+      text-decoration: none;
+      color: $cl-white;
+
+      &:hover,
+      &--active {
+        border-bottom: $base/2 solid $cl-red-500;
+      }
     }
   }
-
-  &_link {
-    font-weight: $fw-medium;
-    text-decoration: none;
-    color: $cl-white;
-
-    &:hover,
-    &--active {
-      border-bottom: $base/2 solid $cl-red-500;
-    }
-  }
 }
+
 // === / HEADER ===
 
 // === HERO ===
@@ -917,6 +933,13 @@ p {
     }
   }
 
+  &_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+  }
+
   &:after {
     width: 20vh;
     height: 40vh;
@@ -944,12 +967,13 @@ p {
 
     @media (max-width: $breakpoints-md-max) {
       flex-direction: column;
+      padding-top: $pv-xs;
       padding-bottom: 0;
     }
   }
 
   &_description {
-    flex: 1;
+    flex-basis: 50%;
 
     @media (max-width: $breakpoints-md-max) {
       margin-bottom: $base * 6;
@@ -957,8 +981,11 @@ p {
   }
 
   &_image {
+    flex: 1;
+    width: 100%;
+
     @media (max-width: $breakpoints-md-max) {
-      width: 100%;
+      flex: auto;
       height: $base * 80;
     }
 
@@ -1111,12 +1138,12 @@ p {
     padding: 0;
 
     .section-inner div:not(.section-rations_catalog) {
-      margin-left: 20px;
-      margin-right: 20px;
+      margin-left: $base * 5;
+      margin-right: $base * 5;
     }
 
     .section-rations_catalog {
-      padding: 0 20px;
+      padding: 0 $base * 5;
     }
 
     .swiper-pagination {
@@ -1218,6 +1245,10 @@ p {
 
   .section-inner {
     padding-bottom: $pv-m;
+
+    @media (max-width: $breakpoints-md-max) {
+      padding-bottom: $pv-s;
+    }
   }
 
   &_title {
@@ -1274,12 +1305,13 @@ p {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 2%;
+    gap: 4%;
     margin-bottom: $base * 20;
 
     @media (max-width: $breakpoints-md-max) {
       flex-direction: column-reverse;
       row-gap: $base * 4;
+      margin-bottom: 0;
     }
   }
 
@@ -1337,6 +1369,12 @@ p {
 
   &_title {
     margin-bottom: $base * 20;
+
+    @media (max-width: $breakpoints-md-max) {
+      flex-direction: column-reverse;
+      row-gap: $base * 4;
+      margin-bottom: $base * 10;
+    }
   }
 
   .features {
@@ -1442,15 +1480,22 @@ p {
   background-repeat: no-repeat;
 
   @media (max-width: $breakpoints-xl-max) {
-    background-position: $base * -35 120%, right $base * -15 top, $base * 7 38%,
-      left 36% bottom 50%, right $base * 25 top 55%, 43% 25%,
+    background-position: $base * -35 120%, right $base * -15 top, $base * 7 24%,
+      left 36% bottom 52%, right $base * 25 top 68%, 43% 25%,
       left 38% bottom 30%, right 2% bottom;
   }
 
-  @media (max-width: $breakpoints-md-max) {
-    background-position: $base * -35 120%, right $base * -40 top $base * -35,
-      $base * 7 -1000%, left 36% bottom -1000%, right $base * 5 top $base * 40,
-      95% 26%, right -10% top 45%, right 2% bottom;
+  @media (max-width: $breakpoints-xs-max) {
+    background-image: url("../img/bg-contacts-line1.svg"),
+      url("../img/bg-contacts-line2.svg"), url("../img/bg-contacts-line3.svg"),
+      url("../img/bg-contacts-shine1.svg"), url("../img/bg-contacts-shine2.svg"),
+      url("../img/bg-contacts-shine3.svg"), url("../img/bg-contacts-dog.png"),
+      url("../img/bg-contacts-meat.png"), url("../img/bg-contacts-apple.png");
+    background-position: $base * -35 1200%, right $base * -30 top -8%,
+      bottom $base * -35 right $base * -25, $base * 7 -1000%,
+      left 36% bottom -1000%, right 1000% top $base * 10, right 2% top 18%,
+      right 5% top 38%, left 3% bottom $base * 15;
+    background-size: auto, 50%, auto, auto, auto, 15%, auto, 30%, auto;
   }
 
   .section-inner {
@@ -1462,9 +1507,9 @@ p {
       row-gap: $base * 10;
     }
 
-    @media (max-width: $breakpoints-md-max) {
-      flex-direction: column;
+    @media (max-width: $breakpoints-xs-max) {
       row-gap: $base * 18;
+      padding-bottom: $pv-l;
     }
   }
 
@@ -1627,8 +1672,10 @@ p {
     text-decoration: none;
     white-space: nowrap;
 
-    &:not(:last-child) {
-      margin-bottom: $base * 2;
+    @media (max-width: $breakpoints-sm-max) {
+      &:not(:last-child) {
+        margin-bottom: $base * 2;
+      }
     }
   }
 }
