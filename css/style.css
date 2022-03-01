@@ -2,12 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@700&display=swap");
 html {
   scroll-padding-top: 76px;
-}
-
-@media (max-width: 1399.98px) {
-  html {
-    font-size: 14px;
-  }
+  font-size: 14px;
 }
 
 body {
@@ -206,6 +201,10 @@ p {
 .list_item:before {
   content: "●";
   color: #961914;
+}
+
+.lock {
+  overflow-y: hidden;
 }
 
 .features {
@@ -621,6 +620,8 @@ p {
 .popup {
   width: 100%;
   height: 100%;
+  top: 0;
+  left: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -631,10 +632,22 @@ p {
       -ms-flex-pack: center;
           justify-content: center;
   background-color: rgba(0, 0, 0, 0.5);
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   position: fixed;
-  top: 0;
   z-index: 100;
+}
+
+.popup_header {
+  display: block;
+}
+
+.popup_content {
+  position: relative;
+  padding: 3.75rem;
+  background: #ffffff;
+  -webkit-transition: all 0.8s;
+  transition: all 0.8s;
 }
 
 .popup__catalog {
@@ -679,14 +692,6 @@ p {
   opacity: 1;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
-}
-
-.popup_content {
-  position: relative;
-  padding: 3.75rem;
-  background: #ffffff;
-  -webkit-transition: all 0.8s;
-  transition: all 0.8s;
 }
 
 .popup_image {
@@ -821,6 +826,14 @@ p {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.popup_description__item-info {
+  display: block;
+}
+
+.popup_description__order, .popup_description__thanks {
+  display: none;
 }
 
 .popup .catalog_item-title {

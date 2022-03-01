@@ -5,8 +5,7 @@ const body = document.querySelector('body'),
       catalogTitles = document.querySelectorAll('.catalog_item-title'),
       confirmOrderButton = document.querySelector('.confirm-order-button'),
       countButton = document.querySelector('.section-rations_count-button'),
-      orderButtons = document.querySelectorAll('.catalog_item-button'),
-      popupCloseButtons = document.querySelectorAll('.popup_close-button'),
+      orderButtons = document.querySelectorAll('.catalog_item-button'),      
       accordionHeaders = document.querySelectorAll('.accordion_header'),
       compositionsDesktop = document.querySelector('.section-barf_compositions__desktop'),
       compositionsMobile = document.querySelector('.section-barf_compositions__mobile'),
@@ -18,6 +17,80 @@ const body = document.querySelector('body'),
       popupItem = document.querySelector('.popup_description__item-info'),
       popupOrder = document.querySelector('.popup_description__order'),
       popupThanks = document.querySelector('.popup_description__thanks');
+
+const popupLinks = document.querySelectorAll('.popup-link'),
+      lockPadding = document.querySelectorAll('.lock-padding'),
+      popupCloseButtons = document.querySelectorAll('.popup_close-button');
+
+const timeout = 200;
+
+if (popupLinks.length > 0) {
+  for (let index = 0; index < popupLinks.length; index++) {
+    const popupLink = popupLinks[index];
+    popupLink.addEventListener("click", function (e) {
+      const popupName = popupLink.dataset.popupClass;
+      const currentPopup = document.querySelector('.' + popupName);
+      openPopup(currentPopup);
+    })
+  }
+}
+
+if (popupCloseButtons.length > 0) {
+  for (let index = 0; index < popupCloseButtons.length; index++) {
+    const popupCloseButton = popupCloseButtons[index];
+    popupCloseButton.addEventListener('click', function () {
+      closePopup(popupCloseButton.closest('.popup'));
+    })
+  }
+}
+
+function openPopup(currentPopup) {
+  bodyLock();
+
+  currentPopup.classList.add('popup__open');
+  currentPopup.addEventListener('click', function (e) {
+    if (!e.target.closest('.popup_content')) {
+      closePopup(currentPopup);
+    }
+  })
+}
+
+function closePopup(currentPopup) {
+  bodyUnlock();
+
+  currentPopup.classList.remove('popup__open');
+}
+
+function bodyLock() {
+  const lockPaddingValue = window.innerWidth - document.documentElement.clientWidth + 'px';
+  
+  if (lockPadding.length > 0) {
+    for (let index = 0; index < lockPadding.length; index++) {
+      const el = lockPadding[index];
+      el.style.paddingRight = lockPaddingValue;
+    }
+  }
+
+  body.style.paddingRight = lockPaddingValue;
+  body.classList.add('lock');
+  //body.style.overflowY = 'hidden';
+}
+
+function bodyUnlock() {
+  setTimeout(function () {    
+    if (lockPadding.length > 0) {
+      for (let index = 0; index < lockPadding.length; index++) {
+        const el = lockPadding[index];
+        el.style.paddingRight = 0;
+      }
+    }
+    
+    body.style.paddingRight = 0;
+    body.classList.remove('lock');
+  }, timeout);
+}
+
+// create swipers
 
 const compositionSwiper = new Swiper('.section-barf_compositions__mobile', {
   direction: 'horizontal',
@@ -38,6 +111,9 @@ const catalogSwiper = new Swiper('.section-rations_catalog__mobile', {
   },
 });
 
+
+// add listeners
+
 window.addEventListener('DOMContentLoaded', () => {
   showCompositions();
   showCatalog()
@@ -56,51 +132,54 @@ window.addEventListener('scroll', () => {
   }
 })
 
-catalogImages.forEach((catalogImage) => {
-  catalogImage.addEventListener('click', () => {
-    openPopup(catalogPopup);
-    hideAllInfo();
-    showItemInfo();    
-  })
-})
-
-catalogTitles.forEach((catalogTitle) => {
-  catalogTitle.addEventListener('click', () => {
-    openPopup(catalogPopup);
-    hideAllInfo();
-    showItemInfo();    
-  })
-})
-
-orderButtons.forEach((button) => {
-  button.addEventListener('click', () => {
-    openPopup(catalogPopup);
-    hideAllInfo();
-    showOrderInfo();
-  })
-})
-
-confirmOrderButton.addEventListener('click', () => {
-  hideAllInfo();
-  showThanksInfo();   
-})
-
-countButton.addEventListener('click', () => {
-  openPopup(countPopup);
-})
-
-
-popupCloseButtons.forEach((button) => {
-  button.addEventListener('click', (e) => {    
-    let currentPopupClass = e.currentTarget.dataset.popupClass;
-    let currentPopup = document.querySelector(currentPopupClass);
-    closePopup(currentPopup);
-  })
-})
-
 accordionHeaders.forEach(header => header.addEventListener('click', toggleAccordion));
 
-//seamless.polyfill(); //smooth scroll for safari
+// catalogImages.forEach((catalogImage) => {
+//   catalogImage.addEventListener('click', () => {
+//     openPopup(catalogPopup);
+//     hideAllInfo();
+//     showItemInfo();    
+//   })
+// })
+
+// catalogTitles.forEach((catalogTitle) => {
+//   catalogTitle.addEventListener('click', () => {
+//     openPopup(catalogPopup);
+//     hideAllInfo();
+//     showItemInfo();    
+//   })
+// })
+
+// orderButtons.forEach((button) => {
+//   button.addEventListener('click', () => {
+//     openPopup(catalogPopup);
+//     hideAllInfo();
+//     showOrderInfo();
+//   })
+// })
+
+// confirmOrderButton.addEventListener('click', () => {
+//   hideAllInfo();
+//   showThanksInfo();   
+// })
+
+// countButton.addEventListener('click', () => {
+//   openPopup(countPopup);
+// })
+
+
+// popupCloseButtons.forEach((button) => {
+//   button.addEventListener('click', (e) => {    
+//     let currentPopupClass = e.currentTarget.dataset.popupClass;
+//     let currentPopup = document.querySelector(currentPopupClass);
+//     closePopup(currentPopup);
+//   })
+// })
+
+
+// anchors navigation
+
+// seamless.polyfill(); //smooth scroll for safari
 
 anchors.forEach((anchor) => {
   anchor.addEventListener('click', (e) => {
@@ -121,36 +200,39 @@ anchors.forEach((anchor) => {
   })
 })
 
-function openPopup(popup) {
-  popup.classList.add('popup__open');
-  body.style.overflow = 'hidden';
-}
+// function openPopup(popup) {
+//   popup.classList.add('popup__open');
+//   body.style.overflow = 'hidden';
+// }
 
-function closePopup(popup) {
-  popup.classList.remove('popup__open');
-  body.style.overflow = 'scroll';
-}
+// function closePopup(popup) {
+//   popup.classList.remove('popup__open');
+//   body.style.overflow = 'scroll';
+// }
 
-function hideAllInfo() {
-  popupHeader.style.display = "none";
-  popupItem.style.display = "none";
-  popupOrder.style.display = "none";
-  popupThanks.style.display = "none";
-}
+// function hideAllInfo() {
+//   popupHeader.style.display = "none";
+//   popupItem.style.display = "none";
+//   popupOrder.style.display = "none";
+//   popupThanks.style.display = "none";
+// }
 
-function showItemInfo() {
-  popupHeader.style.display = "block";
-  popupItem.style.display = "block";
-}
+// function showItemInfo() {
+//   popupHeader.style.display = "block";
+//   popupItem.style.display = "block";
+// }
 
-function showOrderInfo() {
-  popupHeader.style.display = "block";
-  popupOrder.style.display = "block";
-}
+// function showOrderInfo() {
+//   popupHeader.style.display = "block";
+//   popupOrder.style.display = "block";
+// }
 
-function showThanksInfo() {
-  popupThanks.style.display = "flex"; 
-}
+// function showThanksInfo() {
+//   popupThanks.style.display = "flex"; 
+// }
+
+
+// compositions and catalog sections variants for mobile and desktop
 
 function showCompositions() {
   if (document.documentElement.clientWidth >= 575.98) {
@@ -171,6 +253,7 @@ function showCatalog() {
     catalogMobile.style.display = "flex";
   }
 }
+
 
 function toggleAccordion() {
   let thisItem = this.parentNode;

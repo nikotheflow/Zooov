@@ -109,9 +109,9 @@ $cl-black: #000000;
 html {
   scroll-padding-top: 76px;
 
-  @media (max-width: $breakpoints-xl-max) {
-    font-size: 14px;
-  }
+  //@media (max-width: $breakpoints-xl-max) {
+  font-size: 14px;
+  //}
 }
 
 body {
@@ -287,6 +287,10 @@ p {
       color: $cl-red-500;
     }
   }
+}
+
+.lock {
+  overflow-y: hidden;
 }
 
 .features {
@@ -598,14 +602,27 @@ p {
 .popup {
   width: 100%;
   height: 100%;
+  top: 0;
+  left: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.5);
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   position: fixed;
-  top: 0;
   z-index: 100;
+
+  &_header {
+    display: block;
+  }
+
+  &_content {
+    position: relative;
+    padding: $pv-xs;
+    background: $cl-white;
+    transition: all 0.8s;
+  }
 
   &__catalog {
     visibility: hidden;
@@ -641,13 +658,6 @@ p {
       opacity: 1;
       transition: all 0.2s;
     }
-  }
-
-  &_content {
-    position: relative;
-    padding: $pv-xs;
-    background: $cl-white;
-    transition: all 0.8s;
   }
 
   &_image {
@@ -754,6 +764,14 @@ p {
       display: flex;
       flex-direction: column;
       justify-content: center;
+    }
+
+    &__item-info {
+      display: block;
+    }
+    &__order,
+    &__thanks {
+      display: none;
     }
   }
 
