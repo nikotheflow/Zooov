@@ -866,8 +866,6 @@ p {
   padding-top: 1rem;
   background-color: transparent;
   z-index: 100;
-  -webkit-transition: 0.1s;
-  transition: 0.1s;
 }
 
 .section-header .section-inner {
@@ -903,8 +901,6 @@ p {
   margin: 0;
   -webkit-box-shadow: 0 2px 10px rgba(122, 122, 122, 0.3);
           box-shadow: 0 2px 10px rgba(122, 122, 122, 0.3);
-  -webkit-transition: 0.1s;
-  transition: 0.1s;
 }
 
 .section-header__fixed .logo {

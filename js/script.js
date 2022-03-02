@@ -19,10 +19,13 @@ const body = document.querySelector('body'),
       popupThanks = document.querySelector('.popup_description__thanks');
 
 const popupLinks = document.querySelectorAll('.popup-link'),
+      contentLinks = document.querySelectorAll('.content-link'),
       lockPadding = document.querySelectorAll('.lock-padding'),
       popupCloseButtons = document.querySelectorAll('.popup_close-button');
 
-const timeout = 200;
+const timeout = 200; // time to open popup
+
+// popups
 
 if (popupLinks.length > 0) {
   for (let index = 0; index < popupLinks.length; index++) {
@@ -30,6 +33,7 @@ if (popupLinks.length > 0) {
     popupLink.addEventListener("click", function (e) {
       const popupName = popupLink.dataset.popupClass;
       const currentPopup = document.querySelector('.' + popupName);
+
       openPopup(currentPopup);
     })
   }
@@ -39,8 +43,34 @@ if (popupCloseButtons.length > 0) {
   for (let index = 0; index < popupCloseButtons.length; index++) {
     const popupCloseButton = popupCloseButtons[index];
     popupCloseButton.addEventListener('click', function () {
+
       closePopup(popupCloseButton.closest('.popup'));
     })
+  }
+}
+
+if (contentLinks.length > 0) {
+  for (let index = 0; index < contentLinks.length; index++) {
+    const contentLink = contentLinks[index];
+    contentLink.addEventListener('click', function () {
+      const popupContent = contentLink.dataset.popupContent;
+      checkContent(popupContent);
+    })
+  }
+}
+
+
+function checkContent(popupContent) {
+  hideAllInfo()
+  if (popupContent === 'item') {
+    popupHeader.style.display = "block";
+    popupItem.style.display = "block";
+    popupOrder.style.display = "none";
+  } else if (popupContent === 'order') {
+    popupHeader.style.display = "block";
+    popupOrder.style.display = "block";
+  } else if (popupContent === 'thanks') {
+    popupThanks.style.display = "flex"; 
   }
 }
 
@@ -61,6 +91,7 @@ function closePopup(currentPopup) {
   currentPopup.classList.remove('popup__open');
 }
 
+
 function bodyLock() {
   const lockPaddingValue = window.innerWidth - document.documentElement.clientWidth + 'px';
   
@@ -73,7 +104,6 @@ function bodyLock() {
 
   body.style.paddingRight = lockPaddingValue;
   body.classList.add('lock');
-  //body.style.overflowY = 'hidden';
 }
 
 function bodyUnlock() {
@@ -210,12 +240,12 @@ anchors.forEach((anchor) => {
 //   body.style.overflow = 'scroll';
 // }
 
-// function hideAllInfo() {
-//   popupHeader.style.display = "none";
-//   popupItem.style.display = "none";
-//   popupOrder.style.display = "none";
-//   popupThanks.style.display = "none";
-// }
+function hideAllInfo() {
+  popupHeader.style.display = "none";
+  popupItem.style.display = "none";
+  popupOrder.style.display = "none";
+  popupThanks.style.display = "none";
+}
 
 // function showItemInfo() {
 //   popupHeader.style.display = "block";
