@@ -64,11 +64,11 @@ function checkContent(popupContent) {
   hideAllInfo()
   if (popupContent === 'item') {
     popupHeader.style.display = "block";
-    popupItem.style.display = "block";
+    popupItem.style.display = "flex";
     popupOrder.style.display = "none";
   } else if (popupContent === 'order') {
     popupHeader.style.display = "block";
-    popupOrder.style.display = "block";
+    popupOrder.style.display = "flex";
   } else if (popupContent === 'thanks') {
     popupThanks.style.display = "flex"; 
   }

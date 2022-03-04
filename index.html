@@ -301,60 +301,67 @@
         <img class="popup_image" src="img/popup-image.png" alt="">
       </div>
 
-      <div class="popup_header">
-        <h4 class="popup_item-title catalog_item-title">Для взрослых собак</h4>
-        <p class="popup_item-category catalog_item-category">Баранина/Кролик</p>
+      <div class="popup_text-area">
+        <div class="popup_header">
+          <h4 class="popup_item-title catalog_item-title">Для взрослых собак</h4>
+          <p class="popup_item-category catalog_item-category">Баранина/Кролик</p>
+        </div>
+
+        <div class="popup_description__item-info popup_description">
+          <p class="popup_item-subtitle catalog_item-text">Подходит для ежедневного кормления. Богат животными белками и
+            Омега-3.</p>
+          <p class="popup_item-compound catalog_item-text"><b>Состав:</b> Мякоть баранины (46,5%), мясо кролика (23,5%),
+            кости кролика (10%), печень баранины (5%), почки бараньи (2,5%), рубец бараний (2,5%), кабачок (3%),
+            брокколи (3%), семена
+            конопли (2%), шпинат (1%), яблоко (1%), льняное масло, конопляное масло.</p>
+          <p class="popup_item-nutritional catalog_item-text"><b>Пищевая ценность на 100г:</b> 174.9 ккал, белки 16.45,
+            жиры 11.9, углеводы 0.60</p>
+          <p class="popup_item-parameters catalog_item-parameters">700г / 500г / 300г / 150г / 100г</p>
+          <button class="button button__secondary catalog_item-button content-link"
+            data-popup-content="order">Заказать</button>
+        </div>
+
+        <div class="popup_description__order popup_description">
+          <form class="popup_form popup-form popup-form-order" action="">
+            <input class="form-field form-field__light popup_form-field popup_form-field__full" type="text"
+              placeholder="Имя">
+            <input class="form-field form-field__light popup_form-field popup_form-field__full" type="tel"
+              placeholder="Телефон">
+            <input class="form-field form-field__light popup_form-field popup_form-field__full" type="text"
+              placeholder="Адрес">
+            <select class="form-field form-field__light popup_form-field popup_form-field__full" name="" id="">
+              <option class="form_option" value="700">700г</option>
+              <option class="form_option" value="500">500г</option>
+              <option class="form_option" value="300">300г</option>
+              <option class="form_option" value="150">150г</option>
+              <option class="form_option" value="100">100г</option>
+            </select>
+            <label class="form-label" for="quantity">Количество: </label>
+            <input class="form-field form-field__light popup_form-field popup_form-field__right" type="number"
+              id="quantity" name="quantity" min="1" max="10">
+          </form>
+          <div class="order_total">
+            <input class="form-checkbox form-checkbox__light" type="checkbox" id="popup-agree-checkbox"
+              checked="checked">
+            <label class="form-label form-label__checkbox popup_form-label" for="popup-agree-checkbox">Даю согласие
+              на обработку персональных данных</label>
+            <div class="order_confirm">
+              <p class="popup_price">828₽</p>
+              <button class="button button__secondary confirm-order-button content-link" data-popup-content="thanks"
+                type="button">Оформить заказ</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="popup_description__thanks popup_description">
+          <h2 class="popup_title">Спасибо!</h2>
+          <p class="popup_text">Ваш заказ оформлен и передан менеджеру. Мы свяжемся с вами для уточнения и подтверждения
+            в ближайшее время.</p>
+          <p class="popup_text">Если вы захотите дополнить свой заказ или уточнить какие-то детали – вы сможете это
+            сделать у оператора.</p>
+        </div>
       </div>
 
-      <div class="popup_description__item-info popup_description">
-        <p class="popup_item-subtitle catalog_item-text">Подходит для ежедневного кормления. Богат животными белками и
-          Омега-3.</p>
-        <p class="popup_item-compound catalog_item-text"><b>Состав:</b> Мякоть баранины (46,5%), мясо кролика (23,5%),
-          кости кролика (10%), печень баранины (5%), почки бараньи (2,5%), рубец бараний (2,5%), кабачок (3%),
-          брокколи (3%), семена
-          конопли (2%), шпинат (1%), яблоко (1%), льняное масло, конопляное масло.</p>
-        <p class="popup_item-nutritional catalog_item-text"><b>Пищевая ценность на 100г:</b> 174.9 ккал, белки 16.45,
-          жиры 11.9, углеводы 0.60</p>
-        <p class="popup_item-parameters catalog_item-parameters">700г / 500г / 300г / 150г / 100г</p>
-        <button class="button button__secondary catalog_item-button content-link"
-          data-popup-content="order">Заказать</button>
-      </div>
-
-      <div class="popup_description__order popup_description">
-        <form class="popup_form popup-form popup-form-order" action="">
-          <input class="form-field form-field__light popup_form-field popup_form-field__full" type="text"
-            placeholder="Имя">
-          <input class="form-field form-field__light popup_form-field popup_form-field__full" type="tel"
-            placeholder="Телефон">
-          <input class="form-field form-field__light popup_form-field popup_form-field__full" type="text"
-            placeholder="Адрес">
-          <select class="form-field form-field__light popup_form-field popup_form-field__full" name="" id="">
-            <option class="form_option" value="700">700г</option>
-            <option class="form_option" value="500">500г</option>
-            <option class="form_option" value="300">300г</option>
-            <option class="form_option" value="150">150г</option>
-            <option class="form_option" value="100">100г</option>
-          </select>
-          <label class="form-label" for="quantity">Количество: </label>
-          <input class="form-field form-field__light popup_form-field popup_form-field__right" type="number"
-            id="quantity" name="quantity" min="1" max="10">
-          <input class="form-checkbox form-checkbox__light" type="checkbox" id="popup-agree-checkbox" checked="checked">
-          <label class="form-label form-label__checkbox popup_form-label popup_form-field__full"
-            for="popup-agree-checkbox">Даю согласие
-            на обработку персональных данных</label>
-          <p class="popup_price">828₽</p>
-          <button class="button button__secondary confirm-order-button popup_form-field__center-right content-link"
-            data-popup-content="thanks" type="button">Оформить заказ</button>
-        </form>
-      </div>
-
-      <div class="popup_description__thanks popup_description">
-        <h2 class="popup_title">Спасибо!</h2>
-        <p class="popup_text">Ваш заказ оформлен и передан менеджеру. Мы свяжемся с вами для уточнения и подтверждения
-          в ближайшее время.</p>
-        <p class="popup_text">Если вы захотите дополнить свой заказ или уточнить какие-то детали – вы сможете это
-          сделать у оператора.</p>
-      </div>
 
       <button class="popup_close-button">
         <svg class="close-button" width="32" height="32" viewBox="0 0 32 32" fill="none"
