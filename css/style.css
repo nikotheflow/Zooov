@@ -651,6 +651,24 @@ p {
   background: #ffffff;
 }
 
+@media (max-width: 767.98px) {
+  .popup_content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 4rem 1.5rem 2.5rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .popup_header {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+  }
+}
+
 .popup__catalog {
   visibility: hidden;
   opacity: 0;
@@ -664,6 +682,12 @@ p {
   gap: 2.5rem;
 }
 
+@media (max-width: 767.98px) {
+  .popup__catalog .popup_content {
+    gap: 1rem;
+  }
+}
+
 .popup_image {
   width: 100%;
   height: 100%;
@@ -674,9 +698,16 @@ p {
 }
 
 .popup_image-area {
+  display: relative;
   -ms-flex-preferred-size: 50%;
       flex-basis: 50%;
   height: 35rem;
+}
+
+@media (max-width: 767.98px) {
+  .popup_image-area {
+    height: 25rem;
+  }
 }
 
 .popup_text-area {
@@ -696,9 +727,15 @@ p {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+@media (max-width: 767.98px) {
+  .popup_text-area {
+    position: static;
+  }
 }
 
 .popup_description {
@@ -715,10 +752,23 @@ p {
   height: 100%;
 }
 
+@media (min-width: 768px) {
+  .popup_description {
+    padding-top: 5rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .popup_description__order {
+    gap: 1.25rem;
+  }
+}
+
 .popup_description__thanks {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding-top: 0;
 }
 
 .popup__count {
@@ -774,10 +824,6 @@ p {
 
 .popup_text:not(:last-child) {
   margin-bottom: 1rem;
-}
-
-.popup_item-category {
-  margin-bottom: 2rem;
 }
 
 .popup_price {
@@ -852,6 +898,7 @@ p {
 
 .popup .catalog_item-category {
   font-size: 1rem;
+  margin-bottom: 0;
 }
 
 .popup .catalog_item-category__turkey:after, .popup .catalog_item-category__mutton:after {
@@ -1289,7 +1336,7 @@ p {
     overflow: hidden;
     padding: 0;
   }
-  .section-rations .section-inner div:not(.section-rations_catalog) {
+  .section-rations .section-inner > div:not(.section-rations_catalog) {
     margin-left: 1.25rem;
     margin-right: 1.25rem;
   }

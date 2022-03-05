@@ -617,6 +617,17 @@ p {
     margin: auto;
     padding: $pv-xs;
     background: $cl-white;
+
+    @media (max-width: $breakpoints-sm-max) {
+      flex-direction: column;
+      padding: $base * 16 $base * 6 $base * 10;
+    }
+  }
+
+  &_header {
+    @media (max-width: $breakpoints-sm-max) {
+      order: -1;
+    }
   }
 
   &__catalog {
@@ -628,6 +639,10 @@ p {
       width: $base * 200;
       max-width: 100%;
       gap: $base * 10;
+
+      @media (max-width: $breakpoints-sm-max) {
+        gap: $base * 4;
+      }
     }
   }
 
@@ -639,8 +654,13 @@ p {
     margin-bottom: 0;
 
     &-area {
+      display: relative;
       flex-basis: 50%;
       height: $base * 140;
+
+      @media (max-width: $breakpoints-sm-max) {
+        height: $base * 100;
+      }
     }
   }
 
@@ -654,7 +674,11 @@ p {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: flex-end;
+
+    @media (max-width: $breakpoints-sm-max) {
+      position: static;
+    }
   }
 
   &_description {
@@ -663,8 +687,19 @@ p {
     justify-content: space-between;
     height: 100%;
 
+    @media (min-width: $breakpoints-md-min) {
+      padding-top: $pv-s;
+    }
+
+    &__order {
+      @media (max-width: $breakpoints-sm-max) {
+        gap: $base * 5;
+      }
+    }
+
     &__thanks {
       justify-content: center;
+      padding-top: 0;
     }
   }
 
@@ -715,10 +750,6 @@ p {
     &:not(:last-child) {
       margin-bottom: $base * 4;
     }
-  }
-
-  &_item-category {
-    margin-bottom: $base * 8;
   }
 
   &_price {
@@ -781,6 +812,7 @@ p {
 
     &-category {
       font-size: $fs-s;
+      margin-bottom: 0;
 
       &__turkey:after,
       &__mutton:after {
@@ -808,7 +840,6 @@ p {
   padding-top: $base * 4;
   background-color: transparent;
   z-index: 100;
-  //transition: 0.2s;
 
   .section-inner {
     padding: 0;
@@ -834,7 +865,6 @@ p {
     background-color: $cl-white;
     margin: 0;
     box-shadow: 0 2px 10px rgba(122, 122, 122, 0.3);
-    //transition: 0.2s;
 
     .logo {
       width: $base * 15;
@@ -1153,7 +1183,7 @@ p {
     overflow: hidden;
     padding: 0;
 
-    .section-inner div:not(.section-rations_catalog) {
+    .section-inner > div:not(.section-rations_catalog) {
       margin-left: $base * 5;
       margin-right: $base * 5;
     }
