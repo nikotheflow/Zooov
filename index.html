@@ -18,9 +18,10 @@
       <a class="logo section-header_logo" href="#"><img class="logo-image anchor" href="#hero" src="img/logo.png"
           alt="logo"></a>
       <button class="button button__burger">
-        <svg width="29" height="18" viewBox="0 0 29 18" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M1 8C0.447715 8 0 8.44772 0 9C0 9.55228 0.447715 10 1 10V8ZM28 10C28.5523 10 29 9.55228 29 9C29 8.44772 28.5523 8 28 8V10ZM1 0C0.447715 0 0 0.447715 0 1C0 1.55228 0.447715 2 1 2V0ZM28 2C28.5523 2 29 1.55228 29 1C29 0.447715 28.5523 0 28 0V2ZM1 16C0.447715 16 0 16.4477 0 17C0 17.5523 0.447715 18 1 18V16ZM28 18C28.5523 18 29 17.5523 29 17C29 16.4477 28.5523 16 28 16V18ZM1 10H28V8H1V10ZM1 2H28V0H1V2ZM1 18H28V16H1V18Z" />
+        <svg width="29" height="18" viewBox="0 0 29 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 9H28" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M1 1H28" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M1 17H28" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
       </button>
       <nav class="nav">
@@ -41,8 +42,7 @@
   <!-- HERO -->
   <section class="section-outer section-hero" id="hero">
     <div class="section-inner">
-      <h1 class="section-hero_title">Питание,<br> которое <span class="section-hero_outline popup-link"
-          data-popup-class="popup__catalog">полюбит</span>
+      <h1 class="section-hero_title">Питание,<br> которое <span class="section-hero_outline">полюбит</span>
         <nobr>ваш
           хвостик</nobr>
       </h1>
@@ -419,7 +419,21 @@
     </div>
   </div>
 
+  <div class="popup popup__thanks">
+    <div class="popup_content">
+      <h2 class="popup_title">Спасибо!</h2>
+      <p class="popup_text">Мы ответим вам в ближайшее время.</p>
+      <button class="popup_close-button">
+        <svg class="close-button" width="32" height="32" viewBox="0 0 32 32" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path d="M25 7L7 25" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M25 25L7 7" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
+    </div>
+  </div>
   <!-- / RATIONS -->
+
 
   <!-- ZOOOV -->
   <section class="section-outer section-zooov" id="zooov">
@@ -628,7 +642,8 @@
                 на обработку <nobr>персональных данных</nobr></span>
             </label>
           </div>
-          <button class="button section-contacts_form-button">Отправить</button>
+          <button class="button section-contacts_form-button popup-link"
+            data-popup-class="popup__thanks">Отправить</button>
         </form>
       </div>
     </div>

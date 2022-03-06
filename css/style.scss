@@ -112,6 +112,10 @@ html {
   @media (max-width: $breakpoints-xl-max) {
     font-size: 14px;
   }
+
+  @media (max-width: $breakpoints-md-max) {
+    scroll-padding-top: 49px;
+  }
 }
 
 body {
@@ -216,17 +220,33 @@ p {
   cursor: pointer;
 
   &__burger {
+    position: relative;
     display: none;
     align-items: center;
     justify-content: center;
-    width: $base * 10;
-    height: $base * 10;
+    width: $base * 7;
+    height: $base * 7;
     background: transparent;
     border: none;
     margin-left: auto;
+    padding: 0;
+    z-index: 5;
 
-    svg {
-      fill: white;
+    &.active {
+      path:nth-child(1) {
+        transform: scale(0);
+      }
+      path:nth-child(2) {
+        transform: translate(5px, -2px) rotate(45deg);
+      }
+      path:nth-child(3) {
+        transform: translate(-8px, 7px) rotate(-45deg);
+      }
+    }
+
+    path {
+      stroke: $cl-black;
+      transition: 0.1s ease;
     }
 
     @media (max-width: $breakpoints-md-max) {
@@ -393,6 +413,7 @@ p {
   &_button {
     width: $base * 8;
     height: $base * 8;
+    padding: 0;
     box-sizing: border-box;
     background: transparent;
     border: none;
@@ -610,10 +631,13 @@ p {
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 100;
   padding: $pv-xxs;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.2s;
 
   &_content {
-    display: flex;
     position: relative;
+    display: flex;
     margin: auto;
     padding: $pv-xs;
     background: $cl-white;
@@ -631,10 +655,6 @@ p {
   }
 
   &__catalog {
-    visibility: hidden;
-    opacity: 0;
-    transition: all 0.2s;
-
     .popup_content {
       width: $base * 200;
       max-width: 100%;
@@ -704,10 +724,6 @@ p {
   }
 
   &__count {
-    visibility: hidden;
-    opacity: 0;
-    transition: all 0.2s;
-
     .popup_content {
       flex-direction: column;
       width: $base * 140;
@@ -732,6 +748,7 @@ p {
     background: transparent;
     border: none;
     cursor: pointer;
+    padding: 0;
   }
 
   &_count-button {
@@ -749,6 +766,25 @@ p {
 
     &:not(:last-child) {
       margin-bottom: $base * 4;
+    }
+  }
+
+  &__thanks {
+    .popup {
+      &_content {
+        flex-direction: column;
+        align-items: center;
+        gap: $base * 4;
+
+        @media (max-width: $breakpoints-sm-max) {
+          padding: $base * 7;
+        }
+      }
+
+      &_title,
+      &_text {
+        margin: 0;
+      }
     }
   }
 
@@ -842,7 +878,7 @@ p {
   z-index: 100;
 
   .section-inner {
-    padding: 0;
+    padding: 0 $base * 6;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -851,10 +887,17 @@ p {
   &_logo {
     width: $base * 20;
     height: $base * 20;
+    z-index: 5;
 
     @media (max-width: $breakpoints-md-max) {
       width: $base * 15;
       height: $base * 15;
+    }
+  }
+
+  &:not(.section-header__fixed) .button__burger:not(.active) {
+    path {
+      stroke: $cl-white;
     }
   }
 
@@ -878,19 +921,45 @@ p {
 
     .nav-wrapper {
       &_link {
-        color: black;
+        color: $cl-black;
       }
-    }
-
-    .button__burger svg {
-      fill: black;
     }
   }
 }
 
+.section-header.section-header__fixed:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $cl-white;
+  z-index: 5;
+}
+
 .nav {
+  z-index: 5;
+
   @media (max-width: $breakpoints-md-max) {
-    display: none;
+    position: fixed;
+    box-sizing: border-box;
+    top: -100vh;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: $base * 30;
+    transition: 0.2s ease;
+    overflow-y: auto;
+    z-index: auto;
+    background-color: $cl-white;
+    background-image: url("../img/bg-burger1.svg"), url("../img/bg-burger2.svg");
+    background-repeat: no-repeat;
+    background-position: 0 40%, right 0 top 90%;
+    background-size: 20%, 25%;
+
+    &.active {
+      top: 0;
+    }
   }
 
   &-wrapper {
@@ -899,11 +968,22 @@ p {
     list-style: none;
     padding: 0;
 
+    @media (max-width: $breakpoints-md-max) {
+      flex-direction: column;
+      align-items: center;
+    }
+
     &_item {
       white-space: nowrap;
 
       & + & {
-        margin-left: $base * 13;
+        @media (min-width: $breakpoints-lg-min) {
+          margin-left: $base * 13;
+        }
+
+        @media (max-width: $breakpoints-md-max) {
+          margin-top: $base * 12;
+        }
       }
     }
 
@@ -911,6 +991,12 @@ p {
       font-weight: $fw-medium;
       text-decoration: none;
       color: $cl-white;
+
+      @media (max-width: $breakpoints-md-max) {
+        color: $cl-black;
+        font-size: $fs-l;
+        font-weight: $fw-semibold;
+      }
 
       &:hover,
       &--active {

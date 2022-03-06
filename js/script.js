@@ -1,8 +1,10 @@
 const body = document.querySelector('body'),
-      header = document.querySelector('.section-header'),
       anchors = document.querySelectorAll('.anchor'),
+      header = document.querySelector('.section-header'),
+      navigation = document.querySelector('.nav'),
       catalogImages = document.querySelectorAll('.catalog_item-image'),
       catalogTitles = document.querySelectorAll('.catalog_item-title'),
+      burgerButton = document.querySelector('.button__burger'),
       confirmOrderButton = document.querySelector('.confirm-order-button'),
       countButton = document.querySelector('.section-rations_count-button'),
       orderButtons = document.querySelectorAll('.catalog_item-button'),      
@@ -30,11 +32,12 @@ const timeout = 200; // time to open popup
 if (popupLinks.length > 0) {
   for (let index = 0; index < popupLinks.length; index++) {
     const popupLink = popupLinks[index];
-    popupLink.addEventListener("click", function (e) {
+    popupLink.addEventListener('click', function (e) {
       const popupName = popupLink.dataset.popupClass;
       const currentPopup = document.querySelector('.' + popupName);
 
       openPopup(currentPopup);
+      e.preventDefault();
     })
   }
 }
@@ -145,11 +148,13 @@ const catalogSwiper = new Swiper('.section-rations_catalog__mobile', {
 // add listeners
 
 window.addEventListener('DOMContentLoaded', () => {
+  closeBurgerMenu()
   showCompositions();
   showCatalog()
 })
 
 window.addEventListener('resize', () => {
+  closeBurgerMenu()
   showCompositions();
   showCatalog()
 })
@@ -162,51 +167,15 @@ window.addEventListener('scroll', () => {
   }
 })
 
+burgerButton.addEventListener('click', function() {
+  navigation.classList.toggle('active');
+  burgerButton.classList.toggle('active');
+  body.classList.toggle('lock');
+
+  document.querySelection()
+})
+
 accordionHeaders.forEach(header => header.addEventListener('click', toggleAccordion));
-
-// catalogImages.forEach((catalogImage) => {
-//   catalogImage.addEventListener('click', () => {
-//     openPopup(catalogPopup);
-//     hideAllInfo();
-//     showItemInfo();    
-//   })
-// })
-
-// catalogTitles.forEach((catalogTitle) => {
-//   catalogTitle.addEventListener('click', () => {
-//     openPopup(catalogPopup);
-//     hideAllInfo();
-//     showItemInfo();    
-//   })
-// })
-
-// orderButtons.forEach((button) => {
-//   button.addEventListener('click', () => {
-//     openPopup(catalogPopup);
-//     hideAllInfo();
-//     showOrderInfo();
-//   })
-// })
-
-// confirmOrderButton.addEventListener('click', () => {
-//   hideAllInfo();
-//   showThanksInfo();   
-// })
-
-// countButton.addEventListener('click', () => {
-//   openPopup(countPopup);
-// })
-
-
-// popupCloseButtons.forEach((button) => {
-//   button.addEventListener('click', (e) => {    
-//     let currentPopupClass = e.currentTarget.dataset.popupClass;
-//     let currentPopup = document.querySelector(currentPopupClass);
-//     closePopup(currentPopup);
-//   })
-// })
-
-
 // anchors navigation
 
 // seamless.polyfill(); //smooth scroll for safari
@@ -214,6 +183,8 @@ accordionHeaders.forEach(header => header.addEventListener('click', toggleAccord
 anchors.forEach((anchor) => {
   anchor.addEventListener('click', (e) => {
     e.preventDefault()
+    closeBurgerMenu()
+
     let sectionID = anchor.getAttribute('href');
 
     if (sectionID === '#barf') {
@@ -230,37 +201,12 @@ anchors.forEach((anchor) => {
   })
 })
 
-// function openPopup(popup) {
-//   popup.classList.add('popup__open');
-//   body.style.overflow = 'hidden';
-// }
-
-// function closePopup(popup) {
-//   popup.classList.remove('popup__open');
-//   body.style.overflow = 'scroll';
-// }
-
 function hideAllInfo() {
   popupHeader.style.display = "none";
   popupItem.style.display = "none";
   popupOrder.style.display = "none";
   popupThanks.style.display = "none";
 }
-
-// function showItemInfo() {
-//   popupHeader.style.display = "block";
-//   popupItem.style.display = "block";
-// }
-
-// function showOrderInfo() {
-//   popupHeader.style.display = "block";
-//   popupOrder.style.display = "block";
-// }
-
-// function showThanksInfo() {
-//   popupThanks.style.display = "flex"; 
-// }
-
 
 // compositions and catalog sections variants for mobile and desktop
 
@@ -284,6 +230,11 @@ function showCatalog() {
   }
 }
 
+function closeBurgerMenu() {
+  navigation.classList.remove('active');
+  burgerButton.classList.remove('active');
+  body.classList.remove('lock');
+}
 
 function toggleAccordion() {
   let thisItem = this.parentNode;
