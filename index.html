@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
   <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
@@ -329,13 +329,30 @@
               placeholder="Телефон">
             <input class="form-field form-field__light popup_form-field popup_form-field__full" type="text"
               placeholder="Адрес">
-            <select class="form-field form-field__light popup_form-field popup_form-field__full" name="" id="">
+            <!-- <select class="form-field form-field__light popup_form-field popup_form-field__full" name="" id="">
               <option class="form_option" value="700">700г</option>
               <option class="form_option" value="500">500г</option>
               <option class="form_option" value="300">300г</option>
               <option class="form_option" value="150">150г</option>
               <option class="form_option" value="100">100г</option>
-            </select>
+            </select> -->
+            <div class="select popup_form-field__full">
+              <div class="select__header form-field form-field__light">
+                <span class="select__current">Выберите объем</span>
+                <div class="select__icon">
+                  <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13 1L7 7L1 1" stroke="#434242" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </div>
+              </div>
+              <div class="select__body">
+                <div class="select__item">700г</div>
+                <div class="select__item">500г</div>
+                <div class="select__item">300г</div>
+                <div class="select__item">150г</div>
+                <div class="select__item">100г</div>
+              </div>
+            </div>
             <label class="form-label" for="quantity">Количество: </label>
             <input class="form-field form-field__light popup_form-field popup_form-field__right" type="number"
               id="quantity" name="quantity" min="1" max="10">

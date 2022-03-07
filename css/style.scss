@@ -97,6 +97,7 @@ $cl-red-800: #69120e;
 $cl-white: #ffffff;
 $cl-gray-200: #f4f5f5;
 $cl-gray-300: #eff0f0;
+$cl-gray-350: #e5e5e5;
 $cl-gray-400: #9f9e9d;
 $cl-gray-500: #9d9f9e;
 $cl-gray-600: #434242;
@@ -864,6 +865,71 @@ p {
     }
   }
 }
+
+.select {
+  font-size: $fs-xs;
+  position: relative;
+  cursor: pointer;
+
+  &__header {
+    box-sizing: border-box;
+    display: flex;
+    height: $base * 12;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 16px;
+    background-color: $cl-gray-200;
+    border-radius: 8px;
+  }
+
+  &__current {
+    opacity: 0.5;
+  }
+
+  &.active &__icon {
+    transform: rotate(180deg);
+  }
+
+  &__icon {
+    width: 16px;
+    height: 16px;
+
+    & svg {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__body {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 8px 0;
+    background-color: $cl-gray-200;
+    border-radius: 8px;
+    margin-top: 8px;
+  }
+
+  &.active &__body {
+    display: block;
+    transition: 0.2s ease;
+  }
+
+  &__item {
+    padding: 8px 16px;
+
+    &:hover {
+      background-color: $cl-gray-350;
+    }
+  }
+}
 // === / COMMON ===
 
 // === HEADER ===
@@ -1020,6 +1086,7 @@ p {
 
   .section-inner {
     height: 100vh;
+    min-height: $base * 150;
     display: flex;
     flex-direction: column;
     justify-content: center;
