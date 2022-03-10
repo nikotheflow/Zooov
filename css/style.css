@@ -654,8 +654,8 @@ p {
 
 .catalog_item-category__turkey:after {
   content: "";
-  width: 3.75rem;
-  height: 3.75rem;
+  width: 4.5rem;
+  height: 4.5rem;
   position: absolute;
   top: 1.25rem;
   left: 1.25rem;
@@ -665,8 +665,8 @@ p {
 
 .catalog_item-category__mutton:after {
   content: "";
-  width: 3.75rem;
-  height: 3.75rem;
+  width: 4.5rem;
+  height: 4.5rem;
   position: absolute;
   top: 1.25rem;
   left: 1.25rem;
@@ -969,17 +969,6 @@ p {
 
 .popup_form-label {
   color: #9f9e9d;
-}
-
-.popup .count_thanks {
-  display: none;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .popup .catalog_item-title {
@@ -1996,6 +1985,12 @@ p {
 @media (max-width: 1399.98px) {
   .section-contacts {
     background-position: -8.75rem 120%, right -3.75rem top, 1.75rem 24%, left 36% bottom 52%, right 6.25rem top 68%, 43% 25%, left 38% bottom 30%, right 2% bottom;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .section-contacts {
+    background-position: -8.75rem 120%, right -12.5rem top, 1.75rem 40%, right -100% bottom 52%, right 16% top 56%, right 10% top 42%, left -100% bottom 30%, right -2% bottom;
   }
 }
 

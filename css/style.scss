@@ -29,8 +29,8 @@
 
 @mixin catalog-item-sticker($image) {
   content: "";
-  width: $base * 15;
-  height: $base * 15;
+  width: $base * 18;
+  height: $base * 18;
   position: absolute;
   top: $base * 5;
   left: $base * 5;
@@ -1741,6 +1741,12 @@ p {
     background-position: $base * -35 120%, right $base * -15 top, $base * 7 24%,
       left 36% bottom 52%, right $base * 25 top 68%, 43% 25%,
       left 38% bottom 30%, right 2% bottom;
+  }
+
+  @media (max-width: $breakpoints-md-max) {
+    background-position: $base * -35 120%, right $base * -50 top, $base * 7 40%,
+      right -100% bottom 52%, right 16% top 56%, right 10% top 42%,
+      left -100% bottom 30%, right -2% bottom;
   }
 
   @media (max-width: $breakpoints-xs-max) {
