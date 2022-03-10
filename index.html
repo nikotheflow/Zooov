@@ -290,7 +290,7 @@
         <p class="section-rations_count-text">Рассчитаем в каком количестве нужно кормить вашего хвостика рационами
           Zooov</p>
         <button class="button button__primary section-rations_count-button popup-link"
-          data-popup-class="popup__count">Расcчитать</button>
+          data-popup-class="popup__count">Рассчитать</button>
       </div>
     </div>
   </section>
@@ -329,13 +329,6 @@
               placeholder="Телефон">
             <input class="form-field form-field__light popup_form-field popup_form-field__full" type="text"
               placeholder="Адрес">
-            <!-- <select class="form-field form-field__light popup_form-field popup_form-field__full" name="" id="">
-              <option class="form_option" value="700">700г</option>
-              <option class="form_option" value="500">500г</option>
-              <option class="form_option" value="300">300г</option>
-              <option class="form_option" value="150">150г</option>
-              <option class="form_option" value="100">100г</option>
-            </select> -->
             <div class="select popup_form-field__full">
               <div class="select__header form-field form-field__light">
                 <span class="select__current">Выберите объем</span>
@@ -355,7 +348,7 @@
             </div>
             <label class="form-label" for="quantity">Количество: </label>
             <input class="form-field form-field__light popup_form-field popup_form-field__right" type="number"
-              id="quantity" name="quantity" min="1" max="10">
+              id="quantity" name="quantity" min="1" max="10" value="1">
           </form>
           <div class="order_total">
             <input class="form-checkbox form-checkbox__light" type="checkbox" id="popup-agree-checkbox"
@@ -399,11 +392,11 @@
       <form action="" class="popup-form popup-form-count">
         <div class="popup-form-count_radio-buttons">
           <div class="popup-form-count_radio-button">
-            <input type="radio" id="age-choiсe1" name="age" value="adult" checked>
+            <input class="form-radio" type="radio" id="age-choiсe1" name="age" value="adult" checked>
             <label for="age-choiсe1">Взрослая собака</label>
           </div>
           <div class="popup-form-count_radio-button">
-            <input type="radio" id="age-choiсe2" name="age" value="puppy">
+            <input class="form-radio" type="radio" id="age-choiсe2" name="age" value="puppy">
             <label for="age-choiсe2">Щенок</label>
           </div>
         </div>
@@ -418,11 +411,12 @@
         <div class="popup-form_checkbox">
           <input class="form-checkbox form-checkbox__light" type="checkbox" id="popup-count-agree-checkbox"
             checked="checked">
-          <label class="form-label form-label__checkbox popup_form-label" for="popup-count-agree-checkbox">Даю согласие
+          <label class="form-label form-label__checkbox popup_form-label" for="popup-count-agree-checkbox">Даю
+            согласие
             на обработку персональных данных</label>
         </div>
 
-        <button class="button button__primary popup_count-button" type="button">Рассчитать</button>
+        <button class="button button__primary popup_count-button">Рассчитать</button>
       </form>
 
 

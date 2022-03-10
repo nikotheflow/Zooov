@@ -459,6 +459,10 @@ p {
   color: rgba(0, 0, 0, 0.5);
 }
 
+.form-field[type="number"] {
+  text-align: center;
+}
+
 .form-label {
   font-size: 0.875rem;
   line-height: 140%;
@@ -472,13 +476,13 @@ p {
   resize: none;
 }
 
-.form-checkbox {
+.form-checkbox, .form-radio {
   position: absolute;
   z-index: -1;
   opacity: 0;
 }
 
-.form-checkbox + label {
+.form-checkbox + label, .form-radio + label {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -492,7 +496,7 @@ p {
   cursor: pointer;
 }
 
-.form-checkbox + label::before {
+.form-checkbox + label::before, .form-radio + label::before {
   content: "";
   display: inline-block;
   width: 1rem;
@@ -504,8 +508,11 @@ p {
           flex-grow: 0;
   background-repeat: no-repeat;
   background-position: center center;
-  border-radius: 0.25rem;
   cursor: pointer;
+}
+
+.form-checkbox + label::before {
+  border-radius: 0.25rem;
   margin-right: 0.5rem;
 }
 
@@ -535,6 +542,40 @@ p {
 
 .form-checkbox:checked + label::before {
   background-image: url("../img/check.svg");
+}
+
+.form-radio + label::before {
+  border: 1px solid #434242;
+  border-radius: 50%;
+  margin-right: 0.5em;
+}
+
+.form-radio:not(:disabled):not(:checked) + label:hover::before {
+  border-color: #eab5b7;
+}
+
+.form-radio:not(:disabled):active + label::before {
+  background-color: #fff4f3;
+  border-color: #fff4f3;
+}
+
+.form-radio:focus + label::before {
+  outline: none;
+  -webkit-box-shadow: 0 0 0 2px #9f9e9d;
+          box-shadow: 0 0 0 2px #9f9e9d;
+}
+
+.form-radio:focus:not(:checked) + label::before {
+  border-color: #eff0f0;
+}
+
+.form-radio:checked + label::before {
+  border-color: #961914;
+  background: url("../img/radio-icon.svg") 50% 50% no-repeat;
+}
+
+.form-radio:disabled + label::before {
+  background-color: #fff4f3;
 }
 
 .catalog {
@@ -928,6 +969,17 @@ p {
 
 .popup_form-label {
   color: #9f9e9d;
+}
+
+.popup .count_thanks {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .popup .catalog_item-title {

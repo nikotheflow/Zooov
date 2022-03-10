@@ -473,6 +473,10 @@ p {
         color: rgba($cl-black, 0.5);
       }
     }
+
+    &[type="number"] {
+      text-align: center;
+    }
   }
 
   &-label {
@@ -488,7 +492,8 @@ p {
     resize: none;
   }
 
-  &-checkbox {
+  &-checkbox,
+  &-radio {
     position: absolute;
     z-index: -1;
     opacity: 0;
@@ -509,8 +514,13 @@ p {
       flex-grow: 0;
       background-repeat: no-repeat;
       background-position: center center;
-      border-radius: $base;
       cursor: pointer;
+    }
+  }
+
+  &-checkbox {
+    & + label::before {
+      border-radius: $base;
       margin-right: $base * 2;
     }
 
@@ -542,6 +552,41 @@ p {
 
     &:checked + label::before {
       background-image: url("../img/check.svg");
+    }
+  }
+
+  &-radio {
+    & + label::before {
+      border: 1px solid $cl-gray-600;
+      border-radius: 50%;
+      margin-right: 0.5em;
+    }
+
+    &:not(:disabled):not(:checked) + label:hover::before {
+      border-color: $cl-red-300;
+    }
+
+    &:not(:disabled):active + label::before {
+      background-color: $cl-red-100;
+      border-color: $cl-red-100;
+    }
+
+    &:focus + label::before {
+      outline: none;
+      box-shadow: 0 0 0 2px $cl-gray-400;
+    }
+
+    &:focus:not(:checked) + label::before {
+      border-color: $cl-gray-300;
+    }
+
+    &:checked + label::before {
+      border-color: $cl-red-500;
+      background: url("../img/radio-icon.svg") 50% 50% no-repeat;
+    }
+
+    &:disabled + label::before {
+      background-color: $cl-red-100;
     }
   }
 }

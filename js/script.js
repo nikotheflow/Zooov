@@ -69,13 +69,9 @@ burgerButton.addEventListener('click', function() {
   navigation.classList.toggle('active');
   burgerButton.classList.toggle('active');
   body.classList.toggle('lock');
-
-  document.querySelection()
 })
 
 // anchors navigation
-
-// seamless.polyfill(); //smooth scroll for safari
 
 anchors.forEach((anchor) => {
   anchor.addEventListener('click', (e) => {
@@ -209,8 +205,9 @@ function closePopup(currentPopup) {
 
 
 function bodyLock() {
+
   const lockPaddingValue = window.innerWidth - document.documentElement.clientWidth + 'px';
-  
+
   if (lockPadding.length > 0) {
     for (let index = 0; index < lockPadding.length; index++) {
       const el = lockPadding[index];
@@ -220,6 +217,7 @@ function bodyLock() {
 
   body.style.paddingRight = lockPaddingValue;
   body.classList.add('lock');
+
 }
 
 function bodyUnlock() {
