@@ -94,47 +94,40 @@ anchors.forEach((anchor) => {
   })
 })
 
-if (popupLinks.length > 0) {
-  for (let index = 0; index < popupLinks.length; index++) {
-    const popupLink = popupLinks[index];
-    popupLink.addEventListener('click', function (e) {
-      const popupName = popupLink.dataset.popupClass;
-      const currentPopup = document.querySelector('.' + popupName);
+popupLinks.forEach((link) => {
+  link.addEventListener('click', (e) => {
+    const popupName = link.dataset.popupClass;
+    const currentPopup = document.querySelector('.' + popupName);
 
-      openPopup(currentPopup);
-      e.preventDefault();
-    })
-  }
-}
-
-if (popupCloseButtons.length > 0) {
-  for (let index = 0; index < popupCloseButtons.length; index++) {
-    const popupCloseButton = popupCloseButtons[index];
-    popupCloseButton.addEventListener('click', function () {
-
-      closePopup(popupCloseButton.closest('.popup'));
-    })
-  }
-}
-
-if (contentLinks.length > 0) {
-  for (let index = 0; index < contentLinks.length; index++) {
-    const contentLink = contentLinks[index];
-    contentLink.addEventListener('click', function () {
-      const popupContent = contentLink.dataset.popupContent;
-      checkContent(popupContent);
-    })
-  }
-}
-
-accordionHeaders.forEach(header => header.addEventListener('click', toggleAccordion));
-
-selectHeaders.forEach(selectHeader => {
-  selectHeader.addEventListener('click', toggleSelect)
+    openPopup(currentPopup);
+    e.preventDefault();
+  })
 })
 
-selectItems.forEach(selectItem => {
-  selectItem.addEventListener('click', chooseSelect)
+popupCloseButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    const popup = button.closest('.popup');
+
+    closePopup(popup);
+  })
+})
+
+contentLinks.forEach((link) => {
+  link.addEventListener('click', () => {
+    const popupContent = link.dataset.popupContent;
+
+    checkContent(popupContent);
+  })
+})
+
+accordionHeaders.forEach((header) => header.addEventListener('click', toggleAccordion));
+
+selectHeaders.forEach((header) => {
+  header.addEventListener('click', toggleSelect);
+})
+
+selectItems.forEach((item) => {
+  item.addEventListener('click', chooseSelect);
 })
 
 function hideAllInfo() {
@@ -173,7 +166,7 @@ function closeBurgerMenu() {
 }
 
 function checkContent(popupContent) {
-  hideAllInfo()
+  hideAllInfo();
   if (popupContent === 'item') {
     popupHeader.style.display = "block";
     popupItem.style.display = "flex";
@@ -208,12 +201,9 @@ function bodyLock() {
 
   const lockPaddingValue = window.innerWidth - document.documentElement.clientWidth + 'px';
 
-  if (lockPadding.length > 0) {
-    for (let index = 0; index < lockPadding.length; index++) {
-      const el = lockPadding[index];
-      el.style.paddingRight = lockPaddingValue;
-    }
-  }
+  lockPadding.forEach((e) => {
+    e.style.paddingRight = lockPaddingValue;
+  })
 
   body.style.paddingRight = lockPaddingValue;
   body.classList.add('lock');
@@ -222,12 +212,9 @@ function bodyLock() {
 
 function bodyUnlock() {
   setTimeout(function () {    
-    if (lockPadding.length > 0) {
-      for (let index = 0; index < lockPadding.length; index++) {
-        const el = lockPadding[index];
-        el.style.paddingRight = 0;
-      }
-    }
+    lockPadding.forEach((e) => {
+      e.style.paddingRight = 0;
+    })
     
     body.style.paddingRight = 0;
     body.classList.remove('lock');
