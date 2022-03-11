@@ -11,13 +11,13 @@
   <title>Zooov</title>
 </head>
 
-<body>
+<>
   <!-- HEADER -->
   <section class="section-header lock-padding">
     <div class="section-inner">
       <a class="logo section-header_logo" href="#"><img class="logo-image anchor" href="#hero" src="img/logo.png"
           alt="logo"></a>
-      <button class="button button__burger">
+      <button class="button button__burger" aria-label="burger">
         <svg width="29" height="18" viewBox="0 0 29 18" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M1 9H28" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
           <path d="M1 1H28" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -142,159 +142,7 @@
   </section>
   <!-- / BARF -->
 
-  <!-- RATIONS -->
-  <section class="section-outer section-rations" id="rations">
-    <div class="section-inner">
-      <div class="section-rations_header">
-        <h2 class="section-rations_title">Рационы <span class="section-rations_outline">ZOOOV</span></h2>
-        <p class="text">Система питания взрослой собаки не подойдет для щенка, поэтому мы создали разные по составу
-          рационы ZOOOV. Вы сможете заказать полноценное питание исходя из возраста, веса и даже вкусовых предпочтений
-          вашего друга. ZOOOV заботится о каждой собаке.</p>
-      </div>
-
-      <!-- catalog for screen width >= sm -->
-      <ul class="catalog section-rations_catalog section-rations_catalog__desktop">
-        <li class="catalog_item">
-          <div class="catalog_item-top">
-            <img class="catalog_item-image popup-link content-link" data-popup-class="popup__catalog"
-              data-popup-content="item" src="img/catalog-image1.png" alt="">
-            <h4 class="catalog_item-title popup-link content-link" data-popup-class="popup__catalog"
-              data-popup-content="item">Для
-              взрослых собак</h4>
-            <p class="catalog_item-category catalog_item-category__turkey">Индейка/Говядина</p>
-            <p class="catalog_item-text">Основной и самый популярный рацион для взрослых собак от 1 года.</p>
-          </div>
-          <div class="catalog_item-bottom">
-            <p class="catalog_item-parameters">700г / 500г / 300г / 150г / 100г</p>
-            <button class="button button__secondary catalog_item-button popup-link content-link"
-              data-popup-class="popup__catalog" data-popup-content="order">Заказать</button>
-          </div>
-        </li>
-        <li class="catalog_item">
-          <div class="catalog_item-top">
-            <img class="catalog_item-image popup-link content-link" data-popup-class="popup__catalog"
-              data-popup-content="item" src="img/catalog-image2.png" alt="">
-            <h4 class="catalog_item-title popup-link content-link" data-popup-class="popup__catalog"
-              data-popup-content="item">Для щенков</h4>
-            <p class="catalog_item-category catalog_item-category__turkey">Индейка/Говядина</p>
-            <p class="catalog_item-text">Основной рацион для щенков с 3-х недельного возраста.</p>
-          </div>
-          <div class="catalog_item-bottom">
-            <p class="catalog_item-parameters">700г / 500г / 300г / 150г / 100г</p>
-            <button class="button button__secondary catalog_item-button popup-link content-link"
-              data-popup-class="popup__catalog" data-popup-content="order">Заказать</button>
-          </div>
-        </li>
-        <li class="catalog_item">
-          <div class="catalog_item-top">
-            <img class="catalog_item-image popup-link content-link" data-popup-class="popup__catalog"
-              data-popup-content="item" src="img/catalog-image3.png" alt="">
-            <h4 class="catalog_item-title popup-link content-link" data-popup-class="popup__catalog"
-              data-popup-content="item">Для взрослых собак</h4>
-            <p class="catalog_item-category catalog_item-category__mutton">Баранина/Кролик</p>
-            <p class="catalog_item-text">Для собак с чувствительным пищеварением и склонностью к аллергии.</p>
-          </div>
-          <div class="catalog_item-bottom">
-            <p class="catalog_item-parameters">700г / 500г / 300г / 150г / 100г</p>
-            <button class="button button__secondary catalog_item-button popup-link content-link"
-              data-popup-class="popup__catalog" data-popup-content="order">Заказать</button>
-          </div>
-        </li>
-        <li class="catalog_item">
-          <div class="catalog_item-top">
-            <img class="catalog_item-image popup-link content-link" data-popup-class="popup__catalog"
-              data-popup-content="item" src="img/catalog-image4.png" alt="">
-            <h4 class="catalog_item-title popup-link content-link" data-popup-class="popup__catalog"
-              data-popup-content="item">Для щенков</h4>
-            <p class="catalog_item-category catalog_item-category__mutton">Баранина/Кролик</p>
-            <p class="catalog_item-text">Для щенков с 3-х недельного возраста с чувствительным пищеварением и
-              склонностью к аллергии.</p>
-          </div>
-          <div class="catalog_item-bottom">
-            <p class="catalog_item-parameters">700г / 500г / 300г / 150г / 100г</p>
-          </div>
-          <button class="button button__secondary catalog_item-button popup-link content-link"
-            data-popup-class="popup__catalog" data-popup-content="order">Заказать</button>
-        </li>
-      </ul>
-
-      <!-- catalog xs screen width (with swiper) -->
-      <div class="section-rations_catalog section-rations_catalog__mobile swiper">
-        <ul class="catalog swiper-wrapper">
-          <li class="catalog_item swiper-slide">
-            <div class="catalog_item-top">
-              <img class="catalog_item-image popup-link content-link" data-popup-class="popup__catalog"
-                data-popup-content="item" src="img/catalog-image1.png" alt="">
-              <h4 class="catalog_item-title popup-link content-link" data-popup-class="popup__catalog"
-                data-popup-content="item">Для взрослых собак</h4>
-              <p class="catalog_item-category catalog_item-category__turkey">Индейка/Говядина</p>
-              <p class="catalog_item-text">Основной и самый популярный рацион для взрослых собак от 1 года.</p>
-            </div>
-            <div class="catalog_item-bottom">
-              <p class="catalog_item-parameters">700г / 500г / 300г / 150г / 100г</p>
-              <button class="button button__secondary catalog_item-button popup-link content-link"
-                data-popup-class="popup__catalog" data-popup-content="order">Заказать</button>
-            </div>
-          </li>
-          <li class="catalog_item swiper-slide">
-            <div class="catalog_item-top">
-              <img class="catalog_item-image popup-link content-link" data-popup-class="popup__catalog"
-                data-popup-content="item" src="img/catalog-image2.png" alt="">
-              <h4 class="catalog_item-title popup-link content-link" data-popup-class="popup__catalog"
-                data-popup-content="item">Для щенков</h4>
-              <p class="catalog_item-category catalog_item-category__turkey">Индейка/Говядина</p>
-              <p class="catalog_item-text">Основной рацион для щенков с 3-х недельного возраста.</p>
-            </div>
-            <div class="catalog_item-bottom">
-              <p class="catalog_item-parameters">700г / 500г / 300г / 150г / 100г</p>
-              <button class="button button__secondary catalog_item-button popup-link content-link"
-                data-popup-class="popup__catalog" data-popup-content="order">Заказать</button>
-            </div>
-          </li>
-          <li class="catalog_item swiper-slide">
-            <div class="catalog_item-top">
-              <img class="catalog_item-image popup-link content-link" data-popup-class="popup__catalog"
-                data-popup-content="item" src="img/catalog-image3.png" alt="">
-              <h4 class="catalog_item-title popup-link content-link" data-popup-class="popup__catalog"
-                data-popup-content="item">Для взрослых собак</h4>
-              <p class="catalog_item-category catalog_item-category__mutton">Баранина/Кролик</p>
-              <p class="catalog_item-text">Для собак с чувствительным пищеварением и склонностью к аллергии.</p>
-            </div>
-            <div class="catalog_item-bottom">
-              <p class="catalog_item-parameters">700г / 500г / 300г / 150г / 100г</p>
-              <button class="button button__secondary catalog_item-button popup-link content-link"
-                data-popup-class="popup__catalog" data-popup-content="order">Заказать</button>
-            </div>
-          </li>
-          <li class="catalog_item swiper-slide">
-            <div class="catalog_item-top">
-              <img class="catalog_item-image popup-link content-link" data-popup-class="popup__catalog"
-                data-popup-content="item" src="img/catalog-image4.png" alt="">
-              <h4 class="catalog_item-title popup-link content-link" data-popup-class="popup__catalog"
-                data-popup-content="item">Для щенков</h4>
-              <p class="catalog_item-category catalog_item-category__mutton">Баранина/Кролик</p>
-              <p class="catalog_item-text">Для щенков с 3-х недельного возраста с чувствительным пищеварением и
-                склонностью к аллергии.</p>
-            </div>
-            <div class="catalog_item-bottom">
-              <p class="catalog_item-parameters">700г / 500г / 300г / 150г / 100г</p>
-              <button class="button button__secondary catalog_item-button popup-link content-link"
-                data-popup-class="popup__catalog" data-popup-content="order">Заказать</button>
-            </div>
-          </li>
-        </ul>
-        <div class="swiper-pagination"></div>
-      </div>
-
-      <div class="section-rations_count">
-        <p class="section-rations_count-text">Рассчитаем в каком количестве нужно кормить вашего хвостика рационами
-          Zooov</p>
-        <button class="button button__primary section-rations_count-button popup-link"
-          data-popup-class="popup__count">Рассчитать</button>
-      </div>
-    </div>
-  </section>
-
+  <!-- POPUPS -->
   <div class="popup popup__catalog">
     <div class="popup_content">
       <div class="popup_image-area">
@@ -317,18 +165,18 @@
           <p class="popup_item-nutritional catalog_item-text"><b>Пищевая ценность на 100г:</b> 174.9 ккал, белки 16.45,
             жиры 11.9, углеводы 0.60</p>
           <p class="popup_item-parameters catalog_item-parameters">700г / 500г / 300г / 150г / 100г</p>
-          <button class="button button__secondary catalog_item-button content-link"
-            data-popup-content="order">Заказать</button>
+          <button class="button button__secondary catalog_item-button content-link" data-popup-content="order"
+            aria-label="buy">Заказать</button>
         </div>
 
         <div class="popup_description__order popup_description">
           <form class="popup_form popup-form popup-form-order" action="">
             <input class="form-field form-field__light popup_form-field popup_form-field__full" type="text"
-              placeholder="Имя">
+              placeholder="Имя" required>
             <input class="form-field form-field__light popup_form-field popup_form-field__full" type="tel"
-              placeholder="Телефон">
+              placeholder="Телефон" required>
             <input class="form-field form-field__light popup_form-field popup_form-field__full" type="text"
-              placeholder="Адрес">
+              placeholder="Адрес" required>
             <div class="select popup_form-field__full">
               <div class="select__header form-field form-field__light">
                 <span class="select__current">Выберите объем</span>
@@ -348,7 +196,7 @@
             </div>
             <label class="form-label" for="quantity">Количество: </label>
             <input class="form-field form-field__light popup_form-field popup_form-field__right" type="number"
-              id="quantity" name="quantity" min="1" max="10" value="1">
+              id="quantity" name="quantity" min="1" max="10" value="1" required>
           </form>
           <div class="order_total">
             <input class="form-checkbox form-checkbox__light" type="checkbox" id="popup-agree-checkbox"
@@ -358,7 +206,7 @@
             <div class="order_confirm">
               <p class="popup_price">828₽</p>
               <button class="button button__secondary confirm-order-button content-link" data-popup-content="thanks"
-                type="button">Оформить заказ</button>
+                type="button" aria-label="checkout">Оформить заказ</button>
             </div>
           </div>
         </div>
@@ -373,7 +221,7 @@
       </div>
 
 
-      <button class="popup_close-button">
+      <button class="popup_close-button" aria-label="close popup">
         <svg class="close-button" width="32" height="32" viewBox="0 0 32 32" fill="none"
           xmlns="http://www.w3.org/2000/svg">
           <path d="M25 7L7 25" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -416,11 +264,11 @@
             на обработку персональных данных</label>
         </div>
 
-        <button class="button button__primary popup_count-button">Рассчитать</button>
+        <button class="button button__primary popup_count-button" aria-label="count">Рассчитать</button>
       </form>
 
 
-      <button class="popup_close-button" data-popup-class=".popup__count">
+      <button class="popup_close-button" data-popup-class=".popup__count" aria-label="close popup">
         <svg class="close-button" width="32" height="32" viewBox="0 0 32 32" fill="none"
           xmlns="http://www.w3.org/2000/svg">
           <path d="M25 7L7 25" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -434,7 +282,7 @@
     <div class="popup_content">
       <h2 class="popup_title">Спасибо!</h2>
       <p class="popup_text">Мы ответим вам в ближайшее время.</p>
-      <button class="popup_close-button">
+      <button class="popup_close-button" aria-label="close popup">
         <svg class="close-button" width="32" height="32" viewBox="0 0 32 32" fill="none"
           xmlns="http://www.w3.org/2000/svg">
           <path d="M25 7L7 25" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -443,6 +291,160 @@
       </button>
     </div>
   </div>
+  <!-- /POPUPS-->
+
+  <!-- RATIONS -->
+  <section class="section-outer section-rations" id="rations">
+    <div class="section-inner">
+      <div class="section-rations_header">
+        <h2 class="section-rations_title">Рационы <span class="section-rations_outline">ZOOOV</span></h2>
+        <p class="text">Система питания взрослой собаки не подойдет для щенка, поэтому мы создали разные по составу
+          рационы ZOOOV. Вы сможете заказать полноценное питание исходя из возраста, веса и даже вкусовых предпочтений
+          вашего друга. ZOOOV заботится о каждой собаке.</p>
+      </div>
+
+      <!-- catalog for screen width >= sm -->
+      <ul class="catalog section-rations_catalog section-rations_catalog__desktop">
+        <li class="catalog_item">
+          <div class="catalog_item-top">
+            <img class="catalog_item-image popup-link content-link" data-popup-class="popup__catalog"
+              data-popup-content="item" src="img/catalog-image1.png" alt="">
+            <h4 class="catalog_item-title popup-link content-link" data-popup-class="popup__catalog"
+              data-popup-content="item">Для
+              взрослых собак</h4>
+            <p class="catalog_item-category catalog_item-category__turkey">Индейка/Говядина</p>
+            <p class="catalog_item-text">Основной и самый популярный рацион для взрослых собак от 1 года.</p>
+          </div>
+          <div class="catalog_item-bottom">
+            <p class="catalog_item-parameters">700г / 500г / 300г / 150г / 100г</p>
+            <button class="button button__secondary catalog_item-button popup-link content-link"
+              data-popup-class="popup__catalog" data-popup-content="order" aria-label="buy">Заказать</button>
+          </div>
+        </li>
+        <li class="catalog_item">
+          <div class="catalog_item-top">
+            <img class="catalog_item-image popup-link content-link" data-popup-class="popup__catalog"
+              data-popup-content="item" src="img/catalog-image2.png" alt="">
+            <h4 class="catalog_item-title popup-link content-link" data-popup-class="popup__catalog"
+              data-popup-content="item">Для щенков</h4>
+            <p class="catalog_item-category catalog_item-category__turkey">Индейка/Говядина</p>
+            <p class="catalog_item-text">Основной рацион для щенков с 3-х недельного возраста.</p>
+          </div>
+          <div class="catalog_item-bottom">
+            <p class="catalog_item-parameters">700г / 500г / 300г / 150г / 100г</p>
+            <button class="button button__secondary catalog_item-button popup-link content-link"
+              data-popup-class="popup__catalog" data-popup-content="order" aria-label="buy">Заказать</button>
+          </div>
+        </li>
+        <li class="catalog_item">
+          <div class="catalog_item-top">
+            <img class="catalog_item-image popup-link content-link" data-popup-class="popup__catalog"
+              data-popup-content="item" src="img/catalog-image3.png" alt="">
+            <h4 class="catalog_item-title popup-link content-link" data-popup-class="popup__catalog"
+              data-popup-content="item">Для взрослых собак</h4>
+            <p class="catalog_item-category catalog_item-category__mutton">Баранина/Кролик</p>
+            <p class="catalog_item-text">Для собак с чувствительным пищеварением и склонностью к аллергии.</p>
+          </div>
+          <div class="catalog_item-bottom">
+            <p class="catalog_item-parameters">700г / 500г / 300г / 150г / 100г</p>
+            <button class="button button__secondary catalog_item-button popup-link content-link"
+              data-popup-class="popup__catalog" data-popup-content="order" aria-label="buy">Заказать</button>
+          </div>
+        </li>
+        <li class="catalog_item">
+          <div class="catalog_item-top">
+            <img class="catalog_item-image popup-link content-link" data-popup-class="popup__catalog"
+              data-popup-content="item" src="img/catalog-image4.png" alt="">
+            <h4 class="catalog_item-title popup-link content-link" data-popup-class="popup__catalog"
+              data-popup-content="item">Для щенков</h4>
+            <p class="catalog_item-category catalog_item-category__mutton">Баранина/Кролик</p>
+            <p class="catalog_item-text">Для щенков с 3-х недельного возраста с чувствительным пищеварением и
+              склонностью к аллергии.</p>
+          </div>
+          <div class="catalog_item-bottom">
+            <p class="catalog_item-parameters">700г / 500г / 300г / 150г / 100г</p>
+          </div>
+          <button class="button button__secondary catalog_item-button popup-link content-link"
+            data-popup-class="popup__catalog" data-popup-content="order" aria-label="buy">Заказать</button>
+        </li>
+      </ul>
+
+      <!-- catalog xs screen width (with swiper) -->
+      <div class="section-rations_catalog section-rations_catalog__mobile swiper">
+        <ul class="catalog swiper-wrapper">
+          <li class="catalog_item swiper-slide">
+            <div class="catalog_item-top">
+              <img class="catalog_item-image popup-link content-link" data-popup-class="popup__catalog"
+                data-popup-content="item" src="img/catalog-image1.png" alt="">
+              <h4 class="catalog_item-title popup-link content-link" data-popup-class="popup__catalog"
+                data-popup-content="item">Для взрослых собак</h4>
+              <p class="catalog_item-category catalog_item-category__turkey">Индейка/Говядина</p>
+              <p class="catalog_item-text">Основной и самый популярный рацион для взрослых собак от 1 года.</p>
+            </div>
+            <div class="catalog_item-bottom">
+              <p class="catalog_item-parameters">700г / 500г / 300г / 150г / 100г</p>
+              <button class="button button__secondary catalog_item-button popup-link content-link"
+                data-popup-class="popup__catalog" data-popup-content="order" aria-label="buy">Заказать</button>
+            </div>
+          </li>
+          <li class="catalog_item swiper-slide">
+            <div class="catalog_item-top">
+              <img class="catalog_item-image popup-link content-link" data-popup-class="popup__catalog"
+                data-popup-content="item" src="img/catalog-image2.png" alt="">
+              <h4 class="catalog_item-title popup-link content-link" data-popup-class="popup__catalog"
+                data-popup-content="item">Для щенков</h4>
+              <p class="catalog_item-category catalog_item-category__turkey">Индейка/Говядина</p>
+              <p class="catalog_item-text">Основной рацион для щенков с 3-х недельного возраста.</p>
+            </div>
+            <div class="catalog_item-bottom">
+              <p class="catalog_item-parameters">700г / 500г / 300г / 150г / 100г</p>
+              <button class="button button__secondary catalog_item-button popup-link content-link"
+                data-popup-class="popup__catalog" data-popup-content="order" aria-label="buy">Заказать</button>
+            </div>
+          </li>
+          <li class="catalog_item swiper-slide">
+            <div class="catalog_item-top">
+              <img class="catalog_item-image popup-link content-link" data-popup-class="popup__catalog"
+                data-popup-content="item" src="img/catalog-image3.png" alt="">
+              <h4 class="catalog_item-title popup-link content-link" data-popup-class="popup__catalog"
+                data-popup-content="item">Для взрослых собак</h4>
+              <p class="catalog_item-category catalog_item-category__mutton">Баранина/Кролик</p>
+              <p class="catalog_item-text">Для собак с чувствительным пищеварением и склонностью к аллергии.</p>
+            </div>
+            <div class="catalog_item-bottom">
+              <p class="catalog_item-parameters">700г / 500г / 300г / 150г / 100г</p>
+              <button class="button button__secondary catalog_item-button popup-link content-link"
+                data-popup-class="popup__catalog" data-popup-content="order" aria-label="buy">Заказать</button>
+            </div>
+          </li>
+          <li class="catalog_item swiper-slide">
+            <div class="catalog_item-top">
+              <img class="catalog_item-image popup-link content-link" data-popup-class="popup__catalog"
+                data-popup-content="item" src="img/catalog-image4.png" alt="">
+              <h4 class="catalog_item-title popup-link content-link" data-popup-class="popup__catalog"
+                data-popup-content="item">Для щенков</h4>
+              <p class="catalog_item-category catalog_item-category__mutton">Баранина/Кролик</p>
+              <p class="catalog_item-text">Для щенков с 3-х недельного возраста с чувствительным пищеварением и
+                склонностью к аллергии.</p>
+            </div>
+            <div class="catalog_item-bottom">
+              <p class="catalog_item-parameters">700г / 500г / 300г / 150г / 100г</p>
+              <button class="button button__secondary catalog_item-button popup-link content-link"
+                data-popup-class="popup__catalog" data-popup-content="order" aria-label="buy">Заказать</button>
+            </div>
+          </li>
+        </ul>
+        <div class="swiper-pagination"></div>
+      </div>
+
+      <div class="section-rations_count">
+        <p class="section-rations_count-text">Рассчитаем в каком количестве нужно кормить вашего хвостика рационами
+          Zooov</p>
+        <button class="button button__primary section-rations_count-button popup-link" data-popup-class="popup__count"
+          aria-label="count">Рассчитать</button>
+      </div>
+    </div>
+  </section>
   <!-- / RATIONS -->
 
 
@@ -538,7 +540,7 @@
         <li class="accordion_item">
           <div class="accordion_header">
             <h3 class="accordion_title">Не опасны ли бактерии, которые находятся в сыром мясе?</h3>
-            <button class="accordion_button">
+            <button class="accordion_button" aria-label="accordion">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect x="9" class="accordion_button__vertical" width="2" height="20" rx="1" fill="#961914" />
                 <rect y="9" class="accordion_button__horisontal" width="20" height="2" rx="1" fill="#961914" />
@@ -555,7 +557,7 @@
         <li class="accordion_item">
           <div class="accordion_header">
             <h3 class="accordion_title">Надо ли давать дополнительно витамины к рациону BARF?</h3>
-            <button class="accordion_button">
+            <button class="accordion_button" aria-label="accordion">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect x="9" class="accordion_button__vertical" width="2" height="20" rx="1" fill="#961914" />
                 <rect y="9" class="accordion_button__horisontal" width="20" height="2" rx="1" fill="#961914" />
@@ -572,7 +574,7 @@
           <div class="accordion_header">
             <h3 class="accordion_title">А если моя собака уже давно питается промышленным кормом и у нее нет проблем со
               здоровьем?</h3>
-            <button class="accordion_button">
+            <button class="accordion_button" aria-label="accordion">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect x="9" class="accordion_button__vertical" width="2" height="20" rx="1" fill="#961914" />
                 <rect y="9" class="accordion_button__horisontal" width="20" height="2" rx="1" fill="#961914" />
@@ -590,7 +592,7 @@
         <li class="accordion_item">
           <div class="accordion_header">
             <h3 class="accordion_title">Можно ли смешивать натуральный корм и корм промышленного производства?</h3>
-            <button class="accordion_button">
+            <button class="accordion_button" aria-label="accordion">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect x="9" class="accordion_button__vertical" width="2" height="20" rx="1" fill="#961914" />
                 <rect y="9" class="accordion_button__horisontal" width="20" height="2" rx="1" fill="#961914" />
@@ -621,11 +623,11 @@
         </p>
         <a class="section-contacts_phone section-contacts_text" href="tel:+79000000000">+7 (800) 555-35-35</a>
         <div class="section-contacts_buttons">
-          <button class="button button__social section-contacts_button">
+          <button class="button button__social section-contacts_button" aria-label="whatsapp">
             <img src="img/logo-whatsapp.svg" alt="whatsapp logo">
             Написать в WhatsApp
           </button>
-          <button class="button button__social section-contacts_button">
+          <button class="button button__social section-contacts_button" aria-label="telegram">
             <img src="img/logo-telegram.svg" alt="telegram logo">
             Написать в Telegram
           </button>
@@ -641,10 +643,11 @@
         <p class="section-contacts_form-area-text section-contacts_text">Напишите нам и мы обязательно подробно на них
           ответим.</p>
         <form class="section-contacts_form" action="">
-          <input class="form-field form-field__dark section-contacts_form-name" type="text" placeholder="Имя">
-          <input class="form-field form-field__dark section-contacts_form-email" type="email" placeholder="Email">
+          <input class="form-field form-field__dark section-contacts_form-name" type="text" placeholder="Имя" required>
+          <input class="form-field form-field__dark section-contacts_form-email" type="email" placeholder="Email"
+            required>
           <textarea class=" form-field form-field__dark form-textarea section-contacts_form-textarea" name="" id=""
-            placeholder="Ваш вопрос..."></textarea>
+            placeholder="Ваш вопрос..." required></textarea>
           <div class="section-contacts_form-checkbox-area">
             <input class="form-checkbox form-checkbox__dark section-contacts_form-checkbox" type="checkbox"
               id="agree_checkbox" checked="checked">
@@ -653,8 +656,8 @@
                 на обработку <nobr>персональных данных</nobr></span>
             </label>
           </div>
-          <button class="button section-contacts_form-button popup-link"
-            data-popup-class="popup__thanks">Отправить</button>
+          <button class="button section-contacts_form-button popup-link" data-popup-class="popup__thanks"
+            aria-label="send">Отправить</button>
         </form>
       </div>
     </div>
@@ -678,6 +681,6 @@
   <!-- <script src="https://cdn.jsdelivr.net/npm/seamless-scroll-polyfill@2.1.6/lib/bundle.min.js"></script> -->
   <script src="js/script.js"></script>
 
-</body>
+  </body>
 
 </html>

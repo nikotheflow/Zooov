@@ -654,7 +654,7 @@ p {
     }
 
     &-parameters {
-      color: $cl-gray-400;
+      color: $cl-gray-600;
       font-size: $fs-xs;
       line-height: 130%;
       margin-bottom: $base * 6;
@@ -1882,7 +1882,7 @@ p {
     &-button {
       margin-top: auto;
       width: 100%;
-      color: $cl-red-400;
+      color: $cl-red-500;
       font-weight: $fw-bold;
       background-color: $cl-red-100;
 
@@ -1918,7 +1918,7 @@ p {
   }
 
   &_text {
-    color: rgba($cl-white, 0.4);
+    color: rgba($cl-white, 0.6);
     font-size: $fs-xxs;
 
     &__main {

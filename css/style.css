@@ -680,7 +680,7 @@ p {
 }
 
 .catalog_item-parameters {
-  color: #9f9e9d;
+  color: #434242;
   font-size: 0.875rem;
   line-height: 130%;
   margin-bottom: 1.5rem;
@@ -2186,7 +2186,7 @@ p {
 .section-contacts_form-button {
   margin-top: auto;
   width: 100%;
-  color: #ec7973;
+  color: #961914;
   font-weight: 700;
   background-color: #fff4f3;
 }
@@ -2236,7 +2236,7 @@ p {
 }
 
 .footer_text {
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.6);
   font-size: 0.75rem;
 }
 
