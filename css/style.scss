@@ -191,6 +191,10 @@ p {
   padding: 0;
 }
 
+img {
+  aspect-ratio: attr(width) / attr(height);
+}
+
 .text {
   color: $cl-gray-600;
 }
@@ -367,7 +371,7 @@ p {
     display: flex;
     flex-direction: column;
 
-    &__active {
+    &.active {
       .accordion {
         &_header {
           padding-bottom: $base * 3;
@@ -380,7 +384,7 @@ p {
           transition: all 0.2s ease;
         }
 
-        &_button {
+        &_button svg {
           transform: rotate(135deg);
           transition: all 0.2s ease;
         }
@@ -419,8 +423,11 @@ p {
     background: transparent;
     border: none;
     cursor: pointer;
-    transform: rotate(0deg);
-    transition: all 0.2s ease;
+
+    svg {
+      transform: rotate(0deg);
+      transition: all 0.2s ease;
+    }
   }
 
   &_content {
@@ -620,6 +627,7 @@ p {
 
     &-image {
       width: 100%;
+      height: auto;
       margin-bottom: $base * 11;
       cursor: pointer;
 
@@ -1122,7 +1130,7 @@ p {
 // === HERO ===
 .section-hero {
   color: $cl-white;
-  background-image: url("../img/hero-background.jpg");
+  background-image: url("../img/hero-background.webp");
   background-repeat: no-repeat;
   background-position: top;
   background-size: cover;
@@ -1579,6 +1587,7 @@ p {
 
     img {
       width: 100%;
+      height: auto;
     }
 
     &::before {
@@ -1588,7 +1597,7 @@ p {
       position: absolute;
       bottom: 12%;
       left: -10%;
-      background: url("../img/about-dog.png") no-repeat center;
+      background: url("../img/about-dog.webp") no-repeat center;
       background-size: contain;
     }
 
@@ -1599,7 +1608,7 @@ p {
       position: absolute;
       top: 38%;
       right: 3%;
-      background: url("../img/about-heart.png") no-repeat center;
+      background: url("../img/about-heart.webp") no-repeat center;
       background-size: contain;
     }
   }
@@ -1730,8 +1739,8 @@ p {
   background-image: url("../img/bg-contacts-line1.svg"),
     url("../img/bg-contacts-line2.svg"), url("../img/bg-contacts-shine1.svg"),
     url("../img/bg-contacts-shine2.svg"), url("../img/bg-contacts-shine3.svg"),
-    url("../img/bg-contacts-dog.png"), url("../img/bg-contacts-meat.png"),
-    url("../img/bg-contacts-apple.png");
+    url("../img/bg-contacts-dog.webp"), url("../img/bg-contacts-meat.webp"),
+    url("../img/bg-contacts-apple.webp");
   background-position: $base * -35 85%, right $base * -15 top, $base * 7 32%,
     left 36% bottom 50%, right $base * 25 top 55%, 43% 25%, left 38% bottom 30%,
     right 2% bottom;
@@ -1753,8 +1762,8 @@ p {
     background-image: url("../img/bg-contacts-line1.svg"),
       url("../img/bg-contacts-line2.svg"), url("../img/bg-contacts-line3.svg"),
       url("../img/bg-contacts-shine1.svg"), url("../img/bg-contacts-shine2.svg"),
-      url("../img/bg-contacts-shine3.svg"), url("../img/bg-contacts-dog.png"),
-      url("../img/bg-contacts-meat.png"), url("../img/bg-contacts-apple.png");
+      url("../img/bg-contacts-shine3.svg"), url("../img/bg-contacts-dog.webp"),
+      url("../img/bg-contacts-meat.webp"), url("../img/bg-contacts-apple.webp");
     background-position: $base * -35 1200%, right $base * -30 top -8%,
       bottom $base * -35 right $base * -25, $base * 7 -1000%,
       left 36% bottom -1000%, right 1000% top $base * 10, right 2% top 18%,
