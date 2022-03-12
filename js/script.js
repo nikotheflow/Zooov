@@ -198,7 +198,6 @@ function closePopup(currentPopup) {
 
 
 function bodyLock() {
-
   const lockPaddingValue = window.innerWidth - document.documentElement.clientWidth + 'px';
 
   lockPadding.forEach((e) => {
@@ -224,7 +223,7 @@ function bodyUnlock() {
 function toggleAccordion() {
   let thisItem = this.parentNode;
 
-  thisItem.classList.toggle('accordion_item__active');
+  thisItem.classList.toggle('active');
 }
 
 function toggleSelect() {
