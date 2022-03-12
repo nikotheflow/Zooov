@@ -1,10 +1,10 @@
 # ZOOOV - Natural diets for dogs according to the BARF system
 
-![zooov preview](/img/preview.jpg "zooov preview")
-
 ### The goal of the project is to develop the skills of creating a cross-browser, adaptive, responsive web design and applying the technologies that are used.
 
-## Technologies and Features
+![zooov preview](/img/preview.jpg "zooov preview")
+
+### Technologies and Features
 
 - HTML5, CSS3, JavaScript;
 - Sass (SCSS) preprocessor;
