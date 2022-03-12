@@ -13,4 +13,4 @@
 - Slider integration (swiper js).
 - Using lighthouse to optimize a website.
 
-### [View website on GitHub Pages](https://nikotheflow.github.io/zooov/ "project on GitHub Pages")
+### [View website on GitHub Pages](https://nikotheflow.github.io/Zooov/ "project on GitHub Pages")
