@@ -4,15 +4,15 @@ html {
   scroll-padding-top: 76px;
 }
 
-@media (max-width: 1399.98px) {
-  html {
-    font-size: 14px;
-  }
-}
-
 @media (max-width: 991.98px) {
   html {
     scroll-padding-top: 49px;
+  }
+}
+
+@media (max-width: 1399.98px) {
+  html {
+    font-size: 14px;
   }
 }
 
@@ -338,8 +338,6 @@ img {
 .accordion_item.active .accordion_button svg {
   -webkit-transform: rotate(135deg);
           transform: rotate(135deg);
-  -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease;
 }
 
 .accordion_item:first-child .accordion_header {
@@ -382,8 +380,6 @@ img {
 }
 
 .accordion_button svg {
-  -webkit-transform: rotate(0deg);
-          transform: rotate(0deg);
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }

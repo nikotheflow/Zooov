@@ -386,7 +386,6 @@ img {
 
         &_button svg {
           transform: rotate(135deg);
-          transition: all 0.2s ease;
         }
       }
     }
@@ -425,7 +424,6 @@ img {
     cursor: pointer;
 
     svg {
-      transform: rotate(0deg);
       transition: all 0.2s ease;
     }
   }
