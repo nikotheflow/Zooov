@@ -1,3 +1,5 @@
+// === VARIABLES ===
+
 const body = document.querySelector('body'),
       anchors = document.querySelectorAll('.anchor'),
       header = document.querySelector('.section-header'),
@@ -22,8 +24,11 @@ const body = document.querySelector('body'),
       selectItems = document.querySelectorAll('.select__item'),
       timeout = 200; // time to open popup
 
-// create swipers
+// === / VARIABLES ===
 
+// === COMMONS ===
+
+// create swipers
 const compositionSwiper = new Swiper('.section-barf_compositions__mobile', {
   direction: 'horizontal',
   loop: false,
@@ -42,8 +47,6 @@ const catalogSwiper = new Swiper('.section-rations_catalog__mobile', {
     clickable: true,
   },
 });
-
-// add listeners
 
 window.addEventListener('DOMContentLoaded', () => {
   closeBurgerMenu()
@@ -122,13 +125,13 @@ contentLinks.forEach((link) => {
 
 accordionHeaders.forEach((header) => header.addEventListener('click', toggleAccordion));
 
-selectHeaders.forEach((header) => {
-  header.addEventListener('click', toggleSelect);
-})
+selectHeaders.forEach((header) => header.addEventListener('click', toggleSelect));
 
-selectItems.forEach((item) => {
-  item.addEventListener('click', chooseSelect);
-})
+selectItems.forEach((item) => item.addEventListener('click', chooseSelect));
+
+// === / COMMONS ===
+
+// === FUNCTIONS ===
 
 function hideAllInfo() {
   popupHeader.style.display = "none";
@@ -239,3 +242,5 @@ function chooseSelect() {
   currentText.innerText = text;
   select.classList.remove('active');
 }
+
+// === / FUNCTIONS ===
